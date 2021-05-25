@@ -15,7 +15,8 @@ class PublicationController extends Controller
     public function index()
     {
         //
-        return view('publication.index');
+        $datos['publications'] = Publication::paginate(5);
+        return view('publication.index',$datos);
     }
 
     /**
@@ -26,6 +27,7 @@ class PublicationController extends Controller
     public function create()
     {
         //
+        
         return view('publication.form_publication');
     }
 
@@ -39,12 +41,12 @@ class PublicationController extends Controller
     {
         //
         $datos_publicacion = request()->except('_token');
-        Publication::insert($datos_publicacion);
+        
         if($request->hasFile('foto')){
             $datos_publicacion['foto'] = $request()->file('foto')->store('uploads', 'public');
 
         }
-        
+        Publication::insert($datos_publicacion);
         return response()->json($datos_publicacion);
     }
 

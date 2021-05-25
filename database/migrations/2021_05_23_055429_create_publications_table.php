@@ -17,6 +17,7 @@ class CreatePublicationsTable extends Migration
             $table->id();
 
             $table->string('tipo');
+            
             $table->string('titulo');
             $table->string('descripcion');
             $table->string('contenido')->nullable();
