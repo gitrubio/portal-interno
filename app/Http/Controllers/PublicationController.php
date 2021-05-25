@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers; 
 
 use App\Models\Publication;
 use Illuminate\Http\Request;
@@ -15,8 +15,13 @@ class PublicationController extends Controller
     public function index()
     {
         //
-        $datos['publications'] = Publication::paginate(5);
-        return view('publication.index',$datos);
+        $datos = Publication::paginate(5);
+        return view('publication.index',compact('datos'));
+        //$publications = Publication::latest()->paginate(5);
+
+        //return view('publication.index', compact('publications'))
+         //   ->with('i', (request()->input('page', 1) - 1) * 5);
+
     }
 
     /**
@@ -28,7 +33,7 @@ class PublicationController extends Controller
     {
         //
         
-        return view('publication.form_publication');
+        return view('publication.create');
     }
 
     /**
@@ -42,8 +47,8 @@ class PublicationController extends Controller
         //
         $datos_publicacion = request()->except('_token');
         
-        if($request->hasFile('foto')){
-            $datos_publicacion['foto'] = $request()->file('foto')->store('uploads', 'public');
+        if($request->hasFile('imagen')){
+            $datos_publicacion['imagen'] = $request()->file('imagen')->store('uploads', 'public');
 
         }
         Publication::insert($datos_publicacion);
@@ -67,10 +72,11 @@ class PublicationController extends Controller
      * @param  \App\Models\Publication  $publication
      * @return \Illuminate\Http\Response
      */
-    public function edit(Publication $publication)
+    public function edit($id)
     {
         //
-        return view('publication.edit');
+        $publication = Publication::findOrFail($id);
+        return view('publication.edit', compact('publication'));
     }
 
     /**
@@ -80,9 +86,15 @@ class PublicationController extends Controller
      * @param  \App\Models\Publication  $publication
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Publication $publication)
+    public function update(Request $request, $id)
     {
         //
+
+        $datos_publicacion = $request->except(['_token', '_method']);
+        Publication::where('id', '=', $id);
+
+        $publication = Publication::findOrFail($id);
+        return view('publication.edit', compact('publication'));
     }
 
     /**
