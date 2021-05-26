@@ -83,6 +83,7 @@
     <label for="video" class="col-md-4 col-form-label text-md-right">{{ __('Video') }}</label>
 
     <div class="col-md-6">
+        {{$publication->video}}
         <input id="video" type="file" class="form-control @error('video') is-invalid @enderror" name="video"  autocomplete="video">
 
         @error('video')
@@ -97,6 +98,7 @@
     <label for="documento" class="col-md-4 col-form-label text-md-right">{{ __('Documento') }}</label>
 
     <div class="col-md-6">
+        {{$publication->documento}}
         <input id="documento" type="file" class="form-control @error('documento') is-invalid @enderror" name="documento"  autocomplete="video">
 
         @error('documento')

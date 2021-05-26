@@ -91,7 +91,7 @@ class PublicationController extends Controller
         //
 
         $datos_publicacion = $request->except(['_token', '_method']);
-        Publication::where('id', '=', $id);
+        Publication::where('id', '=', $id)->update($datos_publicacion);
 
         $publication = Publication::findOrFail($id);
         return view('publication.edit', compact('publication'));
@@ -103,8 +103,11 @@ class PublicationController extends Controller
      * @param  \App\Models\Publication  $publication
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Publication $publication)
+    public function destroy($id)
     {
         //
+        Publication::destroy($id);
+
+        return redirect('publication');
     }
 }
