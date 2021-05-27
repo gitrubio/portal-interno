@@ -1,3 +1,5 @@
+@extends('layouts.app')    
+@section('content')
 <table class="table table-light">
     <thead class="thead-light"> 
         <tr>
@@ -46,3 +48,4 @@
         
     </tbody>
 </table>
+@endsection    
