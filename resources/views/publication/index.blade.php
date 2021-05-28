@@ -15,8 +15,6 @@
             <th>Inicio</th>
             <th>Fin</th>
             <th>Acciones</th>
-
-
         </tr>
     </thead>
     <tbody>
