@@ -9,7 +9,7 @@
                 <div class="card-body">
                     <form method="POST" action="{{ url('publication') }}" enctype="multipart/form-data">
                         @csrf
-                        @include('publication.form_publication');
+                        @include('publication.form');
                     </form>
                 </div>
             </div>

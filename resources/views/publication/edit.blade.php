@@ -10,7 +10,7 @@
                     <form method="POST" action="{{ url('publication/'.$publication->id) }}" enctype="multipart/form-data">
                         @csrf
                         {{method_field('PATCH')}}
-                        @include('publication.form_publication');
+                        @include('publication.form'); 
                     </form>
                 </div>
             </div>

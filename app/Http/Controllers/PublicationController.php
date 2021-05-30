@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Publication;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PublicationController extends Controller 
 {
@@ -45,14 +46,18 @@ class PublicationController extends Controller
     public function store(Request $request)
     {
         //
-        $datos_publicacion = request()->except('_token');
+        $datos_publicacion = $request->except('_token');
         
         if($request->hasFile('imagen')){
-            $datos_publicacion['imagen'] = $request()->file('imagen')->store('uploads', 'public');
+            $datos_publicacion['imagen'] = request()->file('imagen')->store('uploads', 'public');
 
         }
-        Publication::insert($datos_publicacion);
-        return response()->json($datos_publicacion);
+        //Publication::insert($datos_publicacion);
+        Publication::create($datos_publicacion);
+        //return response()->json($datos_publicacion);
+
+        return redirect()->route('publication.index')
+        ->with('success', 'Project created successfully.');
     }
 
     /**
@@ -90,11 +95,24 @@ class PublicationController extends Controller
     {
         //
 
+        
+        
+        //return view('publication.index',compact('datos'));
+
         $datos_publicacion = $request->except(['_token', '_method']);
+
+        if($request->hasFile('imagen')){
+            $publication = Publication::findOrFail($id);
+            Storage::delete('public/'.$publication->imagen);
+            $datos_publicacion['imagen'] = request()->file('imagen')->store('uploads', 'public');
+
+        }
         Publication::where('id', '=', $id)->update($datos_publicacion);
 
-        $publication = Publication::findOrFail($id);
-        return view('publication.edit', compact('publication'));
+        //$publication = Publication::findOrFail($id);
+        //return view('publication.edit', compact('publication'));
+        $datos = Publication::paginate(5);
+        return view('publication.index', compact('datos'));
     }
 
     /**

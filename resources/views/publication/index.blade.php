@@ -1,5 +1,10 @@
 @extends('layouts.app')    
 @section('content')
+<div>
+<a class="btn btn-primary" href="{{url('publication/create')}}">Crear Nueva Publicacion</a>
+{!!$datos->links()!!}
+<br>
+
 <table class="table table-light">
     <thead class="thead-light"> 
         <tr>
@@ -26,7 +31,9 @@
             <td>{{$publication->descripcion}}</td>
             <td>{{$publication->contenido}}</td>
             <td>{{$publication->link}}</td>
-            <td>{{$publication->foto}}</td>
+            <td>
+                <img src="{{asset('storage').'/'.$publication->imagen}}" width="100" alt="{{$publication->imagen}}">    
+            </td>
             <td>{{$publication->video}}</td>
             <td>{{$publication->documento}}</td>
             <td>{{$publication->fecha_inicio}}</td>
@@ -46,4 +53,6 @@
         
     </tbody>
 </table>
+
+</div>
 @endsection    

@@ -4,7 +4,7 @@
     
     <div class="col-md-6">
 
-        <select id="tipo" class="form-control" @error('tipo') is-invalid @enderror" name="tipo" value="{{ $publication->tipo }}" required autocomplete="tipo" autofocus>
+        <select id="tipo" class="form-control" @error('tipo') is-invalid @enderror name="tipo" value="{{ $publication->tipo }}" required autocomplete="tipo" autofocus>
             <option value="">-- Seleccionar --</option>
             <option value="anuncio">Anuncio</option>
             <option value="cumpleaños">Cumpleaños</option>
@@ -157,6 +157,12 @@
         <button type="submit" class="btn btn-primary">
             {{ __('Publicar') }}
         </button>
+    </div>
+
+    <div class="col-md-6 offset-md-4">
+        <a class="btn btn-success" href="{{url('publication/index')}}">
+            {{ __('Regresar') }}
+        </a>
     </div>
 </div>
 

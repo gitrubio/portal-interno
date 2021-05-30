@@ -9,5 +9,5 @@ class Publication extends Model
 {
     use HasFactory; 
 
-    protected $fillable = ['titulo', 'descripcion', 'contenido', 'imagen', 'video', 'documento', 'link', 'fecha_inicio', 'fecha_fin'];
+    protected $fillable = ['tipo','titulo', 'descripcion', 'contenido', 'imagen', 'video', 'documento', 'link', 'fecha_inicio', 'fecha_fin'];
 }
