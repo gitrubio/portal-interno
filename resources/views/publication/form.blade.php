@@ -159,7 +159,7 @@
         </button>
     </div>
     <div class="col-md-6 offset-md-4">
-        <a class="btn btn-primary" href="{{url('publication')}}">
+        <a class="btn btn-success" href="{{url('publication')}}">
             {{ __('Regresar') }}
         </a>
     </div>

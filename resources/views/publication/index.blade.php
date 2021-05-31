@@ -39,13 +39,13 @@
             <td>{{$publication->fecha_inicio}}</td>
             <td>{{$publication->fecha_fin}}</td>
             <td>
-                <a href="{{url('publication/'.$publication->id.'/edit')}}">
-                    Editar |
+                <a class="btn btn-success" href="{{url('publication/'.$publication->id.'/edit')}}">
+                    Editar
                 </a>
                 <form action="{{url('/publication/'.$publication->id)}}" method="POST">
                     @csrf
                     {{method_field('DELETE')}}
-                    <input type="submit" onclick="return confirm('¿Quieres eliminar?')" value="delete">
+                    <input class="btn btn-danger"type="submit" onclick="return confirm('¿Quieres eliminar?')" value="Borrar">
                 </form>
             </td>
         </tr>    
