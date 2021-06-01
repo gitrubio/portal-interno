@@ -2,7 +2,7 @@
 @section('content')
 <div>
 <a class="btn btn-primary" href="{{url('publication/create')}}">Crear Nueva Publicacion</a>
-{!!$datos->links()!!}
+
 <br>
 
 <table class="table table-light">
@@ -34,7 +34,10 @@
             <td>
                 <img src="{{asset('storage').'/'.$publication->imagen}}" width="100" alt="{{$publication->imagen}}">    
             </td>
-            <td>{{$publication->video}}</td>
+            <td>
+                <iframe width="150" height="100" frameborder="0" allowfullscreen=""   src="{{$publication->video}}">
+               
+            </td>
             <td>{{$publication->documento}}</td>
             <td>{{$publication->fecha_inicio}}</td>
             <td>{{$publication->fecha_fin}}</td>
@@ -53,6 +56,7 @@
         
     </tbody>
 </table>
-
+{!!$datos->links()!!}
 </div>
+
 @endsection    

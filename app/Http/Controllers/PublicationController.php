@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Publication;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use App\Http\Controllers\Photo;
 
 class PublicationController extends Controller 
 {
@@ -48,8 +49,23 @@ class PublicationController extends Controller
         //
         $datos_publicacion = $request->except('_token');
         
+        $validatedData = $request->validate([
+            'imagen' => 'imagen|mimes:jpg,png,jpeg,gif,svg|max:2048',
+            'video' => 'mimes:mp4,mov,ogg,qt|max:204800',
+            'documento' => 'mimes:txt,doc,docx,xls,xlsx,pdf|max:20480',
+    
+        ]);
+
         if($request->hasFile('imagen')){
             $datos_publicacion['imagen'] = request()->file('imagen')->store('uploads', 'public');
+
+        }
+        if($request->hasFile('video')){
+            $datos_publicacion['video'] = request()->file('video')->store('uploads', 'public');
+
+        }
+        if($request->hasFile('documento')){
+            $datos_publicacion['documento'] = request()->file('documento')->store('uploads', 'public');
 
         }
         //Publication::insert($datos_publicacion);
@@ -57,7 +73,7 @@ class PublicationController extends Controller
         //return response()->json($datos_publicacion);
 
         return redirect()->route('publication.index')
-        ->with('success', 'Project created successfully.');
+        ->with('success', 'Publicación creada correctamente.');
     }
 
     /**
@@ -93,18 +109,22 @@ class PublicationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-
-        
-        
         //return view('publication.index',compact('datos'));
 
         $datos_publicacion = $request->except(['_token', '_method']);
 
         if($request->hasFile('imagen')){
             $publication = Publication::findOrFail($id);
+            
             Storage::delete('public/'.$publication->imagen);
+            
+            $validatedData = $request->validate([
+                'imagen' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+        
+            ]);
+            
             $datos_publicacion['imagen'] = request()->file('imagen')->store('uploads', 'public');
+            
 
         }
         Publication::where('id', '=', $id)->update($datos_publicacion);
