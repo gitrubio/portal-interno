@@ -65,8 +65,12 @@
 
 <div class="form-group row">
     <label for="imagen" class="col-md-4 col-form-label text-md-right">{{ __('Imagen') }}</label>
-
-    <div class="col-md-6">
+    @if (@isset($publication->imagen))
+        <img class="col-md-3"src="{{asset('storage').'/'.$publication->imagen}}" width="100" alt="$publication->imagen">
+        
+    @endif
+        
+    <div class="col-md-3">
         
         
         <input id="imagen" type="file" class="form-control @error('imagen') is-invalid @enderror" name="imagen"  autocomplete="">
