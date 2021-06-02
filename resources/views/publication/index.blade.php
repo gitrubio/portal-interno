@@ -1,14 +1,13 @@
 @extends('layouts.app')    
 @section('content')
-<div>
+<div class="container">
 <a class="btn btn-primary" href="{{url('publication/create')}}">Crear Nueva Publicacion</a>
-
 <br>
-
+<br>
 <table class="table table-light">
     <thead class="thead-light"> 
         <tr>
-            <th>#</th>
+            <th>Id</th>
             <th>Tipo</th>
             <th>Titulo</th>
             <th>Descripcion</th>
@@ -35,7 +34,7 @@
                 <img src="{{asset('storage').'/'.$publication->imagen}}" width="100" alt="{{$publication->imagen}}">    
             </td>
             <td>
-                <iframe width="150" height="100" frameborder="0" allowfullscreen=""   src="{{$publication->video}}">
+               <!-- <iframe width="150" height="100" frameborder="0" allowfullscreen=""   src="{{$publication->video}}">-->
                
             </td>
             <td>{{$publication->documento}}</td>
@@ -45,10 +44,11 @@
                 <a class="btn btn-success" href="{{url('publication/'.$publication->id.'/edit')}}">
                     Editar
                 </a>
-                <form action="{{url('/publication/'.$publication->id)}}" method="POST">
+                
+                <form  action="{{url('/publication/'.$publication->id)}}" class="d-inline" method="POST" >
                     @csrf
                     {{method_field('DELETE')}}
-                    <input class="btn btn-danger"type="submit" onclick="return confirm('¿Quieres eliminar?')" value="Borrar">
+                    <input class="btn btn-danger d-inline" type="submit" onclick="return confirm('¿Quieres eliminar?')" value="Borrar">
                 </form>
             </td>
         </tr>    

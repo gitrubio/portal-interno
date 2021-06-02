@@ -50,7 +50,7 @@ class PublicationController extends Controller
         $datos_publicacion = $request->except('_token');
         
         $validatedData = $request->validate([
-            'imagen' => 'imagen|mimes:jpg,png,jpeg,gif,svg|max:2048',
+            'imagen' => 'image|mimes:jpg,png,jpeg,gif,svg|max:6144',
             'video' => 'mimes:mp4,mov,ogg,qt|max:204800',
             'documento' => 'mimes:txt,doc,docx,xls,xlsx,pdf|max:20480',
     
@@ -119,7 +119,7 @@ class PublicationController extends Controller
             Storage::delete('public/'.$publication->imagen);
             
             $validatedData = $request->validate([
-                'imagen' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+                'imagen' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:6144',
         
             ]);
             
@@ -129,10 +129,10 @@ class PublicationController extends Controller
         }
         Publication::where('id', '=', $id)->update($datos_publicacion);
 
-        //$publication = Publication::findOrFail($id);
+        $publication = Publication::findOrFail($id);
         //return view('publication.edit', compact('publication'));
-        $datos = Publication::paginate(5);
-        return view('publication.index', compact('datos'));
+        //$datos = Publication::paginate(5);
+        return view('publication.edit', compact('publication'));
     }
 
     /**
