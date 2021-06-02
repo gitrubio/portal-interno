@@ -15,7 +15,7 @@ use App\Http\Controllers\PublicationController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('principal.index');
 });
 
 Auth::routes();
