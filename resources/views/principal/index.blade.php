@@ -55,9 +55,14 @@
 			                <a class="nav-link scroll-link" href="#seccion-protocoloscovid">Protocolos Covid19</a>
 			            </li>
 			            <li id="boton_menu" class="nav-item" onclick="clickMenu()">
-			                <a class="nav-link scroll-link" href="">Menú</a>
+			                <a class="nav-link scroll-link" style="background-color: #003660;" href="">Menú</a>
 			                <div id="contenedor_opciones_menu" class="contenedor_opciones_menu dropdown-content">
-	                            <a class="enlace_menu" href="http://192.168.1.95/ADMISIONES/index.aspx" target="_blank">
+	                            <h3 class="titulo_enlace_menu">
+									 <strong>
+										Perfect Body
+									</strong> 
+								</h3>
+								<a class="enlace_menu" href="http://192.168.1.95/ADMISIONES/index.aspx" target="_blank">
 	                                Admisiones
 	                            </a>
 	                            <a class="enlace_menu" href="http://192.168.1.95/ActivosFijos/index.aspx" target="_blank">
@@ -82,7 +87,12 @@
 	                                Inspección</a>
 	                            <a class="enlace_menu" href="http://192.168.1.52:8686/SST_Perfect-Body/public/" target="_blank">
 	                                C.P.C.PBMC</a>
-	                            <hr>
+	                           
+								<h3 class="titulo_enlace_menu">
+									<strong>
+									   Otros Enlaces
+								   </strong> 
+							   </h3>
 	                            <a class="enlace_menu" href="https://mipres.sispro.gov.co/MIPRESNOPBS/Login.aspx" target="_blank">
 	                                Mipres SISPRO</a>
 	                            <a class="enlace_menu" href="https://imagenes.rras-sas.com/viewer/index.php" target="_blank">
@@ -94,6 +104,9 @@
 	                            <a class="enlace_menu" href="https://drive.google.com/drive/folders/15VjXdXO1VjGVTE-TJrNMcfFSWxHn741r?usp=sharing" target="_blank">
 	                                Fichas INS
 	                            </a>
+								<a class="enlace_menu" href="{{url('/login')}}" target="_blank">
+	                                Administrar
+	                            </a>
                             </div>
 			            </li>
 			            
@@ -102,7 +115,8 @@
 		    </div>
 		</nav>
 
-        <!-- Top content -->
+		
+		<!-- Top content -->
         <div class="top-content">
 	        <div class="container" style="">
 	        	<!-- Title and description row -->
@@ -156,25 +170,26 @@
 	       						<div class="carousel-item">
 	       							<img src="{{asset('/img/slides/huellero.jpg')}}" class="d-block w-100" alt="slide-img-2">
 	       							<div class="carousel-caption">
-										<h3 class="carousel-anuncio-titulo"><span class="fondo-texto">ENTRADA O SALIDA SOLO USE LA HUELLA</span></h3>
+										<h3 class="carousel-anuncio-titulo"><span class="fondo-texto">ENTRADA O SALIDA SOLO CON LA HUELLA</span></h3>
 										<div class="carousel-anuncio-descripcion">
-											<p><span class="fondo-texto">Para registrar su ingreso o salida, solo use la huella</span></p>
+											<p><span class="fondo-texto">Para registrar su ingreso o salida, solo utlice su huella</span></p>
 										</div>
 									</div>
 	       						</div>
 	       						
 	       						<div class="carousel-item">
 	       							<div class="embed-responsive embed-responsive-16by9">
-	       								<video class="embed-responsive-item" src="{{asset('/videos/video4.mp4')}}" allowfullscreen controls autoplay></video>
+	       								<video class="embed-responsive-item" src="{{asset('/videos/video4.mp4')}}" allowfullscreen controls ></video>
 	       							</div>
 	       							<div class="carousel-caption">
 										<h3 class="carousel-anuncio-titulo">
 											<span class="fondo-texto">
-												Caption for Video 3
-											</span></h3>
+												Caption to Video 3
+											</span>
+                                        </h3>
 										<div class="carousel-anuncio-descripcion">
 											<p><span class="fondo-texto">
-												This is the caption description text for video 3.
+												This is the caption description text to video 3.
 											</p>
 										</div>
 									</div>
@@ -197,15 +212,16 @@
 	            <!-- End carousel row -->
 	        </div>
         </div>
+	       
 
-         <!-- Section 2 -->
+		<!-- Section 2 -->
         
     	<div id="anuncio1" class="section-2-container section-container section-container-gray-bg">
 	        <div  class="container">
 	            <div class="row">
 			        <div class="col section-1 section-description wow fadeIn">
-			                    <h2>Anuncios</h2>
-			                    <div class="divider-1 wow fadeInUp"><span></span></div>
+						<h2>Anuncios</h2>
+						<div class="divider-1 wow fadeInUp"><span></span></div>
 		            </div>
 
 	        <div  class="container">
@@ -214,8 +230,8 @@
 	            	
                     	<div class="card" >
 							<div class="card-body">
-							    <h5 class="card-title">ENTRADA O SALIDA SOLO USE LA HUELLA</h5>
-							    <p class="card-text">Para registrar su ingreso o salida, solo use la huella</p>
+							    <h5 class="card-title">ENTRADA O SALIDA SOLO UTILICE LA HUELLA</h5>
+							    <p class="card-text">Para registrar su ingreso o salida, solo utilice la huella</p>
 							    <a href="#" class="badge badge-pill badge-info">Enlace</a>
 							    <img src="{{asset('/img/slides/huellero.jpg')}}" class="card-img-top imagen-anuncio" alt="..." >
 						    </div>
@@ -224,67 +240,8 @@
 	            </div>
             </div>
         </div>
-        
-        <div id="anuncio2" class="section-2-container section-container section-container-gray-bg">
-	        <div  class="container">
-	            <!--
-	            <div class="row">
-	                <div class="col section-1 section-description wow fadeIn">
-	                    <h2>Anuncios</h2>
-	                    <div class="divider-1 wow fadeInUp"><span></span></div>
-	                </div>
-	            </div>
-	          -->
-	            <div class="row">
-	            	<div class="col-sm-12 section-2-box wow fadeInLeft">
-	            	
-                    	<div class="card" >
-							<div class="card-body">
-							    <h5 class="card-title">GRACIAS</h5>
-							    <p class="card-text">Gracias por brindar lo mejor en cada servicio </p>
-							    <a href="#" class="badge badge-pill badge-info">Enlace</a>
-							    <img src="{{asset('/img/slides/foto_gracias_editada.jpg')}}" class="card-img-top imagen-anuncio" alt="..." >
-						    </div>
-						</div>
-	                </div>
-	            </div>
-            </div>
-        </div>
 
-        <!--
-        <div id="anuncio2" class="section-2-container section-container section-container-gray-bg">
-	        <div  class="container">
-	            <div class="row">
-	                <div class="col section-2 section-description wow fadeIn">
-	                </div>
-	            </div>
-	            <div class="row">
-	            	<div class="col section-2-box wow fadeInLeft">
-                    	<h3 id="titulo-anuncio2" class=""></h3>
-                    	<p class="medium-paragraph">
-                    		Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
-                    		sed do eiusmod tempor incididunt ut labore et. Ut wisi enim ad minim veniam, quis nostrud.
-                    	</p>
-                    	<p>
-                    		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.
-                    		Ut wisi enim ad minim veniam, quis nostrud. 
-                    		Exerci tation ullamcorper suscipit <a href="#">lobortis nisl</a> ut aliquip ex ea commodo consequat. 
-                    		Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl. 
-                    	</p>
-                    	<p>
-                    		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.
-                    		Ut wisi enim ad minim veniam, quis nostrud. 
-                    		Exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-                    	</p>
-	                </div>
-	            </div>
-            </div>
-        </div>
-      	-->
-         	
-        
-        
-        <!-- Section 1 -->
+		<!-- Section 1 -->
         <div id="seccion-cumpleaños"  class="section-1-container section-container">
 	        <div class="container">
 	            <div class="row">
@@ -436,8 +393,6 @@
 	        </div>
         </div>
 
-       
-
 		<!-- Section 3 -->
         <div   class="section-3-container section-container">
 	        <div class="container">
@@ -575,21 +530,7 @@
 	        </div>
         </div>
 
-		<!-- Section 4 
-        <div class="section-4-container section-container section-container-image-bg">
-	        <div class="container">
-	            <div class="row">
-	                <div class="col section-4 section-description wow fadeInLeftBig">
-	                	<h2>Section 4</h2>
-	                    <p>
-	                    	Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut 
-	                    	aliquip ex ea commodo consequat. Ut wisi enim ad minim veniam, quis nostrud.
-	                    </p>
-	                </div>
-	            </div>
-	        </div>
-        </div>
-		-->
+		
         <!-- Footer -->
         <footer class="footer-container">
         
@@ -605,6 +546,7 @@
                 	
         </footer>
 
+		
         <!-- Javascript -->
 		<script src="{{asset('/js/jquery-3.3.1.min.js')}}"></script>
 		<script src="{{asset('/js/jquery-migrate-3.0.0.min.js')}}"></script>
@@ -619,82 +561,3 @@
     </body>
 
 </html>
-
-
-<!-- videos incrustados-->
-	       						<!--
-	       						<div class="carousel-item active">
-	       							<div class="embed-responsive embed-responsive-16by9">
-	       								<iframe class="embed-responsive-item" src="https://www.youtube.com/watch?v=naJklgh-ZLs&list=PLIddmSRJEJ0sxS-RmqdRMlkyWOQWvEGEt" allowfullscreen></iframe>
-	       							</div>
-	       							<div class="carousel-caption">
-										<h3>Caption for Video 1</h3>
-										<div class="carousel-caption-description">
-											<p>This is the caption description text for video 1.</p>
-										</div>
-									</div>
-	       						</div>-->
-	       						<!--
-	       						<div class="carousel-item">
-	       							<div class="embed-responsive embed-responsive-16by9">
-	       								<iframe class="embed-responsive-item" src="https://player.vimeo.com/video/84910153?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;color=ffffff" allowfullscreen></iframe>
-	       							</div>
-	       							<div class="carousel-caption">
-										<h3>Caption for VIMEO</h3>
-										<div class="carousel-caption-description">
-											<p>VIDEO DE VIMEO</p>
-										</div>
-									</div>
-	       						</div>
-	       						-->
-
-<!-- Title and description row -->
-	            <!--
-	            <div class="row">
-	                <div class="col col-md-10 offset-md-1">
-	                	<h1>Carousel Template with Videos, Images, Captions</h1>
-	                	<div class="description">
-	                		<p>
-	                			This is a free Carousel template with Videos, Images and Captions, made with the Bootstrap 4 framework. 
-	                			Click on the indicators, controls and links to interact with the page.
-	                		</p>
-	                	</div>
-	                </div>
-	            </div>
-	        	-->
-<!-- End title and description row --> 
-
-
-<!--carousel indicadores-->
-	                	     		
-	       					
-<!--
-	       					<ol class="carousel-indicators">
-	       						<li data-target="#carousel-example" data-slide-to="0" class="active"></li>
-	       						<li data-target="#carousel-example" data-slide-to="1"></li>
-	       						<li data-target="#carousel-example" data-slide-to="2"></li>
-	       						<li data-target="#carousel-example" data-slide-to="3"></li>
-	       						<li data-target="#carousel-example" data-slide-to="4"></li>
-	       					</ol>
-	       					-->
-	       					<!--fin carousel indicadores-->
-
-<!-- elemento card horizontal
-<div class="carousel-item">
-	       							<div class="card mb-3" style="max-width: 540px;">
-									  <div class="row g-0">
-									    <div class="col-md-4">
-									      <img src="assets/img/slides/desierto.jpg" alt="...">
-									    </div>
-									    <div class="col-md-12">
-									      <div class="card-body">
-									        <h5 class="card-title">Card title</h5>
-									        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-									        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-									      </div>
-									    </div>
-									  </div>
-									</div>
-	       						</div>
-
--->

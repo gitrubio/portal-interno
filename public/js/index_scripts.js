@@ -7,7 +7,7 @@ function clickMenu() {
     }
 }
 
-
+/*
 document.addEventListener("DOMContentLoaded", (event) => {
     console.log('DOM is ready.')
    
@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 											</div>`;
 
 			}
+		*/	
 			/*
 			slider.innerHTML += `<a class="scroll-link"  href="${cadaelemento.id}">
 							 	<img src="assets/img/slides/${cadaelemento.foto}" class="d-block w-100" alt="${cadaelemento.titulo}">
@@ -52,18 +53,18 @@ document.addEventListener("DOMContentLoaded", (event) => {
 														<p>${cadaelemento.descripcion}</p>
 													</div>
 												</a>
-											</div>`;*/
+											</div>`;
 			//console.log('cadaelemento');
 			//console.log(cadaelemento);
 			contenido_carousel.appendChild(slider);
 		});
 
 	}
-
-	function cargarSliders(){
+*/
+/*	function cargarSliders(){
 
 		console.log("cargarSliders");
-		/*
+		
 		fetch('http://localhost/Menu2/assets/database/carousel.json')
 		.then(respuesta => respuesta.json())
 		.then(sliders => {
@@ -102,6 +103,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 		})
 
 		*/
+		/*
 		const requestURL= 'http://localhost/Menu2/assets/database/carousel.json';
 		const request = new XMLHttpRequest();
 		request.open('GET', requestURL);
@@ -127,7 +129,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
 const requestUrl= 'http://localhost/Menu2/assets/database/carousel.json';
 //const requestUrl= 'http://192.168.1.52:8686/Menu2/assets/database/carousel.json';
-
+*/
 
 
 

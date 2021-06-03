@@ -72,8 +72,7 @@ class PublicationController extends Controller
         Publication::create($datos_publicacion);
         //return response()->json($datos_publicacion);
 
-        return redirect()->route('publication.index')
-        ->with('success', 'Publicación creada correctamente.');
+        return redirect('publication')->with('mensaje', 'Publicación creada correctamente.');
     }
 
     /**

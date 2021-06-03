@@ -4,6 +4,9 @@
 <a class="btn btn-primary" href="{{url('publication/create')}}">Crear Nueva Publicacion</a>
 <br>
 <br>
+@if (Session::has('mensaje'))
+    {{Session::get('mensaje')}}
+@endif
 <table class="table table-light">
     <thead class="thead-light"> 
         <tr>

@@ -8,13 +8,13 @@
 */
 
 body {
-	 /*font-family: 'Source Sans Pro', 'Arial', sans-serif;*/
-	 font-family: 'Poppins', sans-serif;
-	 font-size: 15px;
-	 font-weight: 400;
-	 color: #888;
-	 line-height: 30px;
-	 text-align: center;
+	/*font-family: 'Source Sans Pro', 'Arial', sans-serif;*/
+	font-family: 'Poppins', sans-serif;
+	font-size: 15px;
+	font-weight: 400;
+	color: #888;
+	line-height: 30px;
+	text-align: center;
 }
 
 strong {
@@ -31,7 +31,7 @@ a {
 a:hover, a:focus { color: #a365bc; border: 0; text-decoration: none; }
 
 h1, h2 { margin-top: 10px; font-size: 38px; font-weight: 300; color: black; line-height: 50px; font-style: inherit; }
-h3 { font-size: 22px; font-weight: 300; color: #black; line-height: 30px; font-style: inherit; }
+h3 { font-size: 22px; font-weight: 300; color: black; line-height: 30px; font-style: inherit; }
 
 img { max-width: 100%; }
 
@@ -88,21 +88,22 @@ img { max-width: 100%; }
 .navbar.navbar-no-bg { background: #444; background: rgba(0, 0, 0, 0.01); }
 
 .navbar-dark .navbar-nav {
-	 font-size: 22px;
- 	 color: #fff;
- 	 /*text-transform: uppercase;*/
+	font-size: 22px;
+	color: #fff;
+	/*text-transform: uppercase;*/
  }
 .navbar-dark .navbar-nav .nav-link { 
-	  color: #fff;
- 	  color: rgba(255, 255, 255, 1);
-	  border: 0;
-	  margin-top: 25px;
+	color: #fff;
+	color: rgba(255, 255, 255, 1);
+	border: 0;
+	margin-top: 25px;
+	margin-left: 5px;
 }
 
 .navbar-dark .navbar-nav .nav-link:hover {
-	 color: #fff;
-	 background-color: #003660;
-  }
+	color: #fff;
+	background-color: #003660;
+}
 .navbar-dark .navbar-nav .nav-link:focus { color: #fff; outline: 0; }
 
 .navbar-expand-md .navbar-nav .nav-link { padding-right: 1rem; padding-left: 1rem; }
@@ -110,7 +111,7 @@ img { max-width: 100%; }
 .navbar-brand {
 	width: 285px;
 	height: 100px;
-	background: url('../resources/img/logo_perfect.png') left center no-repeat;
+	background: url('../img/logo_perfect.png') left center no-repeat;
 	border: 0;
 	text-indent: -99999px;
 }
@@ -131,7 +132,10 @@ height: auto;
 /*overflow-y: scroll;*/
 background-color: rgb(110,110,110);
 }
-
+.titulo_enlace_menu{
+	margin-bottom: 0px;
+	color:#003660 ;
+}
 .dropdown-content {
     visibility: hidden;
     position: absolute;
