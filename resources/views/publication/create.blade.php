@@ -4,7 +4,12 @@
     <div class="row justify-content-center"> 
         <div class="col-md-11">
             <div class="card">
-                <div class="card-header">{{ __('Nueva Publicación') }}</div>
+                @if (Session::has('mensaje'))
+                    {{Session::get('mensaje')}}
+                @endif
+                <div class="card-header">
+                    <h2>{{ __('Nueva Publicación') }}</h2>
+                </div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ url('publication') }}" enctype="multipart/form-data">

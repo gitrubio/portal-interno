@@ -12,20 +12,12 @@
         <!-- CSS -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,600">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <!--
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    	-->
+        
         <link rel="stylesheet" href="{{asset('/css/animate.css')}}">
         <link rel="stylesheet" href="{{asset('/css/style.css')}}">
         <link rel="stylesheet" href="{{asset('/css/media-queries.css')}}">
 
-        <!-- Favicon and touch icons
-        <link rel="shortcut icon" href="assets/ico/perfect_favicon.png">
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
-		 -->
+        
     </head>
 
     <body>
@@ -214,32 +206,7 @@
         </div>
 	       
 
-		<!-- Section 2 -->
-        
-    	<div id="anuncio1" class="section-2-container section-container section-container-gray-bg">
-	        <div  class="container">
-	            <div class="row">
-			        <div class="col section-1 section-description wow fadeIn">
-						<h2>Anuncios</h2>
-						<div class="divider-1 wow fadeInUp"><span></span></div>
-		            </div>
-
-	        <div  class="container">
-	            <div class="row">
-	            	<div class="col-sm-12 section-2-box wow fadeInLeft">
-	            	
-                    	<div class="card" >
-							<div class="card-body">
-							    <h5 class="card-title">ENTRADA O SALIDA SOLO UTILICE LA HUELLA</h5>
-							    <p class="card-text">Para registrar su ingreso o salida, solo utilice la huella</p>
-							    <a href="#" class="badge badge-pill badge-info">Enlace</a>
-							    <img src="{{asset('/img/slides/huellero.jpg')}}" class="card-img-top imagen-anuncio" alt="..." >
-						    </div>
-						</div>
-	                </div>
-	            </div>
-            </div>
-        </div>
+		
 
 		<!-- Section 1 -->
         <div id="seccion-cumpleaños"  class="section-1-container section-container">

@@ -20,6 +20,12 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::resource('publication', PublicationController::class)->middleware('auth'); 
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::resource('publication', PublicationController::class); 
+Route::get('/home', [PublicationController::class, 'index'])->name('home');
+
+Route::resource('publication', PublicationController::class)->middleware('auth'); 
+
+Route::group(['middleware' => 'auth'] , function () {
+    Route::get('/home', [PublicationController::class, 'index'])->name('home');
+});

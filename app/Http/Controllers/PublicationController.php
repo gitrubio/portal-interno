@@ -131,7 +131,7 @@ class PublicationController extends Controller
         $publication = Publication::findOrFail($id);
         //return view('publication.edit', compact('publication'));
         //$datos = Publication::paginate(5);
-        return view('publication.edit', compact('publication'));
+        return view('publication.edit', compact('publication'))->with('mensaje','Publicación editada');;
     }
 
     /**
@@ -145,6 +145,6 @@ class PublicationController extends Controller
         //
         Publication::destroy($id);
 
-        return redirect('publication');
+        return redirect('publication')->with('mensaje','Publicación borrada');
     }
 }
