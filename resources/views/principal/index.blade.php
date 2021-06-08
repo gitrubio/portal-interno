@@ -58,17 +58,17 @@
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
                   <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".bs-example-navbar-collapse-1" aria-expanded="false">
-                                          <span class="sr-only">Toggle navigation</span>
-                                          <span class="icon-bar"></span>
-                                          <span class="icon-bar"></span>
-                                          <span class="icon-bar"></span>
-                                      </button>
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
                   <!-- Brand -->
                   <a class="navbar-brand page-scroll sticky-logo" href="index.html">
                     <!--<h1><span>e</span>Business</h1>-->
-                    <!-- Uncomment below if you prefer to use an image logo -->
+                    <!-- Uncomment below if_ you prefer to use_ an image logo -->
                     <img src="img/logo_perfect.png" alt="logo perfectbody" title="">
-                                  </a>
+                  </a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse main-menu bs-example-navbar-collapse-1" id="navbar-example">
@@ -180,13 +180,13 @@
                     <div class="slider-content">
                         <!-- layer 1 -->
                         <div class="layer-1-1 hidden-xs wow slideInDown" data-wow-duration="2s" data-wow-delay=".2s">
-                        <!--<h2 class="title1">A{{$dato_slide->titulo}}</h2>-->
-                        <h2 class="title1">A{{$variable}}</h2>
+                        <h2 class="title1">{{$dato_slide->titulo}}</h2>
+                        <!--<h2 class="title1">A{{$variable}}</h2>-->
                         </div>
                         <!-- layer 2 -->
                         <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                        <!--<h1 class="title2">B{{$dato_slide->descripcion}}</h1>-->
-                        <h1 class="title2">B{{$variable}}</h1>
+                        <h1 class="title2">{{$dato_slide->descripcion}}</h1>
+                        <!--<h1 class="title2">B{{$variable}}</h1>-->
                         </div>
                         <!-- layer 3 -->
                         <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
@@ -199,8 +199,8 @@
                 </div>
             </div>
             {{$variable = $variable + 1}}
-            <h2 style="z-index: 10000">{{$dato_slide->titulo}}</h2>
-            <h2 style="z-index: 10000">{{$dato_slide->descripcion}}</h2>
+            <!--<h2 style="z-index: 10000">{{$dato_slide->titulo}}</h2>-->
+            <!--<h2 style="z-index: 10000">{{$dato_slide->descripcion}}</h2>-->
             @endforeach
 
 
@@ -288,8 +288,8 @@
                   </div>
                   <div class="blog-text">
                     <h4>
-                                            <a href="blog.html">Explicabo magnam quibusdam.</a>
-                      </h4>
+                      <a href="blog.html">Explicabo magnam quibusdam.</a>
+                    </h4>
                     <p>
                       Lorem ipsum dolor sit amet conse adipis elit Assumenda repud eum veniam optio modi sit explicabo nisi magnam quibusdam.sit amet conse adipis elit Assumenda repud eum veniam optio modi sit explicabo nisi magnam quibusdam.
                     </p>
@@ -367,41 +367,38 @@
             <!-- End Left Blog-->
             <!-- Start Left Blog -->
             @foreach ($anuncios as $anuncio)
-
-
-
             <div class="col-md-4 col-sm-4 col-xs-12">
-                    <div class="single-blog">
-                      <div class="single-blog-img">
-                        <a href="blog.html">
-                            <img src="{{asset('storage').'/'.$anuncio->imagen}}" alt="">
-                          </a>
-                      </div>
-                      <div class="blog-meta">
-                        <!--
-                        <span class="comments-type">
-                            <i class="fa fa-comment-o"></i>
-                            <a href="#">130 comments</a>
-                        </span>
-                        -->
-                        <span class="date-type">
-                            <i class="fa fa-calendar"></i>{{$anuncio->fecha_inicio}} / {{$anuncio->fecha_fin}}
-                          </span>
-                      </div>
-                      <div class="blog-text">
-                        <h4>
-                            <a href="blog.html">{{$anuncio->titulo}}</a>
-                        </h4>
-                        <p>
-                          {{$anuncio->descripcion}}.
-                        </p>
-                      </div>
-                      <span>
-                          <a href="{{$anuncio->link}}" class="ready-btn" target="_blank">VER ENLACE</a>
-                      </span>
-                    </div>
-                    <!-- Start single blog -->
-                  </div>
+              <div class="single-blog">
+                <div class="single-blog-img">
+                  <a href="blog.html">
+                      <img src="{{asset('storage').'/'.$anuncio->imagen}}" alt="">
+                    </a>
+                </div>
+                <div class="blog-meta">
+                  <!--
+                  <span class="comments-type">
+                      <i class="fa fa-comment-o"></i>
+                      <a href="#">130 comments</a>
+                  </span>
+                  -->
+                  <span class="date-type">
+                      <i class="fa fa-calendar"></i>{{$anuncio->fecha_inicio}} / {{$anuncio->fecha_fin}}
+                    </span>
+                </div>
+                <div class="blog-text">
+                  <h4>
+                      <a href="blog.html">{{$anuncio->titulo}}</a>
+                  </h4>
+                  <p>
+                    {{$anuncio->descripcion}}.
+                  </p>
+                </div>
+                <span>
+                    <a href="{{$anuncio->link}}" class="ready-btn" target="_blank">VER ENLACE</a>
+                </span>
+              </div>
+              <!-- Start single blog -->
+            </div>
             @endforeach
 
           </div>
@@ -451,7 +448,7 @@
         <div class="row">
           <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="section-headline text-center">
-              <h2>Cumpleaños</h2>
+              <h2>Proximos Cumpleaños</h2>
             </div>
           </div>
         </div>
@@ -771,7 +768,7 @@
               <div class="credits">
                 <!--
                   All the links in the footer should remain intact.
-                  You can delete the links only if you purchased the pro version.
+                  You can delete the links only if_ you purchased the pro version.
                   Licensing information: https://bootstrapmade.com/license/
                   Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=eBusiness
                 -->
