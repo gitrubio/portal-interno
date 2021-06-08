@@ -1,530 +1,808 @@
-<!DOCTYPE html>
-<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Portal Inicio</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
 
-    <head>
+    <!-- Favicons -->
+    <link href="img/favicon_perfect.png" rel="icon">
+    <!--
+    <link href="img/favicon_perfect.png" rel="apple-touch-icon">
+    -->
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700|Raleway:300,400,400i,500,500i,700,800,900" rel="stylesheet">
 
-		<!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        
-        <title>Perfect Body Portal Interno</title>
+    <!-- Bootstrap CSS File -->
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-        <!-- CSS -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,600">
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        
-        <link rel="stylesheet" href="{{asset('/css/animate.css')}}">
-        <link rel="stylesheet" href="{{asset('/css/style.css')}}">
-        <link rel="stylesheet" href="{{asset('/css/media-queries.css')}}">
+    <!-- Libraries CSS Files -->
+    <link href="lib/nivo-slider/css/nivo-slider.css" rel="stylesheet">
+    <link href="lib/owlcarousel/owl.carousel.css" rel="stylesheet">
+    <link href="lib/owlcarousel/owl.transitions.css" rel="stylesheet">
+    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/venobox/venobox.css" rel="stylesheet">
 
-        
-    </head>
+    <!-- Nivo Slider Theme -->
+    <link href="css/nivo-slider-theme.css" rel="stylesheet">
 
-    <body>
+    <!-- Main Stylesheet File -->
+    <link href="css/style.css" rel="stylesheet">
 
-		<!-- Top menu -->
-		<nav id ="navbar-principal" class="navbar navbar-dark fixed-top navbar-expand-md navbar-no-bg">
-			<div class="container dimension-nav">
-				<a class="navbar-brand" href="index.html">Perfect Body Portal Interno</a>
-			    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-			        <span class="navbar-toggler-icon"></span>
-			    </button>
-			    <div class="collapse navbar-collapse" id="navbarNav">
-			        <ul class="navbar-nav ml-auto"> 
-			            <li class="nav-item">
-			                <a class="nav-link scroll-link" href="#top-content">Inicio</a>
-			            </li>
-			            <li class="nav-item">
-			                <!--<a class="nav-link scroll-link" href="#section-2">Anuncios</a>-->
-			                <a class="nav-link scroll-link" href="#anuncio1">Anuncios</a>
-			            </li>
-			            <li class="nav-item">
-			                <!--<a class="nav-link scroll-link" href="#section-1">Cumpleaños</a>-->
-			                <a class="nav-link scroll-link" href="#seccion-cumpleaños">Cumpleaños</a>
-			            </li>
-			            <li class="nav-item">
-			                <!--<a class="nav-link scroll-link" href="#section-3">Protocolos Covid19</a>-->
-			                <a class="nav-link scroll-link" href="#seccion-protocoloscovid">Protocolos Covid19</a>
-			            </li>
-			            <li id="boton_menu" class="nav-item" onclick="clickMenu()">
-			                <a class="nav-link scroll-link" style="background-color: #003660;" href="">Menú</a>
-			                <div id="contenedor_opciones_menu" class="contenedor_opciones_menu dropdown-content">
-	                            <h3 class="titulo_enlace_menu">
-									 <strong>
-										Perfect Body
-									</strong> 
-								</h3>
-								<a class="enlace_menu" href="http://192.168.1.95/ADMISIONES/index.aspx" target="_blank">
-	                                Admisiones
-	                            </a>
-	                            <a class="enlace_menu" href="http://192.168.1.95/ActivosFijos/index.aspx" target="_blank">
-	                                Activos Fijos</a>
-	                            <a class="enlace_menu" href="http://192.168.1.95/CITAS/index.aspx">
-	                                Citas</a>
-	                            <a class="enlace_menu" href="http://192.168.1.95/contratacion/Index.aspx" target="_blank">
-	                                Contratación</a>
-	                            <a class="enlace_menu" href="http://192.168.1.95/SIOS/" target="_blank">
-	                                SIOS</a>
-	                            <a class="enlace_menu" href="http://192.168.1.95/ORDENES/index.aspx" target="_blank">
-	                                Orden Externa</a>
-	                            <a class="enlace_menu" href="http://192.168.1.100:8080/oviyam2/" target="_blank">
-	                                RX-Oviyam</a>
-	                            <a class="enlace_menu" href="http://192.168.1.95/gerencial/index.aspx" target="_blank">
-	                                Gerencial</a>
-	                            <a class="enlace_menu" href="http://192.168.1.52:8686/Incidencias/public/login" target="_blank">
-	                                Incidencias</a>
-	                            <a class="enlace_menu" href="http://192.168.1.52:8686/Gestion_Documental/public/login" target="_blank">
-	                                Gestion Documental</a>
-	                            <a class="enlace_menu" href="http://192.168.1.52:8686/Inspeccion_perfect_Body/public/login" target="_blank">
-	                                Inspección</a>
-	                            <a class="enlace_menu" href="http://192.168.1.52:8686/SST_Perfect-Body/public/" target="_blank">
-	                                C.P.C.PBMC</a>
-	                           
-								<h3 class="titulo_enlace_menu">
-									<strong>
-									   Otros Enlaces
-								   </strong> 
-							   </h3>
-	                            <a class="enlace_menu" href="https://mipres.sispro.gov.co/MIPRESNOPBS/Login.aspx" target="_blank">
-	                                Mipres SISPRO</a>
-	                            <a class="enlace_menu" href="https://imagenes.rras-sas.com/viewer/index.php" target="_blank">
-	                                Radiologos S.A.S</a>
-	                            <a class="enlace_menu" href="https://resultados.patologosasociados.com/" target="_blank">
-	                                Patologos Asociados</a>
-	                            <a class="enlace_menu" href="https://www.colmenaseguros.com/Paginas/EncuestaCovid.aspx" target="_blank">
-	                                Encuesta Colmena</a>
-	                            <a class="enlace_menu" href="https://drive.google.com/drive/folders/15VjXdXO1VjGVTE-TJrNMcfFSWxHn741r?usp=sharing" target="_blank">
-	                                Fichas INS
-	                            </a>
-								<a class="enlace_menu" href="{{url('/login')}}" target="_blank">
-	                                Administrar
-	                            </a>
-                            </div>
-			            </li>
-			            
-			        </ul>
-			    </div>
-		    </div>
-		</nav>
 
-		
-		<!-- Top content -->
-        <div class="top-content">
-	        <div class="container" style="">
-	        	<!-- Title and description row -->
-	            
-	            <!-- End title and description row --> 
-	            
-	            <!-- Carousel row -->
-	            <div class="row margin-top-carousel">
-	            <!--<div class="col">-->
-	            <div class="col col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-	                	<!-- Carousel -->
-	                	<div id="carousel-example" class="carousel slide">
-	                <!--<div id="carousel-example" class="carousel slide ancho-carousel">-->	
-	                		
+    <!-- Responsive Stylesheet File -->
+    <link href="css/responsive.css" rel="stylesheet">
 
-	                		<!--carousel indicadores-->
-	                	     		
-	       					<!--fin carousel indicadores-->
-	       					
-	       					<div id="contenido-carousel" class="carousel-inner">
-	       						
-	       						<div class="carousel-item active">
-	       							<a id="" class="scroll-link" href="#anuncio2">
-	       								<img src="{{asset('/img/slides/enfermero.jpg')}}" class="d-block w-100" alt="slide-img-1">
-	       							</a>
-	       							<div class="carousel-caption">
-										<a  class="scroll-link" href="#anuncio2">
-											<h3 class="carousel-anuncio-titulo"><span class="fondo-texto">FELIZ DIA DEL PROFESIONAL DE ENFERMERIA</span></h3>
-											<div class="carousel-anuncio-descripcion">
-												<p><span class="fondo-texto">Feliz dia a todos los profesionales de enfermeria</span></p>
-											</div>
-										</a>
-									</div>
-	       						</div>
-	       						     						
+    <!-- =======================================================
+      Theme Name: eBusiness
+      Theme URL: https://bootstrapmade.com/ebusiness-bootstrap-corporate-template/
+      Author: BootstrapMade.com
+      License: https://bootstrapmade.com/license/
+    ======================================================= -->
+  </head>
 
-	       						<div class="carousel-item">
-	       							<div class="imagen-slider">
-	       								<img src="{{asset('/img/slides/foto_gracias_editada.jpg')}}" class="d-block w-100" alt="slide-img-2" style="height: auto">
-	       							</div>
-	       							
-	       							<div class="carousel-caption">
-	       								<a  class="scroll-link" href="#anuncio2">
-											<h3 class="carousel-anuncio-titulo"><span class="fondo-texto">GRACIAS A TODOS</span></h3>
-											<div class="carousel-anuncio-descripcion">
-												<p><span class="fondo-texto">Gracias por brindar lo mejor en cada en atención.</span></p>
-											</div>
-										</a>
-									</div>
-	       						</div>
-	       						<div class="carousel-item">
-	       							<img src="{{asset('/img/slides/huellero.jpg')}}" class="d-block w-100" alt="slide-img-2">
-	       							<div class="carousel-caption">
-										<h3 class="carousel-anuncio-titulo"><span class="fondo-texto">ENTRADA O SALIDA SOLO CON LA HUELLA</span></h3>
-										<div class="carousel-anuncio-descripcion">
-											<p><span class="fondo-texto">Para registrar su ingreso o salida, solo utlice su huella</span></p>
-										</div>
-									</div>
-	       						</div>
-	       						
-	       						<div class="carousel-item">
-	       							<div class="embed-responsive embed-responsive-16by9">
-	       								<video class="embed-responsive-item" src="{{asset('/videos/video4.mp4')}}" allowfullscreen controls ></video>
-	       							</div>
-	       							<div class="carousel-caption">
-										<h3 class="carousel-anuncio-titulo">
-											<span class="fondo-texto">
-												Caption to Video 3
-											</span>
-                                        </h3>
-										<div class="carousel-anuncio-descripcion">
-											<p><span class="fondo-texto">
-												This is the caption description text to video 3.
-											</p>
-										</div>
-									</div>
-	       						</div>
-	       						
-	       					</div>
-	       					
-							<a class="carousel-control-prev" href="#carousel-example" role="button" data-slide="prev">
-								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-								<span class="sr-only">Previous</span>
-							</a>
-							<a class="carousel-control-next" href="#carousel-example" role="button" data-slide="next">
-								<span class="carousel-control-next-icon" aria-hidden="true"></span>
-								<span class="sr-only">Next</span>
-							</a>
-	       				</div>
-	                	<!-- End carousel -->
-	                </div>
-	            </div>
-	            <!-- End carousel row -->
-	        </div>
-        </div>
-	       
+  <body data-spy="scroll" data-target="#navbar-example">
+    <!--
+    <div id="preloader"></div>
+    -->
+    <header>
+      <!-- header-area start -->
+      <div id="sticker" class="header-area">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 col-sm-12">
 
-		
-
-		<!-- Section 1 -->
-        <div id="seccion-cumpleaños"  class="section-1-container section-container">
-	        <div class="container">
-	            <div class="row">
-	                <div class="col section-1 section-description wow fadeIn">
-	                    <h2>Cumpleaños Mayo</h2>
-	                    <div class="divider-1 wow fadeInUp"><span></span></div>
-	                </div>
-	            </div>
-	            <div class="row">
-                	<div class="contenedor-cumple col-md-4 section-1-box wow fadeInUp">
-	                	<div class="row">
-                			<div class="col-md-4">
-			                	
-		                		<!--<div class="section-1-box-icon">
-		                		<i class="fab fa-twitter"></i>
-		                		</div>-->
-		                		<img src="{{asset('/img/pastel-de-cumpleanos.png')}}" alt="cumpleaños" style="width:80px;height:120px;">
-			                	
-		                	</div>
-	                		<div class="col-md-8">
-	                    		<h3 class="titulo-cumpleanio">ALVARO PEREZ ORDOÑEZ</h3>
-	                    		<h4 id="cargo">Farmacia</h3>
-	                    		<p class="color-fecha" id="fecha_cumple">5 de Mayo</p>
-	                    	</div>
-	                    </div>
-                    </div>
-
-                    <div class="contenedor-cumple col-md-4 section-1-box wow fadeInUp">
-	                	<div class="row">
-                			<div class="col-md-4">
-			                	
-		                		<!--<div class="section-1-box-icon">
-		                		<i class="fab fa-twitter"></i>
-		                		</div>-->
-		                		<img src="{{asset('/img/pastel-de-cumpleanos.png')}}" alt="cumpleaños" style="width:80px;height:120px;">
-			                	
-		                	</div>
-	                		<div class="col-md-8">
-	                    		<h3 class="titulo-cumpleanio">MILENA GUERRERO LESMES</h3>
-	                    		<h4 id="cargo">Asistencial</h3>
-	                    		<p class="color-fecha" id="fecha_cumple">6 de Mayo</p>
-	                    	</div>
-	                    </div>
-                    </div>
-
-                	<div class="contenedor-cumple col-md-4 section-1-box wow fadeInUp">
-                		<div class="row">
-                			<div class="col-md-4">
-                				<img src="{{asset('/img/pastel-de-cumpleanos.png')}}" alt="cumpleaños" style="width:80px;height:120px;">
-			                	<!--<div class="section-1-box-icon">
-			                		<i class="fas fa-magic"></i>
-			                		<img src="{{asset('/img/pastel-de-cumpleanos.png')}}" alt="cumpleaños" style="width:30px;height:40px;">
-			                	</div>-->
-		                	</div>
-	                		<div class="col-md-8">
-	                    		<h3 class="titulo-cumpleanio" id="nombre">NAIRO REDONDO FLOREZ</h3>
-	                    		<h4 id="cargo">Jefe Mantenimiento</h3>
-	                    		<p class="color-fecha" id="fecha_cumple">10 de Mayo</p>
-	                    	</div>
-	                    </div>
-                    </div>
-                    <div class="contenedor-cumple col-md-4 section-1-box wow fadeInDown">
-	                	<div class="row">
-                			<div class="col-md-4">
-			                	<img src="{{asset('/img/pastel-de-cumpleanos.png')}}" alt="cumpleaños" style="width:80px;height:120px;">
-			                	<!--			                		
-			                	</div><div class="section-1-box-icon">
-			                		<i class="fas fa-cog"></i>
-			                	</div>-->
-		                	</div>
-	                		<div class="col-md-8">
-	                    		<h3 class="titulo-cumpleanio">LINA SALGADO GOMEZ</h3>
-	                    		<h4 id="cargo">Administrativo</h3>
-	                    		<p class="color-fecha" id="fecha_cumple">11 de Mayo</p>
-	                    	</div>
-	                    </div>
-                    </div>
-                    <div class="contenedor-cumple col-md-4 section-1-box wow fadeInUp">
-	                	<div class="row">
-                			<div class="col-md-4">
-			                	<!--
-			                	<div class="section-1-box-icon">
-
-			                		<i class="fab fa-twitter"></i>
-			                	</div>
-			                	-->
-			                	<img src="{{asset('/img/pastel-de-cumpleanos.png')}}" alt="cumpleaños" style="width:80px;height:120px;">
-		                	</div>
-	                		<div class="col-md-8">
-	                    		<h3 class="titulo-cumpleanio">OSCAR RODRIGUEZ AVENDAÑO</h3>
-	                    		<h4 id="cargo">Asistencial</h3>
-	                    		<p class="color-fecha" id="fecha_cumple">11 de Mayo</p>
-	                    	</div>
-	                    </div>
-                    </div>
-
-                    <div class="contenedor-cumple col-md-4 section-1-box wow fadeInUp">
-	                	<div class="row">
-                			<div class="col-md-4">
-			                	
-		                		<!--<div class="section-1-box-icon">
-		                		<i class="fab fa-twitter"></i>
-		                		</div>-->
-		                		<img src="{{asset('/img/pastel-de-cumpleanos.png')}}" alt="cumpleaños" style="width:80px;height:120px;">
-			                	
-		                	</div>
-	                		<div class="col-md-8">
-	                    		<h3 class="titulo-cumpleanio">JORGE LINDARTE ANGARITA.</h3>
-	                    		<h4 id="cargo">Asistencial</h3>
-	                    		<p class="color-fecha" id="fecha_cumple">15 de Mayo</p>
-	                    	</div>
-	                    </div>
-                    </div>
-                    <div class="contenedor-cumple col-md-4 section-1-box wow fadeInUp">
-	                	<div class="row">
-                			<div class="col-md-4">
-			                	
-		                		<!--<div class="section-1-box-icon">
-		                		<i class="fab fa-twitter"></i>
-		                		</div>-->
-		                		<img src="{{asset('/img/pastel-de-cumpleanos.png')}}" alt="cumpleaños" style="width:80px;height:120px;">
-			                	
-		                	</div>
-	                		<div class="col-md-8">
-	                    		<h3 class="titulo-cumpleanio">KATIA CAMARGO POLO</h3>
-	                    		<h4 id="cargo">Asistencial</h3>
-	                    		<p class="color-fecha" id="fecha_cumple">17 de Mayo</p>
-	                    	</div>
-	                    </div>
-                    </div>
-                    <div class="contenedor-cumple col-md-4 section-1-box wow fadeInUp">
-	                	<div class="row">
-                			<div class="col-md-4">
-			                	
-		                		<!--<div class="section-1-box-icon">
-		                		<i class="fab fa-twitter"></i>
-		                		</div>-->
-		                		<img src="{{asset('/img/pastel-de-cumpleanos.png')}}" alt="cumpleaños" style="width:80px;height:120px;">
-			                	
-		                	</div>
-	                		<div class="col-md-8">
-	                    		<h3 class="titulo-cumpleanio">IVIS PATIÑO</h3>
-	                    		<h4 id="cargo">Asistencial</h3>
-	                    		<p class="color-fecha" id="fecha_cumple">24 de Mayo</p>
-	                    	</div>
-	                    </div>
-                    </div>
-	            </div>
-	        </div>
-        </div>
-
-		<!-- Section 3 -->
-        <div   class="section-3-container section-container">
-	        <div class="container">
-	        	
-	            <div class="row">
-	                <div id="seccion-protocoloscovid" class="col section-3 section-description wow fadeIn">
-	                    <h2>Protocolos Covid19</h2>
-	                    <div class="divider-1 wow fadeInUp"><span></span></div>
-	                </div>
-	            </div>
-	            
-	            <div class="row">
-	                <div class="col-md-6 section-3-box wow fadeInLeft">
-	                	<div class="row">
-	                		<div class="col-md-3">
-	                			<!--<div class="section-3-box-icon">
-	                				<i class="fas fa-paperclip"></i>
-	                			</div>
-	                			<embed width="191" height="207" name="plugin" src="assets/documents/AAL CIRUGIA.pdf" type="application/pdf">-->
-                				<img src="{{asset('/img/pdf.png')}}" alt="documento" style="width:90px;height:120px;">
-
-	                		</div>
-	                		<div class="col-md-9">
-	                			<a href="" >
-
-	                			</a>
-	                			<h3>Protocolo covid-19</h3>
-		                    	<p>
-		                    		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.
-		                    		Ut wisi enim ad minim veniam, quis nostrud.
-		                    	</p>
-	                		</div>
-	                	</div>
-	                </div>
-	                <div class="col-md-6 section-3-box wow fadeInLeft">
-	                	<div class="row">
-	                		<div class="col-md-3">
-	                			<!--<div class="section-3-box-icon">
-	                				<i class="fas fa-paperclip"></i>
-	                			</div>
-	                			<embed width="191" height="207" name="plugin" src="assets/documents/AAL CIRUGIA.pdf" type="application/pdf">-->
-                				<img src="{{asset('/img/pdf.png')}}" alt="documento" style="width:90px;height:120px;">
-
-	                		</div>
-	                		<div class="col-md-9">
-	                			<h3>Restauracion de servicios</h3>
-		                    	<p>
-		                    		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.
-		                    		Ut wisi enim ad minim veniam, quis nostrud.
-		                    	</p>
-	                		</div>
-	                	</div>
-	                </div>
-	            </div>
-	            
-	            <div class="row">
-	                <div class="col-md-6 section-3-box wow fadeInLeft">
-	                	<div class="row">
-	                		<div class="col-md-3">
-	                			<!--<div class="section-3-box-icon">
-	                				<i class="fas fa-paperclip"></i>
-	                			</div>
-	                			<embed width="191" height="207" name="plugin" src="assets/documents/AAL CIRUGIA.pdf" type="application/pdf">-->
-                				<img src="{{asset('/img/pdf.png')}}" alt="documento" style="width:90px;height:120px;">
-
-	                		</div>
-	                		<div class="col-md-9">
-	                			<h3>Atencion y prevencion</h3>
-		                    	<p>
-		                    		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.
-		                    		Ut wisi enim ad minim veniam, quis nostrud.
-		                    	</p>
-	                		</div>
-	                	</div>
-	                </div>
-	                <div class="col-md-6 section-3-box wow fadeInLeft">
-	                	<div class="row">
-	                		<div class="col-md-3">
-	                			<!--<div class="section-3-box-icon">
-	                				<i class="fas fa-paperclip"></i>
-	                			</div>
-	                			<embed width="191" height="207" name="plugin" src="assets/documents/AAL CIRUGIA.pdf" type="application/pdf">-->
-                				<img src="{{asset('/img/pdf.png')}}" alt="documento" style="width:90px;height:120px;">
-
-	                		</div>
-	                		<div class="col-md-9">
-	                			<h3>Manejo de cadaveres</h3>
-		                    	<p>
-		                    		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.
-		                    		Ut wisi enim ad minim veniam, quis nostrud.
-		                    	</p>
-	                		</div>
-	                	</div>
-	                </div>
-	                <div class="col-md-6 section-3-box wow fadeInLeft">
-	                	<div class="row">
-	                		<div class="col-md-3">
-	                			<!--<div class="section-3-box-icon">
-	                				<i class="fas fa-paperclip"></i>
-	                			</div>
-	                			<embed width="191" height="207" name="plugin" src="assets/documents/AAL CIRUGIA.pdf" type="application/pdf">-->
-                				<img src="{{asset('/img/pdf.png')}}" alt="documento" style="width:90px;height:120px;">
-
-	                		</div>
-	                		<div class="col-md-9">
-	                			<h3>Manejo biológico</h3>
-		                    	<p>
-		                    		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.
-		                    		Ut wisi enim ad minim veniam, quis nostrud.
-		                    	</p>
-	                		</div>
-	                	</div>
-	                </div>
-	                <div class="col-md-6 section-3-box wow fadeInLeft">
-	                	<div class="row">
-	                		<div class="col-md-3">
-	                			<!--<div class="section-3-box-icon">
-	                				<i class="fas fa-paperclip"></i>
-	                			</div>
-	                			<embed width="191" height="207" name="plugin" src="assets/documents/AAL CIRUGIA.pdf')}}" type="application/pdf">-->
-                				<img src="{{asset('/img/pdf.png')}}" alt="documento" style="width:90px;height:120px;">
-
-	                		</div>
-	                		<div class="col-md-9">
-	                			<h3>Plantilla de aislamiento</h3>
-		                    	<p>
-		                    		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.
-		                    		Ut wisi enim ad minim veniam, quis nostrud.
-		                    	</p>
-	                		</div>
-	                	</div>
-	                </div>
-	            </div>
-
-	        </div>
-        </div>
-
-		
-        <!-- Footer -->
-        <footer class="footer-container">
-        
-	        <div class="container">
-	        	<div class="row">
-	        		
-                    <div class="col">
-                    	&copy; Portal para la divulgación interna de información concierniente a la institución <a id="link-footer" href="http://www.perfectbody.com.co/" target="_blank">Perfect Body Medical Center</a>.
-                    </div>
-                    
+              <!-- Navigation -->
+              <nav class="navbar navbar-default">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".bs-example-navbar-collapse-1" aria-expanded="false">
+                                          <span class="sr-only">Toggle navigation</span>
+                                          <span class="icon-bar"></span>
+                                          <span class="icon-bar"></span>
+                                          <span class="icon-bar"></span>
+                                      </button>
+                  <!-- Brand -->
+                  <a class="navbar-brand page-scroll sticky-logo" href="index.html">
+                    <!--<h1><span>e</span>Business</h1>-->
+                    <!-- Uncomment below if you prefer to use an image logo -->
+                    <img src="img/logo_perfect.png" alt="logo perfectbody" title="">
+                                  </a>
                 </div>
-	        </div>
-                	
-        </footer>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse main-menu bs-example-navbar-collapse-1" id="navbar-example">
+                  <ul class="nav navbar-nav navbar-right">
+                    <li class="active">
+                      <a class="page-scroll" href="#home">Inicio</a>
+                    </li>
+                    <li>
+                      <a class="page-scroll" href="#blog">Anuncios</a>
+                    </li>
+                    <li>
+                      <a class="page-scroll" href="#team">Cumpleaños</a>
+                    </li>
+                    <li>
+                      <a class="page-scroll" href="#pricing">Protocolo Covid19</a>
+                    </li>
+                    <li id="boton_menu" class="dropdown" onclick="clickMenu()"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Menú<span class="caret"></span></a>
+                      <!--<ul class="dropdown-menu" role="menu">-->
 
-		
-        <!-- Javascript -->
-		<script src="{{asset('/js/jquery-3.3.1.min.js')}}"></script>
-		<script src="{{asset('/js/jquery-migrate-3.0.0.min.js')}}"></script>
-		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-        <script src="{{asset('/js/jquery.backstretch.min.js')}}"></script>
-        <script src="{{asset('/js/wow.min.js')}}"></script>
-        <script src="{{asset('/js/waypoints.min.js')}}"></script>
-        <script src="{{asset('/js/scripts.js')}}"></script>
-        <script src="{{asset('/js/index_scripts.js')}}"></script>
+                        <div id="contenedor_opciones_menu" class="contenedor_opciones_menu dropdown-content">
+                          <h3 class="titulo_enlace_menu">
+                             <strong>
+                              Perfect Body
+                            </strong>
+                          </h3>
+                          <a id="enlace_menu" class="enlace_menu" href="http://192.168.1.95/ADMISIONES/index.aspx" target="_blank">
+                            Admisiones
+                          </a>
+                          <a id="enlace_menu" class="enlace_menu" href="http://192.168.1.95/ActivosFijos/index.aspx" target="_blank">
+                            Activos Fijos
+                          </a>
+                          <a id="enlace_menu" class="enlace_menu" href="http://192.168.1.95/CITAS/index.aspx">
+                            Citas</a>
+                          <a id="enlace_menu" class="enlace_menu" href="http://192.168.1.95/contratacion/Index.aspx" target="_blank">
+                              Contratación</a>
+                          <a id="enlace_menu" class="enlace_menu" href="http://192.168.1.95/SIOS/" target="_blank">
+                              SIOS</a>
+                          <a id="enlace_menu" class="enlace_menu" href="http://192.168.1.95/ORDENES/index.aspx" target="_blank">
+                              Orden Externa</a>
+                          <a id="enlace_menu" class="enlace_menu" href="http://192.168.1.100:8080/oviyam2/" target="_blank">
+                              RX-Oviyam</a>
+                          <a id="enlace_menu" class="enlace_menu" href="http://192.168.1.95/gerencial/index.aspx" target="_blank">
+                              Gerencial</a>
+                          <a id="enlace_menu" class="enlace_menu" href="http://192.168.1.52:8686/Incidencias/public/login" target="_blank">
+                              Incidencias</a>
+                          <a id="enlace_menu" class="enlace_menu" href="http://192.168.1.52:8686/Gestion_Documental/public/login" target="_blank">
+                              Gestion Documental</a>
+                          <a id="enlace_menu" class="enlace_menu" href="http://192.168.1.52:8686/Inspeccion_perfect_Body/public/login" target="_blank">
+                              Inspección</a>
+                          <a id="enlace_menu" class="enlace_menu" href="http://192.168.1.52:8686/SST_Perfect-Body/public/" target="_blank">
+                              C.P.C.PBMC</a>
 
-    </body>
+                          <h3 class="titulo_enlace_menu">
+                            <strong>
+                               Otros Enlaces
+                             </strong>
+                           </h3>
+                              <a id="enlace_menu" class="enlace_menu" href="https://mipres.sispro.gov.co/MIPRESNOPBS/Login.aspx" target="_blank">
+                                  Mipres SISPRO</a>
+                              <a id="enlace_menu" class="enlace_menu" href="https://imagenes.rras-sas.com/viewer/index.php" target="_blank">
+                                  Radiologos S.A.S</a>
+                              <a id="enlace_menu" class="enlace_menu" href="https://resultados.patologosasociados.com/" target="_blank">
+                                  Patologos Asociados</a>
+                              <a id="enlace_menu" class="enlace_menu" href="https://www.colmenaseguros.com/Paginas/EncuestaCovid.aspx" target="_blank">
+                                  Encuesta Colmena</a>
+                              <a id="enlace_menu" class="enlace_menu" href="https://drive.google.com/drive/folders/15VjXdXO1VjGVTE-TJrNMcfFSWxHn741r?usp=sharing" target="_blank">
+                                  Fichas INS
+                              </a>
+                              <a id="enlace_menu" class="enlace_menu" href="{{url('/login')}}" target="_blank">
+                                  Administrar
+                              </a>
+                            </div>
+                      <!--</ul>-->
+                    </li>
+                  </ul>
+                </div>
+                <!-- navbar-collapse -->
+              </nav>
+              <!-- END: Navigation -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- header-area end -->
+    </header>
+    <!-- header end -->
 
-</html>
+    <!-- Start Slider Area -->
+    <div id="home" class="slider-area">
+        <div class="bend niceties preview-2">
+            <div id="ensign-nivoslider" class="slides">
+                @foreach ($imagenes_slides as $imagen_slide)
+                <img src="{{asset('storage').'/'.$imagen_slide->imagen}}" alt="" title="#slider-direction-0" />
+                @endforeach
+                <!--
+                <img src="img/slider/fondo_perfect.jpg" alt="" title="#slider-direction-0" />
+                <img src="img/slider/prueba_covid.jpg" alt="" title="#slider-direction-1" />
+                <img src="img/slider/aparato.jpg" alt="" title="#slider-direction-2" />
+                -->
+            </div>
+
+            <!-- direction 0 -->
+            {{$variable = 0}}
+            @foreach ($datos_slides as $dato_slide)
+            <div id="{{'slider-direction-'.$variable}}" class="slider-direction slider-one">
+                <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="slider-content">
+                        <!-- layer 1 -->
+                        <div class="layer-1-1 hidden-xs wow slideInDown" data-wow-duration="2s" data-wow-delay=".2s">
+                        <!--<h2 class="title1">A{{$dato_slide->titulo}}</h2>-->
+                        <h2 class="title1">A{{$variable}}</h2>
+                        </div>
+                        <!-- layer 2 -->
+                        <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
+                        <!--<h1 class="title2">B{{$dato_slide->descripcion}}</h1>-->
+                        <h1 class="title2">B{{$variable}}</h1>
+                        </div>
+                        <!-- layer 3 -->
+                        <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
+                        <a class="ready-btn right-btn page-scroll" href="#services">Todos los anuncios</a>
+                        <a class="ready-btn page-scroll" href="#about">MAS INFO</a>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            {{$variable = $variable + 1}}
+            <h2 style="z-index: 10000">{{$dato_slide->titulo}}</h2>
+            <h2 style="z-index: 10000">{{$dato_slide->descripcion}}</h2>
+            @endforeach
+
+
+
+
+
+        </div>
+    </div>
+    <!-- End Slider Area -->
+
+    <!-- Start About area -->
+
+     <!-- End About area -->
+
+
+    <!-- our-skill-area start -->
+    <!-- our-skill-area end -->
+
+
+  <!-- Faq area start -->
+  <!-- end Faq area  -->
+
+  <!-- Start Blog Area -->
+    <div id="blog" class="blog-area">
+      <div class="blog-inner area-padding">
+        <div class="blog-overly"></div>
+        <div class="container ">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="section-headline text-center">
+                <h2>Anuncios Perfect Body</h2>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <!-- Start Left Blog -->
+            <!--
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="single-blog">
+                <div class="blog-text">
+                  <h4>
+                      <a href="blog.html">Assumenda repud eum veniam</a>
+                  </h4>
+                  <p>
+                    Lorem ipsum dolor sit amet conse adipis elit Assumenda repud eum veniam optio modi sit explicabo nisi magnam quibusdam.sit amet conse adipis elit Assumenda repud eum veniam optio modi sit explicabo nisi magnam quibusdam.
+                  </p>
+                </div>
+                <div class="blog-meta">
+                  <span class="comments-type">
+                      <i class="fa fa-comment-o"></i>
+                      <a href="#">13 comments</a>
+                    </span>
+                  <span class="date-type">
+                      <i class="fa fa-calendar"></i>2016-03-05 / 09:10:16
+                    </span>
+                </div>
+                <div class="single-blog-img">
+                  <a href="blog.html">
+                    <img width="1400" src="img/blog/prueba_covid.jpg" alt="">
+                  </a>
+                </div>
+
+
+                <span>
+                    <a href="blog.html" class="ready-btn">enlace externo</a>
+                  </span>
+              </div>
+            -->
+              <!-- Start single blog
+              <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="single-blog">
+                  <div class="single-blog-img">
+                    <a href="blog.html">
+                        <img src="img/blog/2.jpg" alt="">
+                      </a>
+                  </div>
+                  <div class="blog-meta">
+                    <span class="comments-type">
+                        <i class="fa fa-comment-o"></i>
+                        <a href="#">130 comments</a>
+                      </span>
+                    <span class="date-type">
+                        <i class="fa fa-calendar"></i>2016-03-05 / 09:10:16
+                      </span>
+                  </div>
+                  <div class="blog-text">
+                    <h4>
+                                            <a href="blog.html">Explicabo magnam quibusdam.</a>
+                      </h4>
+                    <p>
+                      Lorem ipsum dolor sit amet conse adipis elit Assumenda repud eum veniam optio modi sit explicabo nisi magnam quibusdam.sit amet conse adipis elit Assumenda repud eum veniam optio modi sit explicabo nisi magnam quibusdam.
+                    </p>
+                  </div>
+                  <span>
+                      <a href="blog.html" class="ready-btn">VER ENLACE</a>
+                    </span>
+                </div>-->
+                <!-- Start single blog -->
+              </div>
+              <!-- End Left Blog-->
+              <!-- Start Right Blog
+              <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="single-blog">
+                  <div class="single-blog-img">
+                    <a href="blog.html">
+                        <img src="img/blog/3.jpg" alt="">
+                      </a>
+                  </div>
+                  <div class="blog-meta">
+                    <span class="comments-type">
+                        <i class="fa fa-comment-o"></i>
+                        <a href="#">10 comments</a>
+                      </span>
+                    <span class="date-type">
+                        <i class="fa fa-calendar"></i>2016-03-05 / 09:10:16
+                      </span>
+                  </div>
+                  <div class="blog-text">
+                    <h4>
+                                            <a href="blog.html">Lorem ipsum dolor sit amet</a>
+                      </h4>
+                    <p>
+                      Lorem ipsum dolor sit amet conse adipis elit Assumenda repud eum veniam optio modi sit explicabo nisi magnam quibusdam.sit amet conse adipis elit Assumenda repud eum veniam optio modi sit explicabo nisi magnam quibusdam.
+                    </p>
+                  </div>
+                  <span>
+                      <a href="blog.html" class="ready-btn">VER ENLACE</a>
+                    </span>
+                </div>
+              </div>
+              End Right Blog-->
+              <!-- Start Right Blog
+              <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="single-blog">
+                  <div class="single-blog-img">
+                    <a href="blog.html">
+                        <img src="img/blog/3.jpg" alt="">
+                      </a>
+                  </div>
+                  <div class="blog-meta">
+                    <span class="comments-type">
+                        <i class="fa fa-comment-o"></i>
+                        <a href="#">10 comments</a>
+                      </span>
+                    <span class="date-type">
+                        <i class="fa fa-calendar"></i>2016-03-05 / 09:10:16
+                      </span>
+                  </div>
+                  <div class="blog-text">
+                    <h4>
+                                            <a href="blog.html">Lorem ipsum dolor sit amet</a>
+                      </h4>
+                    <p>
+                      Lorem ipsum dolor sit amet conse adipis elit Assumenda repud eum veniam optio modi sit explicabo nisi magnam quibusdam.sit amet conse adipis elit Assumenda repud eum veniam optio modi sit explicabo nisi magnam quibusdam.
+                    </p>
+                  </div>
+                  <span>
+                      <a href="blog.html" class="ready-btn">VER ENLACE</a>
+                    </span>
+                </div>
+              </div>
+              End Right Blog-->
+
+            <!-- End Left Blog-->
+            <!-- Start Left Blog -->
+            @foreach ($anuncios as $anuncio)
+
+
+
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="single-blog">
+                      <div class="single-blog-img">
+                        <a href="blog.html">
+                            <img src="{{asset('storage').'/'.$anuncio->imagen}}" alt="">
+                          </a>
+                      </div>
+                      <div class="blog-meta">
+                        <!--
+                        <span class="comments-type">
+                            <i class="fa fa-comment-o"></i>
+                            <a href="#">130 comments</a>
+                        </span>
+                        -->
+                        <span class="date-type">
+                            <i class="fa fa-calendar"></i>{{$anuncio->fecha_inicio}} / {{$anuncio->fecha_fin}}
+                          </span>
+                      </div>
+                      <div class="blog-text">
+                        <h4>
+                            <a href="blog.html">{{$anuncio->titulo}}</a>
+                        </h4>
+                        <p>
+                          {{$anuncio->descripcion}}.
+                        </p>
+                      </div>
+                      <span>
+                          <a href="{{$anuncio->link}}" class="ready-btn" target="_blank">VER ENLACE</a>
+                      </span>
+                    </div>
+                    <!-- Start single blog -->
+                  </div>
+            @endforeach
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Blog -->
+
+    <!-- Start Wellcome Area -->
+    <div class="wellcome-area">
+      <div class="well-bg">
+        <div class="test-overly"></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="wellcome-text">
+                <div class="well-text text-center">
+                  <h2>Portal de inicio Perfect Body</h2>
+                  <p>
+                    Encuentre en el menú superior enlaces de interes
+                  </p>
+                  <!--
+                  <div class="subs-feilds">
+
+                    <div class="suscribe-input">
+
+                      <input type="email" class="email form-control width-80" id="sus_email" placeholder="Email">
+                      <button type="submit" id="sus_submit" class="add-btn width-20">Subscribe</button>
+                      <div id="msg_Submit" class="h3 text-center hidden"></div>
+
+                    </div>
+
+                  </div>
+                  -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Wellcome Area -->
+
+    <!-- Start team Area -->
+    <div id="team" class="our-team-area area-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="section-headline text-center">
+              <h2>Cumpleaños</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="team-top">
+            <div class="col-md-3 col-sm-3 col-xs-12">
+              <div class="single-team-member">
+                <div class="team-img">
+                  <a href="#">
+                      <img src="img/team/1.jpg" alt="">
+                    </a>
+                  <div class="team-social-icon text-center">
+                    <ul>
+                      <li>
+                        <a href="#">
+                            <i class="fa fa-facebook"></i>
+                          </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                            <i class="fa fa-twitter"></i>
+                          </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                            <i class="fa fa-instagram"></i>
+                          </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="team-content text-center">
+                  <h4>Jhon Mickel</h4>
+                  <p>Seo</p>
+                </div>
+              </div>
+            </div>
+            <!-- End column -->
+            <div class="col-md-3 col-sm-3 col-xs-12">
+              <div class="single-team-member">
+                <div class="team-img">
+                  <a href="#">
+                      <img src="img/team/2.jpg" alt="">
+                    </a>
+                  <div class="team-social-icon text-center">
+                    <ul>
+                      <li>
+                        <a href="#">
+                            <i class="fa fa-facebook"></i>
+                          </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                            <i class="fa fa-twitter"></i>
+                          </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                            <i class="fa fa-instagram"></i>
+                          </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="team-content text-center">
+                  <h4>Andrew Arnold</h4>
+                  <p>Web Developer</p>
+                </div>
+              </div>
+            </div>
+            <!-- End column -->
+            <div class="col-md-3 col-sm-3 col-xs-12">
+              <div class="single-team-member">
+                <div class="team-img">
+                  <a href="#">
+                      <img src="img/team/3.jpg" alt="">
+                    </a>
+                  <div class="team-social-icon text-center">
+                    <ul>
+                      <li>
+                        <a href="#">
+                            <i class="fa fa-facebook"></i>
+                          </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                            <i class="fa fa-twitter"></i>
+                          </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                            <i class="fa fa-instagram"></i>
+                          </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="team-content text-center">
+                  <h4>Lellien Linda</h4>
+                  <p><strong>fecha</strong></p>
+                </div>
+              </div>
+            </div>
+            <!-- End column -->
+            <div class="col-md-3 col-sm-3 col-xs-12">
+              <div class="single-team-member">
+                <div class="team-img">
+                  <a href="#">
+                      <img src="img/team/4.jpg" alt="">
+                    </a>
+                  <div class="team-social-icon text-center">
+                    <ul>
+                      <li>
+                        <a href="#">
+                            <i class="fa fa-facebook"></i>
+                          </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                            <i class="fa fa-twitter"></i>
+                          </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                            <i class="fa fa-instagram"></i>
+                          </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="team-content text-center">
+                  <h4>Jhon Powel</h4>
+                  <p>Seo Expert</p>
+                </div>
+              </div>
+            </div>
+            <!-- End column -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Team Area -->
+
+    <!-- cumpleaños mes -->
+    <div id="cumpleños_mes" class="our-team-area area-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="section-headline text-center">
+              <h2>Cumpleaños</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-md-center">
+          <div class="col-md-2 col-sm-2 col-xs-12"></div> <!--para poder centrar-->
+          <div class="col-md-8 col-sm-8 col-xs-12">
+            <div class="list-group">
+              <div class="list-group-item list-group-item-action">
+                <span class="badge badge-pill badge-primary pull-right">145</span>
+                <h4>Lellien Linda</h4>
+              </div>
+              <div class="list-group-item list-group-item-action">
+                <span class="badge badge-pill badge-primary pull-right">145</span>
+                <h4>Lellien Linda</h4>
+              </div>
+              <div class="list-group-item list-group-item-action">
+                <span class="badge badge-pill badge-primary pull-right">145</span>
+                <h4>Lellien Linda</h4>
+              </div>
+          </div>
+
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+  <!-- final cumpleaños mes-->
+
+
+    <!-- start pricing area -->
+    <div id="pricing" class="pricing-area area-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="section-headline text-center">
+              <h2>Protocolos Covid-19</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-md-center">
+          <div class="col-md-3 col-sm-3 col-xs-12"></div> <!--para poder centrar-->
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="pri_table_list active">
+
+              <h3>Encuentre aqui los documentos</h3>
+              <ol>
+                <li class="check"><a href="#" target="_blank"><h5>Protocolo Covid-19</h5></a></li>
+                <li class="check"><a href="#" target="_blank"><h5>Plantilla Aislamiento</h5></a></li>
+                <li class="check">Full access</li>
+                <li class="check">Free apps</li>
+                <li class="check">Multiple slider</li>
+                <li class="check">Free domin</li>
+                <li class="check">Support unlimited</li>
+                <li class="check">Payment online</li>
+                <li class="check">Cash back</li>
+              </ol>
+            </div>
+          </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End pricing table area -->
+
+    <!-- Start Wellcome Area -->
+    <!-- End Wellcome Area -->
+
+
+
+    <!-- Start Suscrive Area -->
+    <div class="suscribe-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs=12">
+            <div class="suscribe-text text-center">
+              <h3>Tecnologia Perfect Body</h3>
+              <!--<a class="sus-btn" href="#">Get A quate</a>-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Suscrive Area -->
+    <!-- Start contact Area -->
+
+    <!-- End Contact Area -->
+
+    <!-- Start Footer bottom Area -->
+    <footer>
+      <div class="footer-area">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="footer-content">
+                <div class="footer-head">
+                  <div class="footer-logo">
+                    <h2>Departamento de Tecnologia</h2>
+                  </div>
+
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.</p>
+                  <div class="footer-icons">
+                    <ul>
+                      <li>
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                      </li>
+                      <li>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                      </li>
+                      <li>
+                        <a href="#"><i class="fa fa-google"></i></a>
+                      </li>
+                      <li>
+                        <a href="#"><i class="fa fa-pinterest"></i></a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end single footer -->
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="footer-content">
+                <div class="footer-head">
+                  <h4>información</h4>
+                  <p>
+                    Soporte para la herramienta SIOS, reporte de incidentes con equipos tecnologicos y apoyo en seguridad.
+                  </p>
+                  <div class="footer-contacts">
+                    <p><span>Tel:</span> (5)4237101 ext 6020</p>
+                    <p><span>Email:</span> tecnologia@perfectbody.com.co</p>
+                    <p><span>Horario de atención:</span> 7:30am-12:00am / 2:00pm-6:00pm</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end single footer -->
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="footer-content">
+                <div class="footer-head">
+                  <h4>Instagram</h4>
+                  <div class="flicker-img">
+                    <a href="#"><img src="img/portfolio/1.jpg" alt=""></a>
+                    <a href="#"><img src="img/portfolio/2.jpg" alt=""></a>
+                    <a href="#"><img src="img/portfolio/3.jpg" alt=""></a>
+                    <a href="#"><img src="img/portfolio/4.jpg" alt=""></a>
+                    <a href="#"><img src="img/portfolio/5.jpg" alt=""></a>
+                    <a href="#"><img src="img/portfolio/6.jpg" alt=""></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-area-bottom">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="copyright text-center">
+                <p>
+                  &copy; Copyright <strong>Tecnologia Perfect Body</strong>. Todos los derechos Reservados.
+                </p>
+              </div>
+              <div class="credits">
+                <!--
+                  All the links in the footer should remain intact.
+                  You can delete the links only if you purchased the pro version.
+                  Licensing information: https://bootstrapmade.com/license/
+                  Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=eBusiness
+                -->
+                Rediseñado por <a href="https://www.linkedin.com/in/camosqueraba/">Carlos Mosquera</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/venobox/venobox.min.js"></script>
+    <script src="lib/knob/jquery.knob.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/parallax/parallax.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/nivo-slider/js/jquery.nivo.slider.js" type="text/javascript"></script>
+    <script src="lib/appear/jquery.appear.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+
+    <!-- Contact Form JavaScript File -->
+    <script src="contactform/contactform.js"></script>
+
+    <script src="js/main.js"></script>
+    <script src="js/index_scripts.js"></script>
+  </body>
+
+  </html>
