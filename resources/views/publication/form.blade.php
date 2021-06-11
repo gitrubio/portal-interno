@@ -25,7 +25,7 @@
     <label for="titulo" class="col-md-4 col-form-label text-md-right">{{ __('Titulo') }}</label>
 
     <div class="col-md-6">
-        <input id="titulo" type="text" class="form-control @error('titulo') is-invalid @enderror" name="titulo" value="{{isset($publication->descripcion)?$publication->descripcion:old('descripcion')}}" required autocomplete="titulo" autofocus>
+        <input id="titulo" type="text" class="form-control @error('titulo') is-invalid @enderror" name="titulo" value="{{isset($publication->titulo)?$publication->titulo:old('titulo')}}" required autocomplete="titulo" autofocus>
 
         @error('titulo')
             <span class="invalid-feedback" role="alert">

@@ -19,15 +19,14 @@ class MainController extends Controller
         //$anuncios = Publication::paginate(5);
         $documentos = Publication::where('tipo', 'documento')->orderBy('created_at', 'desc')->get();
         
-        $cumpleanio = DB::connection('sqlsrv')->table('nEmpleados')->get();
-        //DB::connection('sqlsrv');
-        /*->select("SELECT day(FechaNac) Dia , E.Nombre1 +' '+ E.Apellido1+' '+  E.Apellido2 AS Empleado
+        //$cumpleanio = DB::connection('sqlsrv')->table('nEmpleados')->get();
+        /*$cumpleanios = DB::connection('sqlsrv')->select("SELECT day(FechaNac) Dia , E.Nombre1 +' '+ E.Apellido1+' '+  E.Apellido2 AS Empleado
         FROM nEmpleados E
         JOIN nContratos C ON E.IdEmpleado=C.IdEmpleado
         WHERE MONTH(FechaNac)= '6' AND C.Activo='1'
         ORDER BY Dia");*/
         
-        //return view('principal.index', compact('anuncios', 'datos_slides', 'imagenes_slides', 'documentos'));
-        return response()->json($cumpleanio);
+        return view('principal.index', compact('anuncios', 'datos_slides', 'imagenes_slides', 'documentos'));
+        //return response()->json($cumpleanio);
     }
 }

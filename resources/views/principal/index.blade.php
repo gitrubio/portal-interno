@@ -160,48 +160,70 @@
     <div id="home" class="slider-area">
         <div class="bend niceties preview-2">
             <div id="ensign-nivoslider" class="slides">
-                @foreach ($imagenes_slides as $imagen_slide)
-                <img src="{{asset('storage').'/'.$imagen_slide->imagen}}" alt="" title="#slider-direction-0" />
-                @endforeach
-                <!--
-                <img src="img/slider/fondo_perfect.jpg" alt="" title="#slider-direction-0" />
-                <img src="img/slider/prueba_covid.jpg" alt="" title="#slider-direction-1" />
-                <img src="img/slider/aparato.jpg" alt="" title="#slider-direction-2" />
-                -->
+              <img src="img/slider/fondo_perfect.jpg" alt="" title="#slider-direction-0" />
+              {{$variable = 1}}
+              @foreach ($imagenes_slides as $imagen_slide)
+              <img src="{{asset('storage').'/'.$imagen_slide->imagen}}" alt="" title="{{'#slider-direction-'.$variable}}" />
+              {{$variable = $variable +1}}
+              @endforeach
             </div>
 
             <!-- direction 0 -->
             {{$variable = 0}}
-            @foreach ($datos_slides as $dato_slide)
             <div id="{{'slider-direction-'.$variable}}" class="slider-direction slider-one">
-                <div class="container">
+              <div class="container">
                 <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="slider-content">
+                      <div class="slider-content">
                         <!-- layer 1 -->
                         <div class="layer-1-1 hidden-xs wow slideInDown" data-wow-duration="2s" data-wow-delay=".2s">
-                        <h2 class="title1">{{$dato_slide->titulo}}</h2>
-                        <!--<h2 class="title1">A{{$variable}}</h2>-->
+                          <h2 class="title1">Bienvenido a la pagina de inicio</h2>
                         </div>
                         <!-- layer 2 -->
                         <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                        <h1 class="title2">{{$dato_slide->descripcion}}</h1>
-                        <!--<h1 class="title2">B{{$variable}}</h1>-->
+                          <h1 class="title2">Portal Interno PBMC</h1>
                         </div>
                         <!-- layer 3 -->
                         <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
-                        <a class="ready-btn right-btn page-scroll" href="#services">Todos los anuncios</a>
-                        <a class="ready-btn page-scroll" href="#about">MAS INFO</a>
+                          <a class="ready-btn right-btn page-scroll" href="#services">Todos los anuncios</a>
+                          <a class="ready-btn page-scroll" href="#about">MAS INFO</a>
                         </div>
-                    </div>
+                      </div>
                     </div>
                 </div>
+              </div>
+          </div>
+          {{$variable = $variable +1}}
+          @foreach ($datos_slides as $dato_slide)
+          
+          <div id="{{'slider-direction-'.$variable}}" class="slider-direction slider-one">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <div class="slider-content">
+                    <!-- layer 1 -->
+                    <div class="layer-1-1 hidden-xs wow slideInDown" data-wow-duration="2s" data-wow-delay=".2s">
+                    <h2 class="title1">{{$dato_slide->titulo}}</h2>
+                    
+                    </div>
+                    <!-- layer 2 -->
+                    <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
+                    <h1 class="title2">{{$dato_slide->descripcion}}</h1>
+                    
+                    </div>
+                    <!-- layer 3 -->
+                    <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
+                    <a class="ready-btn right-btn page-scroll" href="#services">Todos los anuncios</a>
+                    <a class="ready-btn page-scroll" href="#about">MAS INFO</a>
+                    </div>
+                  </div>
                 </div>
+              </div>
             </div>
-            {{$variable = $variable + 1}}
-            <!--<h2 style="z-index: 10000">{{$dato_slide->titulo}}</h2>-->
-            <!--<h2 style="z-index: 10000">{{$dato_slide->descripcion}}</h2>-->
-            @endforeach
+          </div>
+          {{$variable = $variable + 1}}
+          
+          @endforeach
 
 
 
@@ -372,7 +394,7 @@
                 <div class="single-blog-img">
                   <a href="blog.html">
                       <img src="{{asset('storage').'/'.$anuncio->imagen}}" alt="">
-                    </a>
+                  </a>
                 </div>
                 <div class="blog-meta">
                   <!--
@@ -389,12 +411,19 @@
                   <h4>
                       <a href="blog.html">{{$anuncio->titulo}}</a>
                   </h4>
-                  <p>
+                  <div class="blog-contenedor-descripcion">
+                    <p>
+                      {{$anuncio->descripcion}}.
+                    </p>  
+                  </div>
+                  <!--
+                  <p >
                     {{$anuncio->descripcion}}.
                   </p>
+                  -->
                 </div>
                 <span>
-                    <a href="{{$anuncio->link}}" class="ready-btn" target="_blank">VER ENLACE</a>
+                    <a href="{{$anuncio->link}}" class="ready-btn" target="_blank">VER ENLACE EXTERNO</a>
                 </span>
               </div>
               <!-- Start single blog -->
@@ -647,15 +676,9 @@
 
               <h3>Encuentre aqui los documentos</h3>
               <ol>
-                <li class="check"><a href="#" target="_blank"><h5>Protocolo Covid-19</h5></a></li>
-                <li class="check"><a href="#" target="_blank"><h5>Plantilla Aislamiento</h5></a></li>
-                <li class="check">Full access</li>
-                <li class="check">Free apps</li>
-                <li class="check">Multiple slider</li>
-                <li class="check">Free domin</li>
-                <li class="check">Support unlimited</li>
-                <li class="check">Payment online</li>
-                <li class="check">Cash back</li>
+                @foreach ($documentos as $documento )
+                <li class="check"><a href="{{url(asset('storage').'/'.$documento->documento)}}" target="_blank"><h5>{{$documento->titulo}}</h5></a></li>
+                @endforeach
               </ol>
             </div>
           </div>
