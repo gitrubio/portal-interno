@@ -10,23 +10,65 @@ use Illuminate\Support\Facades\DB;
 class MainController extends Controller
 {
 
+    public function conectarSqlServer(){
+                
+        $serverName = "192.168.1.95"; //serverName\instanceName
+        $connectionInfo = array( "Database"=>"nomina", "UID"=>"sa", "PWD"=>"sa1_xxxx");
+
+        try 
+        {
+            if ($connection =  sqlsrv_connect($serverName, $connectionInfo))
+            {
+                //echo 'cnexion establecida';
+            }
+            else
+            {
+                die( print_r( sqlsrv_errors(), true));
+                throw new Exception('no se pudo conectar');
+            }
+        }
+        catch(Exception $e)
+        {
+            echo $e->getMessage();
+        }
+
+        $mes = date('m');
+        $consulta = "SELECT day(FechaNac) Dia , E.Nombre1 +' '+ E.Apellido1+' '+  E.Apellido2 AS Empleado
+            FROM nEmpleados E
+            JOIN nContratos C ON E.IdEmpleado=C.IdEmpleado
+            WHERE MONTH(FechaNac)= '06' AND C.Activo='1'
+            ORDER BY Dia";
+    
+    
+        $result =  sqlsrv_query($connection, $consulta, array(), array("Scrollable" => SQLSRV_CURSOR_KEYSET ));
+        if(!$result){
+            echo "No se ha podido realizar la consulta";
+        }
+
+        $colum = sqlsrv_fetch_array($result);
+
+        return $colum;
+    }
+
     public function index(){
         //
-        $imagenes_slides = Publication::select('imagen')->orderBy('created_at')->take(3)->get();
-        $datos_slides = Publication::select('id','titulo', 'descripcion')->orderBy('created_at')->take(3)->get();
+        $imagenes_slides = Publication::select('imagen')->where('tipo' , 'anuncio')->orderBy('created_at', 'desc')->take(3)->get();
+        $datos_slides = Publication::select('id','titulo', 'descripcion')->where('tipo' , 'anuncio')->orderBy('created_at', 'desc')->take(3)->get();
         //$cumpleanios = Publication::where('id', '=', $id);
         $anuncios = Publication::where('tipo', 'anuncio')->orderBy('created_at', 'desc')->get();
         //$anuncios = Publication::paginate(5);
         $documentos = Publication::where('tipo', 'documento')->orderBy('created_at', 'desc')->get();
         
-        //$cumpleanio = DB::connection('sqlsrv')->table('nEmpleados')->get();
-        /*$cumpleanios = DB::connection('sqlsrv')->select("SELECT day(FechaNac) Dia , E.Nombre1 +' '+ E.Apellido1+' '+  E.Apellido2 AS Empleado
+        //$cumpleanios = DB::connection('sqlsrv')->table('nEmpleados')->get();
+        $cumpleanios2 = DB::connection('sqlsrv')->select("SELECT day(FechaNac) Dia , E.Nombre1 +' '+ E.Apellido1+' '+  E.Apellido2 AS Empleado
         FROM nEmpleados E
         JOIN nContratos C ON E.IdEmpleado=C.IdEmpleado
-        WHERE MONTH(FechaNac)= '6' AND C.Activo='1'
-        ORDER BY Dia");*/
-        
-        return view('principal.index', compact('anuncios', 'datos_slides', 'imagenes_slides', 'documentos'));
-        //return response()->json($cumpleanio);
+        WHERE MONTH(FechaNac)= '06' AND C.Activo='1'
+        ORDER BY Dia");
+        $cumpleanios = $this->conectarSqlServer();
+        //return view('principal.index', compact('anuncios', 'datos_slides', 'imagenes_slides', 'documentos'));
+        return response()->json($cumpleanios);
     }
+
+    
 }
