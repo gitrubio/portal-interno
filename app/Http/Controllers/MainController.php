@@ -11,11 +11,11 @@ class MainController extends Controller
 {
 
     public function conectarSqlServer(){
-                
+
         $serverName = "192.168.1.95"; //serverName\instanceName
         $connectionInfo = array( "Database"=>"nomina", "UID"=>"sa", "PWD"=>"sa1_xxxx");
 
-        try 
+        try
         {
             if ($connection =  sqlsrv_connect($serverName, $connectionInfo))
             {
@@ -38,8 +38,8 @@ class MainController extends Controller
             JOIN nContratos C ON E.IdEmpleado=C.IdEmpleado
             WHERE MONTH(FechaNac)= '06' AND C.Activo='1'
             ORDER BY Dia";
-    
-    
+
+
         $result =  sqlsrv_query($connection, $consulta, array(), array("Scrollable" => SQLSRV_CURSOR_KEYSET ));
         if(!$result){
             echo "No se ha podido realizar la consulta";
@@ -58,17 +58,24 @@ class MainController extends Controller
         $anuncios = Publication::where('tipo', 'anuncio')->orderBy('created_at', 'desc')->get();
         //$anuncios = Publication::paginate(5);
         $documentos = Publication::where('tipo', 'documento')->orderBy('created_at', 'desc')->get();
-        
+
         //$cumpleanios = DB::connection('sqlsrv')->table('nEmpleados')->get();
-        $cumpleanios2 = DB::connection('sqlsrv')->select("SELECT day(FechaNac) Dia , E.Nombre1 +' '+ E.Apellido1+' '+  E.Apellido2 AS Empleado
+        /*$cumpleanios2 = DB::connection('sqlsrv')->select("SELECT day(FechaNac) Dia , E.Nombre1 +' '+ E.Apellido1+' '+  E.Apellido2 AS Empleado
         FROM nEmpleados E
         JOIN nContratos C ON E.IdEmpleado=C.IdEmpleado
         WHERE MONTH(FechaNac)= '06' AND C.Activo='1'
-        ORDER BY Dia");
-        $cumpleanios = $this->conectarSqlServer();
-        //return view('principal.index', compact('anuncios', 'datos_slides', 'imagenes_slides', 'documentos'));
-        return response()->json($cumpleanios);
+        ORDER BY Dia");*/
+        //$cumpleanios = $this->conectarSqlServer();
+        return view('principal.index', compact('anuncios', 'datos_slides', 'imagenes_slides', 'documentos'));
+        //return response()->json($cumpleanios);
     }
 
-    
+    public function show($id){
+
+        $anuncio = Publication::where('id', $id)->get();
+        return view('principal.anuncios.anuncio-detalle', compact('anuncio'));
+
+
+    }
+
 }

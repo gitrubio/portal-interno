@@ -1,3 +1,5 @@
+<!doctype html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <title>Portal Inicio</title>
@@ -195,7 +197,7 @@
           </div>
           {{$variable = $variable +1}}
           @foreach ($datos_slides as $dato_slide)
-          
+
           <div id="{{'slider-direction-'.$variable}}" class="slider-direction slider-one">
             <div class="container">
               <div class="row">
@@ -204,12 +206,12 @@
                     <!-- layer 1 -->
                     <div class="layer-1-1 hidden-xs wow slideInDown" data-wow-duration="2s" data-wow-delay=".2s">
                     <h2 class="title1">{{$dato_slide->titulo}}</h2>
-                    
+
                     </div>
                     <!-- layer 2 -->
                     <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
                     <h1 class="title2">{{$dato_slide->descripcion}}</h1>
-                    
+
                     </div>
                     <!-- layer 3 -->
                     <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
@@ -222,7 +224,7 @@
             </div>
           </div>
           {{$variable = $variable + 1}}
-          
+
           @endforeach
 
 
@@ -414,7 +416,7 @@
                   <div class="blog-contenedor-descripcion">
                     <p>
                       {{$anuncio->descripcion}}.
-                    </p>  
+                    </p>
                   </div>
                   <!--
                   <p >

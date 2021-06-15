@@ -28,3 +28,6 @@ Route::resource('publication', PublicationController::class)->middleware('auth')
 Route::group(['middleware' => 'auth'] , function () {
     Route::get('/home', [PublicationController::class, 'index'])->name('home');
 });
+
+
+Route::get('anuncios/{id}', [MainController::class, 'show']);
