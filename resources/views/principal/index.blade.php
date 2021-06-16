@@ -637,28 +637,20 @@
           <div class="col-md-2 col-sm-2 col-xs-12"></div> <!--para poder centrar-->
           <div class="col-md-8 col-sm-8 col-xs-12">
             <div class="list-group">
+              @foreach ($cumpleanios as $cumpleanio )
               <div class="list-group-item list-group-item-action">
-                <span class="badge badge-pill badge-primary pull-right">145</span>
-                <h4>Lellien Linda</h4>
+                <span class="badge badge-pill badge-primary pull-right">{{$cumpleanio['dia']}}</span>
+                <h4>{{$cumpleanio['nombre']}}</h4>
               </div>
-              <div class="list-group-item list-group-item-action">
-                <span class="badge badge-pill badge-primary pull-right">145</span>
-                <h4>Lellien Linda</h4>
-              </div>
-              <div class="list-group-item list-group-item-action">
-                <span class="badge badge-pill badge-primary pull-right">145</span>
-                <h4>Lellien Linda</h4>
-              </div>
+              @endforeach
           </div>
 
           </div>
         </div>
-
-
       </div>
     </div>
   </div>
-  <!-- final cumpleaños mes-->
+  <!-- fin cumpleaños mes-->
 
 
     <!-- start pricing area -->

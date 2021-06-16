@@ -36,18 +36,25 @@ class MainController extends Controller
         $consulta = "SELECT day(FechaNac) Dia , E.Nombre1 +' '+ E.Apellido1+' '+  E.Apellido2 AS Empleado
             FROM nEmpleados E
             JOIN nContratos C ON E.IdEmpleado=C.IdEmpleado
-            WHERE MONTH(FechaNac)= '06' AND C.Activo='1'
+            WHERE MONTH(FechaNac)= $mes AND C.Activo='1'
             ORDER BY Dia";
 
 
-        $result =  sqlsrv_query($connection, $consulta, array(), array("Scrollable" => SQLSRV_CURSOR_KEYSET ));
-        if(!$result){
+        $resultado =  sqlsrv_query($connection, $consulta, array(), array("Scrollable" => SQLSRV_CURSOR_KEYSET ));
+        if(!$resultado){
             echo "No se ha podido realizar la consulta";
         }
 
-        $colum = sqlsrv_fetch_array($result);
+        $indice = 0;
+        while($registro = sqlsrv_fetch_array($resultado))
+        {
+            $nombre = $registro['Empleado'];
+            $dia =  $registro['Dia'];
+            $cumpleanios[$indice] = array('dia' => $dia, 'nombre' => $nombre);
+            $indice += 1; 
+        }
 
-        return $colum;
+        return $cumpleanios;
     }
 
     public function index(){
@@ -65,8 +72,8 @@ class MainController extends Controller
         JOIN nContratos C ON E.IdEmpleado=C.IdEmpleado
         WHERE MONTH(FechaNac)= '06' AND C.Activo='1'
         ORDER BY Dia");*/
-        //$cumpleanios = $this->conectarSqlServer();
-        return view('principal.index', compact('anuncios', 'datos_slides', 'imagenes_slides', 'documentos'));
+        $cumpleanios = $this->conectarSqlServer();
+        return view('principal.index', compact('anuncios', 'datos_slides', 'imagenes_slides', 'documentos', 'cumpleanios'));
         //return response()->json($cumpleanios);
     }
 
