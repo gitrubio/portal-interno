@@ -79,7 +79,7 @@ class MainController extends Controller
 
     public function show($id){
 
-        $anuncio = Publication::select('titulo','descripcion','imagen','link')->where('id', $id)->get();
+        $anuncio = Publication::select('titulo','descripcion','imagen','link')->where('id', $id)->first();
         return view('principal.anuncios.anuncio-detalle', compact('anuncio'));
         //return response()->json($anuncio);
 

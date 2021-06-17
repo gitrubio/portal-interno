@@ -45,9 +45,6 @@
   </head>
 
   <body data-spy="scroll" data-target="#navbar-example">
-    <!--
-    <div id="preloader"></div>
-    -->
     <header>
       <!-- header-area start -->
       <div id="sticker" class="header-area">
@@ -67,7 +64,7 @@
                   </button>
                   <!-- Brand -->
                   <a class="navbar-brand page-scroll sticky-logo" href="index.html">
-                    <!--<h1><span>e</span>Business</h1>-->
+                    
                     <!-- Uncomment below if_ you prefer to use_ an image logo -->
                     <img src="img/logo_perfect.png" alt="logo perfectbody" title="">
                   </a>
@@ -87,7 +84,8 @@
                     <li>
                       <a class="page-scroll" href="#pricing">Protocolo Covid19</a>
                     </li>
-                    <li id="boton_menu" class="dropdown" onclick="clickMenu()"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Menú<span class="caret"></span></a>
+                    <li id="boton_menu" class="dropdown" onclick="clickMenu()">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menú<span class="caret"></span></a>
                       <!--<ul class="dropdown-menu" role="menu">-->
 
                         <div id="contenedor_opciones_menu" class="contenedor_opciones_menu dropdown-content">
@@ -188,7 +186,7 @@
                         <!-- layer 3 -->
                         <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
                           <a class="ready-btn right-btn page-scroll" href="#blog">Todos los anuncios</a>
-                          <a class="ready-btn page-scroll" href="#about">MAS INFO</a>
+                          <a class="ready-btn page-scroll" href="blog">MAS INFO</a>
                         </div>
                       </div>
                     </div>
@@ -216,7 +214,7 @@
                     <!-- layer 3 -->
                     <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
                     <a class="ready-btn right-btn page-scroll" href="#blog">Todos los anuncios</a>
-                    <a class="ready-btn page-scroll" href="#">MAS INFO</a>
+                    <a class="ready-btn page-scroll" href="{{route('publication.show', $dato_slide->id)}}">MAS INFO</a>
                     </div>
                   </div>
                 </div>
@@ -233,21 +231,7 @@
 
         </div>
     </div>
-    <!-- End Slider Area -->
-
-    <!-- Start About area -->
-
-     <!-- End About area -->
-
-
-    <!-- our-skill-area start -->
-    <!-- our-skill-area end -->
-
-
-  <!-- Faq area start -->
-  <!-- end Faq area  -->
-
-  <!-- Start Blog Area -->
+    <!-- Start Blog Area -->
     <div id="blog" class="blog-area">
       <div class="blog-inner area-padding">
         <div class="blog-overly"></div>
@@ -261,157 +245,22 @@
           </div>
           <div class="row">
             <!-- Start Left Blog -->
-            <!--
-            <div class="col-md-12 col-sm-12 col-xs-12">
-              <div class="single-blog">
-                <div class="blog-text">
-                  <h4>
-                      <a href="blog.html">Assumenda repud eum veniam</a>
-                  </h4>
-                  <p>
-                    Lorem ipsum dolor sit amet conse adipis elit Assumenda repud eum veniam optio modi sit explicabo nisi magnam quibusdam.sit amet conse adipis elit Assumenda repud eum veniam optio modi sit explicabo nisi magnam quibusdam.
-                  </p>
-                </div>
-                <div class="blog-meta">
-                  <span class="comments-type">
-                      <i class="fa fa-comment-o"></i>
-                      <a href="#">13 comments</a>
-                    </span>
-                  <span class="date-type">
-                      <i class="fa fa-calendar"></i>2016-03-05 / 09:10:16
-                    </span>
-                </div>
-                <div class="single-blog-img">
-                  <a href="blog.html">
-                    <img width="1400" src="img/blog/prueba_covid.jpg" alt="">
-                  </a>
-                </div>
-
-
-                <span>
-                    <a href="blog.html" class="ready-btn">enlace externo</a>
-                  </span>
-              </div>
-            -->
-              <!-- Start single blog
-              <div class="col-md-4 col-sm-4 col-xs-12">
-                <div class="single-blog">
-                  <div class="single-blog-img">
-                    <a href="blog.html">
-                        <img src="img/blog/2.jpg" alt="">
-                      </a>
-                  </div>
-                  <div class="blog-meta">
-                    <span class="comments-type">
-                        <i class="fa fa-comment-o"></i>
-                        <a href="#">130 comments</a>
-                      </span>
-                    <span class="date-type">
-                        <i class="fa fa-calendar"></i>2016-03-05 / 09:10:16
-                      </span>
-                  </div>
-                  <div class="blog-text">
-                    <h4>
-                      <a href="blog.html">Explicabo magnam quibusdam.</a>
-                    </h4>
-                    <p>
-                      Lorem ipsum dolor sit amet conse adipis elit Assumenda repud eum veniam optio modi sit explicabo nisi magnam quibusdam.sit amet conse adipis elit Assumenda repud eum veniam optio modi sit explicabo nisi magnam quibusdam.
-                    </p>
-                  </div>
-                  <span>
-                      <a href="blog.html" class="ready-btn">VER ENLACE</a>
-                    </span>
-                </div>-->
-                <!-- Start single blog -->
-              </div>
-              <!-- End Left Blog-->
-              <!-- Start Right Blog
-              <div class="col-md-4 col-sm-4 col-xs-12">
-                <div class="single-blog">
-                  <div class="single-blog-img">
-                    <a href="blog.html">
-                        <img src="img/blog/3.jpg" alt="">
-                      </a>
-                  </div>
-                  <div class="blog-meta">
-                    <span class="comments-type">
-                        <i class="fa fa-comment-o"></i>
-                        <a href="#">10 comments</a>
-                      </span>
-                    <span class="date-type">
-                        <i class="fa fa-calendar"></i>2016-03-05 / 09:10:16
-                      </span>
-                  </div>
-                  <div class="blog-text">
-                    <h4>
-                                            <a href="blog.html">Lorem ipsum dolor sit amet</a>
-                      </h4>
-                    <p>
-                      Lorem ipsum dolor sit amet conse adipis elit Assumenda repud eum veniam optio modi sit explicabo nisi magnam quibusdam.sit amet conse adipis elit Assumenda repud eum veniam optio modi sit explicabo nisi magnam quibusdam.
-                    </p>
-                  </div>
-                  <span>
-                      <a href="blog.html" class="ready-btn">VER ENLACE</a>
-                    </span>
-                </div>
-              </div>
-              End Right Blog-->
-              <!-- Start Right Blog
-              <div class="col-md-4 col-sm-4 col-xs-12">
-                <div class="single-blog">
-                  <div class="single-blog-img">
-                    <a href="blog.html">
-                        <img src="img/blog/3.jpg" alt="">
-                      </a>
-                  </div>
-                  <div class="blog-meta">
-                    <span class="comments-type">
-                        <i class="fa fa-comment-o"></i>
-                        <a href="#">10 comments</a>
-                      </span>
-                    <span class="date-type">
-                        <i class="fa fa-calendar"></i>2016-03-05 / 09:10:16
-                      </span>
-                  </div>
-                  <div class="blog-text">
-                    <h4>
-                                            <a href="blog.html">Lorem ipsum dolor sit amet</a>
-                      </h4>
-                    <p>
-                      Lorem ipsum dolor sit amet conse adipis elit Assumenda repud eum veniam optio modi sit explicabo nisi magnam quibusdam.sit amet conse adipis elit Assumenda repud eum veniam optio modi sit explicabo nisi magnam quibusdam.
-                    </p>
-                  </div>
-                  <span>
-                      <a href="blog.html" class="ready-btn">VER ENLACE</a>
-                    </span>
-                </div>
-              </div>
-              End Right Blog-->
-
-            <!-- End Left Blog-->
-            <!-- Start Left Blog -->
             @foreach ($anuncios as $anuncio)
             <div class="col-md-4 col-sm-4 col-xs-12">
               <div class="single-blog">
                 <div class="single-blog-img">
-                  <a href="blog.html">
-                      <img src="{{asset('storage').'/'.$anuncio->imagen}}" alt="">
+                  <a href="{{route('publication.show', $anuncio->id)}}.html">
+                    <img src="{{asset('storage').'/'.$anuncio->imagen}}" alt="">
                   </a>
                 </div>
                 <div class="blog-meta">
-                  <!--
-                  <span class="comments-type">
-                      <i class="fa fa-comment-o"></i>
-                      <a href="#">130 comments</a>
-                  </span>
-                  -->
                   <span class="date-type">
-                      <i class="fa fa-calendar"></i>{{$anuncio->fecha_inicio}} / {{$anuncio->fecha_fin}}
-                    </span>
+                    <i class="fa fa-calendar"></i>{{$anuncio->fecha_inicio}} / {{$anuncio->fecha_fin}}
+                  </span>
                 </div>
                 <div class="blog-text">
                   <h4>
-                      <a href="blog.html">{{$anuncio->titulo}}</a>
+                      <a href="{{route('publication.show', $anuncio->id)}}">{{$anuncio->titulo}}</a>
                   </h4>
                   <div class="blog-contenedor-descripcion">
                     <p>
@@ -431,7 +280,6 @@
               <!-- Start single blog -->
             </div>
             @endforeach
-
           </div>
         </div>
       </div>
@@ -451,19 +299,7 @@
                   <p>
                     Encuentre en el menú superior enlaces de interes
                   </p>
-                  <!--
-                  <div class="subs-feilds">
-
-                    <div class="suscribe-input">
-
-                      <input type="email" class="email form-control width-80" id="sus_email" placeholder="Email">
-                      <button type="submit" id="sus_submit" class="add-btn width-20">Subscribe</button>
-                      <div id="msg_Submit" class="h3 text-center hidden"></div>
-
-                    </div>
-
-                  </div>
-                  -->
+                  <!---->
                 </div>
               </div>
             </div>
@@ -522,8 +358,8 @@
               <div class="single-team-member">
                 <div class="team-img">
                   <a href="#">
-                      <img src="img/team/2.jpg" alt="">
-                    </a>
+                    <img src="img/team/2.jpg" alt="">
+                  </a>
                   <div class="team-social-icon text-center">
                     <ul>
                       <li>
@@ -638,16 +474,14 @@
           <div class="col-md-8 col-sm-8 col-xs-12">
             <div class="list-group">
               @foreach ($cumpleanios as $cumpleanio )
-              <div class="list-group-item list-group-item-action">
-                
+              <!--<div class="list-group-item list-group-item-action ">-->
+              <div>
                 <!--<span class="badge badge-pill badge-primary pull-right">{{$cumpleanio['dia']}}</span>-->
-                <h3 style="display: inline-block; color: #003660; margin-right:15px;">{{$cumpleanio['dia']}}</h3>
+                <h4 style="display: inline-block; color:#003660; margin-right:15px;">{{$cumpleanio['dia']}}</h3>
                 <h4 style="display: inline-block;">{{$cumpleanio['nombre']}}</h4>
-                
               </div>
               @endforeach
-          </div>
-
+            </div>
           </div>
         </div>
       </div>
@@ -670,11 +504,10 @@
           <div class="col-md-3 col-sm-3 col-xs-12"></div> <!--para poder centrar-->
           <div class="col-md-6 col-sm-6 col-xs-12">
             <div class="pri_table_list active">
-
               <h3>Encuentre aqui los documentos</h3>
               <ol>
                 @foreach ($documentos as $documento )
-                <li class="check"><a href="{{url(asset('storage').'/'.$documento->documento)}}" target="_blank"><h5>{{$documento->titulo}}</h5></a></li>
+                <li class="check"><a href="{{url(asset('storage').'/'.$documento->documento)}}" target="_blank"><h6>{{$documento->titulo}}</h5></a></li>
                 @endforeach
               </ol>
             </div>
@@ -685,12 +518,6 @@
       </div>
     </div>
     <!-- End pricing table area -->
-
-    <!-- Start Wellcome Area -->
-    <!-- End Wellcome Area -->
-
-
-
     <!-- Start Suscrive Area -->
     <div class="suscribe-area">
       <div class="container">
@@ -705,10 +532,6 @@
       </div>
     </div>
     <!-- End Suscrive Area -->
-    <!-- Start contact Area -->
-
-    <!-- End Contact Area -->
-
     <!-- Start Footer bottom Area -->
     <footer>
       <div class="footer-area">

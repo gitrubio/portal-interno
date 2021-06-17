@@ -81,9 +81,12 @@ class PublicationController extends Controller
      * @param  \App\Models\Publication  $publication
      * @return \Illuminate\Http\Response
      */
-    public function show(Publication $publication)
+    public function show($id)
     {
         //
+        $anuncio = Publication::select('titulo','descripcion', 'contenido','imagen','link', 'created_at')->where('id', $id)->first();
+        return view('principal.anuncios.anuncio-detalle', compact('anuncio'));
+        //return response()->json($anuncio);
     }
 
     /**
