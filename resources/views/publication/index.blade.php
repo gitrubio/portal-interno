@@ -8,7 +8,7 @@
     {{Session::get('mensaje')}}
 @endif
 <table class="table table-light">
-    <thead class="thead-light"> 
+    <thead class="thead-light">  
         <tr>
             <th>Id</th>
             <th>Tipo</th>

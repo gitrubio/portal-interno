@@ -67,20 +67,21 @@
 									</button>
                 <!-- Brand -->
                 <a class="navbar-brand page-scroll sticky-logo" href="index.html">
-                  <h1><span>e</span>Business</h1>
-                  <!-- Uncomment below if you prefer to use an image logo -->
-                  <!-- <img src="img/logo.png" alt="" title=""> -->
+                  <!--<h1><span>e</span>Business</h1>-->
+                  <!-- Uncomment below if you prefer to an image logo -->
+                  <img src="{{asset('img/logo_perfect.png')}}" alt="perfect_body" title="">
 								</a>
               </div>
               <!-- Collect the nav links, forms, and other content for toggling -->
               <div class="collapse navbar-collapse main-menu bs-example-navbar-collapse-1" id="navbar-example">
                 <ul class="nav navbar-nav navbar-right">
                   <li class="active">
-                    <a class="page-scroll" href="#home">Home</a>
+                    <a class="page-scroll" href="#home">Inicio</a>
                   </li>
                   <li>
-                    <a class="page-scroll" href="#about">About</a>
+                    <a class="page-scroll" href="{{url('/login')}}">Administrar Anuncios</a>
                   </li>
+                  <!--
                   <li>
                     <a class="page-scroll" href="#services">Services</a>
                   </li>
@@ -96,6 +97,7 @@
                   <li>
                     <a class="page-scroll" href="#contact">Contact</a>
                   </li>
+                -->
                 </ul>
               </div>
               <!-- navbar-collapse -->
@@ -118,10 +120,10 @@
           <div class="slider-content text-center">
             <div class="header-bottom">
               <div class="layer2 wow zoomIn" data-wow-duration="1s" data-wow-delay=".4s">
-                <h1 class="title2">Blog Details </h1>
+                <h1 class="title2">Anuncios </h1>
               </div>
               <div class="layer3 wow zoomInUp" data-wow-duration="2s" data-wow-delay="1s">
-                <h2 class="title3">profesional Blog Page</h2>
+                <h2 class="title3">Perfect Body Medical Center</h2>
               </div>
             </div>
           </div>
@@ -133,190 +135,41 @@
   <div class="blog-page area-padding">
     <div class="container">
       <div class="row">
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-          <div class="page-head-blog">
-            <div class="single-blog-page">
-              <!-- search option start -->
-              <form action="#">
-                <div class="search-option">
-                  <input type="text" placeholder="Search...">
-                  <button class="button" type="submit">
-                                            <i class="fa fa-search"></i>
-                                        </button>
-                </div>
-              </form>
-              <!-- search option end -->
-            </div>
-            <div class="single-blog-page">
-              <!-- recent start -->
-              <div class="left-blog">
-                <h4>recent post</h4>
-                <div class="recent-post">
-                  <!-- start single post -->
-                  <div class="recent-single-post">
-                    <div class="post-img">
-                      <a href="#">
-												   <img src="{{asset('img/blog/1.jpg')}}" alt="">
-												</a>
-                    </div>
-                    <div class="pst-content">
-                      <p><a href="#"> Redug Lerse dolor sit amet consect adipis elit.</a></p>
-                    </div>
-                  </div>
-                  <!-- End single post -->
-                  <!-- start single post -->
-                  <div class="recent-single-post">
-                    <div class="post-img">
-                      <a href="#">
-												   <img src="{{asset('img/blog/2.jpg')}}" alt="">
-												</a>
-                    </div>
-                    <div class="pst-content">
-                      <p><a href="#"> Redug Lerse dolor sit amet consect adipis elit.</a></p>
-                    </div>
-                  </div>
-                  <!-- End single post -->
-                  <!-- start single post -->
-                  <div class="recent-single-post">
-                    <div class="post-img">
-                      <a href="#">
-												   <img src="{{asset('img/blog/3.jpg')}}" alt="">
-												</a>
-                    </div>
-                    <div class="pst-content">
-                      <p><a href="#"> Redug Lerse dolor sit amet consect adipis elit.</a></p>
-                    </div>
-                  </div>
-                  <!-- End single post -->
-                  <!-- start single post -->
-                  <div class="recent-single-post">
-                    <div class="post-img">
-                      <a href="#">
-												   <img src="{{asset('img/blog/4.jpg')}}" alt="">
-												</a>
-                    </div>
-                    <div class="pst-content">
-                      <p><a href="#"> Redug Lerse dolor sit amet consect adipis elit.</a></p>
-                    </div>
-                  </div>
-                  <!-- End single post -->
-                </div>
-              </div>
-              <!-- recent end -->
-            </div>
-            <div class="single-blog-page">
-              <div class="left-blog">
-                <h4>categories</h4>
-                <ul>
-                  <li>
-                    <a href="#">Portfolio</a>
-                  </li>
-                  <li>
-                    <a href="#">Project</a>
-                  </li>
-                  <li>
-                    <a href="#">Design</a>
-                  </li>
-                  <li>
-                    <a href="#">wordpress</a>
-                  </li>
-                  <li>
-                    <a href="#">Joomla</a>
-                  </li>
-                  <li>
-                    <a href="#">Html</a>
-                  </li>
-                  <li>
-                    <a href="#">Website</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="single-blog-page">
-              <div class="left-blog">
-                <h4>archive</h4>
-                <ul>
-                  <li>
-                    <a href="#">07 July 2016</a>
-                  </li>
-                  <li>
-                    <a href="#">29 June 2016</a>
-                  </li>
-                  <li>
-                    <a href="#">13 May 2016</a>
-                  </li>
-                  <li>
-                    <a href="#">20 March 2016</a>
-                  </li>
-                  <li>
-                    <a href="#">09 Fabruary 2016</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="single-blog-page">
-              <div class="left-tags blog-tags">
-                <div class="popular-tag left-side-tags left-blog">
-                  <h4>popular tags</h4>
-                  <ul>
-                    <li>
-                      <a href="#">Portfolio</a>
-                    </li>
-                    <li>
-                      <a href="#">Project</a>
-                    </li>
-                    <li>
-                      <a href="#">Design</a>
-                    </li>
-                    <li>
-                      <a href="#">wordpress</a>
-                    </li>
-                    <li>
-                      <a href="#">Joomla</a>
-                    </li>
-                    <li>
-                      <a href="#">Html</a>
-                    </li>
-                    <li>
-                      <a href="#">Masonry</a>
-                    </li>
-                    <li>
-                      <a href="#">Website</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
+        <!--
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+         
         </div>
+        -->
         <!-- End left sidebar -->
         <!-- Start single blog -->
-        <div class="col-md-8 col-sm-8 col-xs-12">
+        <div class="col-md-12 col-sm-12 col-xs-12">
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
               <!-- single-blog start -->
               <article class="blog-post-wrapper">
+                <h2>{{$anuncio->titulo}}</h2>
+                <div class="entry-meta">
+                  <span class="author-meta"><i class="fa fa-user"></i> <a href="#">admin</a></span>
+                  <span><i class="fa fa-clock-o"></i> march 28, 2016</span>
+                  <span class="tag-meta">
+                      <i class="fa fa-folder-o"></i>
+                      <a href="#">painting</a>,
+                      <a href="#">work</a>
+                    </span>
+                    <span>
+                      <i class="fa fa-tags"></i>
+                      <a href="#">tools</a>,
+                      <a href="#"> Humer</a>,
+                      <a href="#">House</a>
+                    </span>
+                  <span><i class="fa fa-comments-o"></i> <a href="#">6 comments</a></span>
+                </div>
+                <div><p>jlksjfklsdjfn sdfjkhsdkn hjkshfjkdhf sbdhfkjdhf bdfhjkdhf jkdb hjksdhfjkdhgf df dfgf </p></div>
                 <div class="post-thumbnail">
                   <img src="{{asset('')}}img/blog/6.jpg" alt="" />
                 </div>
                 <div class="post-information">
-                  <h2>Blog image post layout</h2>
-                  <div class="entry-meta">
-                    <span class="author-meta"><i class="fa fa-user"></i> <a href="#">admin</a></span>
-                    <span><i class="fa fa-clock-o"></i> march 28, 2016</span>
-                    <span class="tag-meta">
-												<i class="fa fa-folder-o"></i>
-												<a href="#">painting</a>,
-												<a href="#">work</a>
-											</span>
-                    <span>
-												<i class="fa fa-tags"></i>
-												<a href="#">tools</a>,
-												<a href="#"> Humer</a>,
-												<a href="#">House</a>
-											</span>
-                    <span><i class="fa fa-comments-o"></i> <a href="#">6 comments</a></span>
-                  </div>
+                  
                   <div class="entry-content">
                     <p>Aliquam et metus pharetra, bibendum massa nec, fermentum odio. Nunc id leo ultrices, mollis ligula in, finibus tortor. Mauris eu dui ut lectus fermentum eleifend. Pellentesque faucibus sem ante, non malesuada odio varius nec. Suspendisse
                       potenti. Proin consectetur aliquam odio nec fringilla. Sed interdum at justo in efficitur. Vivamus gravida volutpat sodales. Fusce ornare sit amet ligula condimentum sagittis.</p>
@@ -425,96 +278,112 @@
   <!-- End Blog Area -->
   <div class="clearfix"></div>
 
-  <!-- Start Footer bottom Area -->
-  <footer>
-    <div class="footer-area">
+  <!-- Start Suscrive Area -->
+    <div class="suscribe-area">
       <div class="container">
         <div class="row">
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="footer-content">
-              <div class="footer-head">
-                <div class="footer-logo">
-                  <h2><span>e</span>Business</h2>
-                </div>
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs=12">
+            <div class="suscribe-text text-center">
+              <h3>Tecnologia Perfect Body</h3>
+              <!--<a class="sus-btn" href="#">Get A quate</a>-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Suscrive Area -->
 
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.</p>
-                <div class="footer-icons">
-                  <ul>
-                    <li>
-                      <a href="#"><i class="fa fa-facebook"></i></a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="fa fa-twitter"></i></a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="fa fa-google"></i></a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="fa fa-pinterest"></i></a>
-                    </li>
-                  </ul>
+  <!-- Start Footer bottom Area -->
+  
+    <footer>
+      <div class="footer-area">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="footer-content">
+                <div class="footer-head">
+                  <div class="footer-logo">
+                    <h2>Departamento de Tecnologia</h2>
+                  </div>
+
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.</p>
+                  <div class="footer-icons">
+                    <ul>
+                      <li>
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                      </li>
+                      <li>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                      </li>
+                      <li>
+                        <a href="#"><i class="fa fa-google"></i></a>
+                      </li>
+                      <li>
+                        <a href="#"><i class="fa fa-pinterest"></i></a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end single footer -->
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="footer-content">
+                <div class="footer-head">
+                  <h4>información</h4>
+                  <p>
+                    Soporte para la herramienta SIOS, reporte de incidentes con equipos tecnologicos y apoyo en seguridad.
+                  </p>
+                  <div class="footer-contacts">
+                    <p><span>Tel:</span> (5)4237101 ext 6020</p>
+                    <p><span>Email:</span> tecnologia@perfectbody.com.co</p>
+                    <p><span>Horario de atención:</span> 7:30am-12:00am / 2:00pm-6:00pm</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end single footer -->
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="footer-content">
+                <div class="footer-head">
+                  <h4>Instagram</h4>
+                  <div class="flicker-img">
+                    <a href="#"><img src="{{asset('img/portfolio/1.jpg')}}" alt=""></a>
+                    <a href="#"><img src="{{asset('img/portfolio/2.jpg')}}" alt=""></a>
+                    <a href="#"><img src="{{asset('img/portfolio/3.jpg')}}" alt=""></a>
+                    <a href="#"><img src="{{asset('img/portfolio/4.jpg')}}" alt=""></a>
+                    <a href="#"><img src="{{asset('img/portfolio/5.jpg')}}" alt=""></a>
+                    <a href="#"><img src="{{asset('img/portfolio/6.jpg')}}" alt=""></a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <!-- end single footer -->
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="footer-content">
-              <div class="footer-head">
-                <h4>information</h4>
+        </div>
+      </div>
+      <div class="footer-area-bottom">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="copyright text-center">
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+                  &copy; Copyright <strong>Tecnologia Perfect Body</strong>. Todos los derechos Reservados.
                 </p>
-                <div class="footer-contacts">
-                  <p><span>Tel:</span> +123 456 789</p>
-                  <p><span>Email:</span> contact@example.com</p>
-                  <p><span>Working Hours:</span> 9am-5pm</p>
-                </div>
               </div>
-            </div>
-          </div>
-          <!-- end single footer -->
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="footer-content">
-              <div class="footer-head">
-                <h4>Instagram</h4>
-                <div class="flicker-img">
-                  <a href="#"><img src="{{asset('img/portfolio/1.jpg')}}" alt=""></a>
-                  <a href="#"><img src="{{asset('img/portfolio/2.jpg')}}" alt=""></a>
-                  <a href="#"><img src="{{asset('img/portfolio/3.jpg')}}" alt=""></a>
-                  <a href="#"><img src="{{asset('img/portfolio/4.jpg')}}" alt=""></a>
-                  <a href="#"><img src="{{asset('img/portfolio/5.jpg')}}" alt=""></a>
-                  <a href="#"><img src="{{asset('img/portfolio/6.jpg')}}" alt=""></a>
-                </div>
+              <div class="credits">
+                <!--
+                  All the links in the footer should remain intact.
+                  You can delete the links only if_ you purchased the pro version.
+                  Licensing information: https://bootstrapmade.com/license/
+                  Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=eBusiness
+                -->
+                Rediseñado por <a href="https://www.linkedin.com/in/camosqueraba/">Carlos Mosquera</a>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="footer-area-bottom">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <div class="copyright text-center">
-              <p>
-                &copy; Copyright <strong>eBusiness</strong>. All Rights Reserved
-              </p>
-            </div>
-            <div class="credits">
-              <!--
-                All the links in the footer should remain intact.
-                You can delete the links only if you purchased the pro version.
-                Licensing information: https://bootstrapmade.com/license/
-                Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=eBusiness
-              -->
-              Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
@@ -532,7 +401,7 @@
   <script src="{{asset('lib/isotope/isotope.pkgd.min.js')}}"></script>
 
   <!-- Contact Form JavaScript File -->
-  <script src="contactform/contactform.js"></script>
+  <script src="{{asset('contactform/contactform.js')}}"></script>
 
   <script src="{{asset('js/main.js')}}"></script>
 </body>

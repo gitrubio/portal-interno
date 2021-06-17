@@ -8,7 +8,7 @@
             <option value="">-- Seleccionar --</option>
             <option value="anuncio">Anuncio</option>
             <option value="cumpleaños">Cumpleaños</option>
-            <option value="documento">Documento</option>
+            <option value="documento">Documento</option> 
 
         </select>
 

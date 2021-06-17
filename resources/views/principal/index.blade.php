@@ -187,7 +187,7 @@
                         </div>
                         <!-- layer 3 -->
                         <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
-                          <a class="ready-btn right-btn page-scroll" href="#services">Todos los anuncios</a>
+                          <a class="ready-btn right-btn page-scroll" href="#blog">Todos los anuncios</a>
                           <a class="ready-btn page-scroll" href="#about">MAS INFO</a>
                         </div>
                       </div>
@@ -215,8 +215,8 @@
                     </div>
                     <!-- layer 3 -->
                     <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
-                    <a class="ready-btn right-btn page-scroll" href="#services">Todos los anuncios</a>
-                    <a class="ready-btn page-scroll" href="#about">MAS INFO</a>
+                    <a class="ready-btn right-btn page-scroll" href="#blog">Todos los anuncios</a>
+                    <a class="ready-btn page-scroll" href="#">MAS INFO</a>
                     </div>
                   </div>
                 </div>
@@ -639,8 +639,11 @@
             <div class="list-group">
               @foreach ($cumpleanios as $cumpleanio )
               <div class="list-group-item list-group-item-action">
-                <span class="badge badge-pill badge-primary pull-right">{{$cumpleanio['dia']}}</span>
-                <h4>{{$cumpleanio['nombre']}}</h4>
+                
+                <!--<span class="badge badge-pill badge-primary pull-right">{{$cumpleanio['dia']}}</span>-->
+                <h3 style="display: inline-block; color: #003660; margin-right:15px;">{{$cumpleanio['dia']}}</h3>
+                <h4 style="display: inline-block;">{{$cumpleanio['nombre']}}</h4>
+                
               </div>
               @endforeach
           </div>
