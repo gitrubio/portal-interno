@@ -7,7 +7,7 @@
   <meta content="" name="keywords">
   <meta content="" name="description">
 
-  <!-- Favicons -->
+  <!-- Favicons --> 
   <link href="{{asset('img/favicon_perfect.png')}}" rel="icon">
 
   <!--{{ asset('js/app.js') }}
@@ -147,6 +147,7 @@
                     
                   </div>
                 </div>
+                <a class="boton-anuncio-enlace" href="{{$anuncio->link}}">{{$anuncio->link}}</a>
               </article>
               <!--
               

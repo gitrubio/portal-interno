@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', [MainController::class, 'index']);
+Route::get('/', [MainController::class, 'index']); 
 
 Auth::routes();
 Route::resource('publication', PublicationController::class)->middleware('auth');

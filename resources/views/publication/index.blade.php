@@ -27,7 +27,7 @@
     <tbody>
         @foreach ($datos as $publication)
         <tr>
-            <td>{{$publication->id}}</td>
+            <td class="celda-contenido">{{$publication->id}}</td>
             <td>{{$publication->tipo}}</td>
             <td>{{$publication->titulo}}</td>
             <td>{{$publication->descripcion}}</td>

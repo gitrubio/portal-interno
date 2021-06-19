@@ -158,78 +158,72 @@
 
     <!-- Start Slider Area -->
     <div id="home" class="slider-area">
-        <div class="bend niceties preview-2">
-            <div id="ensign-nivoslider" class="slides">
-              <img src="img/slider/fondo_perfect.jpg" alt="" title="#slider-direction-0" />
-              {{$variable = 1}}
-              @foreach ($imagenes_slides as $imagen_slide)
-              <img src="{{asset('storage').'/'.$imagen_slide->imagen}}" alt="" title="{{'#slider-direction-'.$variable}}" />
-              {{$variable = $variable +1}}
-              @endforeach
-            </div>
-
-            <!-- direction 0 -->
-            {{$variable = 0}}
-            <div id="{{'slider-direction-'.$variable}}" class="slider-direction slider-one">
-              <div class="container">
-                <div class="row">
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                      <div class="slider-content">
-                        <!-- layer 1 -->
-                        <div class="layer-1-1 hidden-xs wow slideInDown" data-wow-duration="2s" data-wow-delay=".2s">
-                          <h2 class="title1">Bienvenido a la pagina de inicio</h2>
-                        </div>
-                        <!-- layer 2 -->
-                        <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                          <h1 class="title2">Portal Interno PBMC</h1>
-                        </div>
-                        <!-- layer 3 -->
-                        <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
-                          <a class="ready-btn right-btn page-scroll" href="#blog">Todos los anuncios</a>
-                          <a class="ready-btn page-scroll" href="blog">MAS INFO</a>
-                        </div>
-                      </div>
-                    </div>
-                </div>
-              </div>
-          </div>
+      <div class="bend niceties preview-2">
+        <div id="ensign-nivoslider" class="slides">
+          <img src="img/slider/fondo_perfect.jpg" alt="" title="#slider-direction-0" />
+          {{$variable = 1}}
+          @foreach ($imagenes_slides as $imagen_slide)
+          <img src="{{asset('storage').'/'.$imagen_slide->imagen}}" alt="" title="{{'#slider-direction-'.$variable}}" />
           {{$variable = $variable +1}}
-          @foreach ($datos_slides as $dato_slide)
+          @endforeach
+        </div>
 
-          <div id="{{'slider-direction-'.$variable}}" class="slider-direction slider-one">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                  <div class="slider-content">
-                    <!-- layer 1 -->
-                    <div class="layer-1-1 hidden-xs wow slideInDown" data-wow-duration="2s" data-wow-delay=".2s">
-                    <h2 class="title1">{{$dato_slide->titulo}}</h2>
-
-                    </div>
-                    <!-- layer 2 -->
-                    <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                    <h1 class="title2">{{$dato_slide->descripcion}}</h1>
-
-                    </div>
-                    <!-- layer 3 -->
-                    <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
+        <!-- direction 0 -->
+        {{$variable = 0}}
+        <div id="{{'slider-direction-'.$variable}}" class="slider-direction slider-one">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="slider-content">
+                  <!-- layer 1 -->
+                  <div class="layer-1-1 hidden-xs wow slideInDown" data-wow-duration="2s" data-wow-delay=".2s">
+                    <h2 class="title1">Bienvenido a la pagina de inicio</h2>
+                  </div>
+                  <!-- layer 2 -->
+                  <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
+                    <h1 class="title2">Portal Interno PBMC</h1>
+                  </div>
+                  <!-- layer 3 -->
+                  <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
                     <a class="ready-btn right-btn page-scroll" href="#blog">Todos los anuncios</a>
-                    <a class="ready-btn page-scroll" href="{{route('publication.show', $dato_slide->id)}}">MAS INFO</a>
-                    </div>
+                    <a class="ready-btn page-scroll" href="blog">MAS INFO</a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          {{$variable = $variable + 1}}
-
-          @endforeach
-
-
-
-
-
         </div>
+        {{$variable = $variable +1}}
+        @foreach ($datos_slides as $dato_slide)
+
+        <div id="{{'slider-direction-'.$variable}}" class="slider-direction slider-one">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="slider-content">
+                  <!-- layer 1 -->
+                  <div class="layer-1-1 hidden-xs wow slideInDown" data-wow-duration="2s" data-wow-delay=".2s">
+                  <h2 class="title1">{{$dato_slide->titulo}}</h2>
+
+                  </div>
+                  <!-- layer 2 -->
+                  <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
+                  <h1 class="title2">{{$dato_slide->descripcion}}</h1>
+
+                  </div>
+                  <!-- layer 3 -->
+                  <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
+                  <a class="ready-btn right-btn page-scroll" href="#blog">Todos los anuncios</a>
+                  <a class="ready-btn page-scroll" href="{{route('publication.show', $dato_slide->id)}}">MAS INFO</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {{$variable = $variable + 1}}
+        @endforeach
+      </div>
     </div>
     <!-- Start Blog Area -->
     <div id="blog" class="blog-area">
@@ -249,8 +243,8 @@
             <div class="col-md-4 col-sm-4 col-xs-12">
               <div class="single-blog">
                 <div class="single-blog-img">
-                  <a href="{{route('publication.show', $anuncio->id)}}.html">
-                    <img src="{{asset('storage').'/'.$anuncio->imagen}}" alt="">
+                  <a href="{{url('anuncios/'. $anuncio->id)}}.html">
+                    <img class="single-blog-img" src="{{asset('storage').'/'.$anuncio->imagen}}" alt="">
                   </a>
                 </div>
                 <div class="blog-meta">
@@ -259,9 +253,12 @@
                   </span>
                 </div>
                 <div class="blog-text">
-                  <h4>
-                      <a href="{{route('publication.show', $anuncio->id)}}">{{$anuncio->titulo}}</a>
-                  </h4>
+                  <div class="blog-contenedor-titulo">
+                    <h4>
+                      <a class="blog-titulo" href="{{url('anuncios/'. $anuncio->id)}}">{{$anuncio->titulo}}</a>
+                    </h4>
+                  </div>
+                  
                   <div class="blog-contenedor-descripcion">
                     <p>
                       {{$anuncio->descripcion}}.
@@ -310,179 +307,172 @@
     <!-- End Wellcome Area -->
 
     <!-- Start team Area -->
+    
+    <!-- End Team Area -->
+
+    <!-- cumpleaños mes -->
     <div id="team" class="our-team-area area-padding">
       <div class="container">
         <div class="row">
           <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="section-headline text-center">
-              <h2>Proximos Cumpleaños</h2>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="team-top">
-            <div class="col-md-3 col-sm-3 col-xs-12">
-              <div class="single-team-member">
-                <div class="team-img">
-                  <a href="#">
-                      <img src="img/team/1.jpg" alt="">
-                    </a>
-                  <div class="team-social-icon text-center">
-                    <ul>
-                      <li>
-                        <a href="#">
-                            <i class="fa fa-facebook"></i>
-                          </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                            <i class="fa fa-twitter"></i>
-                          </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                            <i class="fa fa-instagram"></i>
-                          </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="team-content text-center">
-                  <h4>Jhon Mickel</h4>
-                  <p>Seo</p>
-                </div>
-              </div>
-            </div>
-            <!-- End column -->
-            <div class="col-md-3 col-sm-3 col-xs-12">
-              <div class="single-team-member">
-                <div class="team-img">
-                  <a href="#">
-                    <img src="img/team/2.jpg" alt="">
-                  </a>
-                  <div class="team-social-icon text-center">
-                    <ul>
-                      <li>
-                        <a href="#">
-                            <i class="fa fa-facebook"></i>
-                          </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                            <i class="fa fa-twitter"></i>
-                          </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                            <i class="fa fa-instagram"></i>
-                          </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="team-content text-center">
-                  <h4>Andrew Arnold</h4>
-                  <p>Web Developer</p>
-                </div>
-              </div>
-            </div>
-            <!-- End column -->
-            <div class="col-md-3 col-sm-3 col-xs-12">
-              <div class="single-team-member">
-                <div class="team-img">
-                  <a href="#">
-                      <img src="img/team/3.jpg" alt="">
-                    </a>
-                  <div class="team-social-icon text-center">
-                    <ul>
-                      <li>
-                        <a href="#">
-                            <i class="fa fa-facebook"></i>
-                          </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                            <i class="fa fa-twitter"></i>
-                          </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                            <i class="fa fa-instagram"></i>
-                          </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="team-content text-center">
-                  <h4>Lellien Linda</h4>
-                  <p><strong>fecha</strong></p>
-                </div>
-              </div>
-            </div>
-            <!-- End column -->
-            <div class="col-md-3 col-sm-3 col-xs-12">
-              <div class="single-team-member">
-                <div class="team-img">
-                  <a href="#">
-                      <img src="img/team/4.jpg" alt="">
-                    </a>
-                  <div class="team-social-icon text-center">
-                    <ul>
-                      <li>
-                        <a href="#">
-                            <i class="fa fa-facebook"></i>
-                          </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                            <i class="fa fa-twitter"></i>
-                          </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                            <i class="fa fa-instagram"></i>
-                          </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="team-content text-center">
-                  <h4>Jhon Powel</h4>
-                  <p>Seo Expert</p>
-                </div>
-              </div>
-            </div>
-            <!-- End column -->
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- End Team Area -->
-
-    <!-- cumpleaños mes -->
-    <div id="cumpleños_mes" class="our-team-area area-padding">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <div class="section-headline text-center">
-              <h2>Cumpleaños</h2>
+              <h2 style="text-transform: capitalize;">Cumpleaños {{$mes}}</h2>
             </div>
           </div>
         </div>
         <div class="row justify-content-md-center">
-          <div class="col-md-2 col-sm-2 col-xs-12"></div> <!--para poder centrar-->
-          <div class="col-md-8 col-sm-8 col-xs-12">
+          <div class="col-md-4 col-sm-4 col-xs-12">
             <div class="list-group">
               @foreach ($cumpleanios as $cumpleanio )
               <!--<div class="list-group-item list-group-item-action ">-->
               <div>
                 <!--<span class="badge badge-pill badge-primary pull-right">{{$cumpleanio['dia']}}</span>-->
                 <h4 style="display: inline-block; color:#003660; margin-right:15px;">{{$cumpleanio['dia']}}</h3>
-                <h4 style="display: inline-block;">{{$cumpleanio['nombre']}}</h4>
+                <h6 style="display: inline-block;">{{$cumpleanio['nombre']}}</h6>
               </div>
               @endforeach
             </div>
           </div>
+            
+          <div class="col-md-7 col-sm-7 col-xs-12">
+            <div class="team-top">
+              <div class="col-md-2 col-sm-2 col-xs-12 contenedor-cumpleaniero">
+                <div class="single-team-member">
+                  <div class="team-img">
+                    <a href="#">
+                        <img src="img/team/1.jpg" alt="">
+                    </a>
+                    <div class="team-social-icon text-center">
+                      <ul>
+                        <li>
+                          <a href="#">
+                              <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                              <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                              <i class="fa fa-instagram"></i>
+                            </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="team-content text-center">
+                    <h6><strong>Linda Paul</strong></h6>
+                    <p>Asistencial</p>
+                  </div>
+                </div>
+              </div>
+              <!-- End column -->
+              <div class="col-md-2 col-sm-2 col-xs-12">
+                <div class="single-team-member">
+                  <div class="team-img">
+                    <a href="#">
+                      <img src="img/team/2.jpg" alt="">
+                    </a>
+                    <div class="team-social-icon text-center">
+                      <ul>
+                        <li>
+                          <a href="#">
+                              <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                              <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                              <i class="fa fa-instagram"></i>
+                            </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="team-content text-center">
+                    <h6><strong>Linda Paul</strong></h6>
+                    <p>Asistencial</p>
+                  </div>
+                </div>
+              </div>
+              <!-- End column -->
+              <div class="col-md-2 col-sm-2 col-xs-12">
+                <div class="single-team-member">
+                  <div class="team-img">
+                    <a href="#">
+                        <img src="img/team/3.jpg" alt="">
+                      </a>
+                    <div class="team-social-icon text-center">
+                      <ul>
+                        <li>
+                          <a href="#">
+                              <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                              <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                              <i class="fa fa-instagram"></i>
+                            </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="team-content text-center">
+                    <h6><strong>Linda Paul</strong></h6>
+                    <p>Asistencial</p>
+                  </div>
+                </div>
+              </div>
+              <!-- End column -->
+              <div class="col-md-2 col-sm-2 col-xs-12">
+                <div class="single-team-member">
+                  <div class="team-img">
+                    <a href="#">
+                        <img src="img/team/4.jpg" alt="">
+                      </a>
+                    <div class="team-social-icon text-center">
+                      <ul>
+                        <li>
+                          <a href="#">
+                              <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                              <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                              <i class="fa fa-instagram"></i>
+                            </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="team-content text-center">
+                    <h6><strong>Linda Paul</strong></h6>
+                    <p>Asistencial</p>
+                  </div>
+                </div>
+              </div>
+              <!-- End column -->
+            </div>
+          </div>
+           
+          </div> <!--para poder centrar-->
+          
         </div>
       </div>
     </div>
