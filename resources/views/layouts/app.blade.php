@@ -7,6 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link href="{{asset('img/favicon_perfect.png')}}" rel="icon">
+
     <title>{{ config('app.name', 'Publicaciones PBMC') }}</title>
 
     <!-- Scripts -->
@@ -18,7 +19,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/publication/index.css') }}" rel="stylesheet">
+
+
 </head>
 <body>
     <div id="app">
