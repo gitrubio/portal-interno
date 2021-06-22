@@ -32,23 +32,37 @@
 
 }
 
-/*.celda-enlace::-webkit-scrollbar-track {
+.celda-documento{
+    width: 200px;
+    max-width : 200px;
+    overflow-x: hidden;
+
+}
+
+.celda-descripcion{
+    height: 70px;
+    max-height : 70px;
+    overflow-y: auto;
+
+}
+
+.celda-descripcion::-webkit-scrollbar-track {
     border: 0.5px solid;
     border-style: inset;
     padding: 2px 0;
     background-color: transparent;
 }
 
-.celda-enlace::-webkit-scrollbar {
-    height: 5px;
+.celda-descripcion::-webkit-scrollbar {
+    width: 5px;
 }
 
-.celda-enlace::-webkit-scrollbar-thumb {
+.celda-descripcion::-webkit-scrollbar-thumb {
     border-radius: 10px;
     box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-    background-color: #fcf8e3;
-    border: 1px solid #000;
+    /*background-color: #fcf8e3;
+    border: 1px solid #000;*/
     border-style: none;
     opacity: 0.1;
 }
-*/
+

@@ -30,7 +30,7 @@
             <td>{{$publication->id}}</td>
             <td>{{$publication->tipo}}</td>
             <td>{{$publication->titulo}}</td>
-            <td>{{$publication->descripcion}}</td>
+            <td><div class="celda-descripcion">{{$publication->descripcion}}</td>
             <td><div class="celda-contenido">{{$publication->contenido}}</div></td>
             <td><div class="celda-enlace">{{$publication->link}}</div></td>
             <td>
@@ -40,7 +40,7 @@
                <!-- <iframe width="150" height="100" frameborder="0" allowfullscreen=""   src="{{$publication->video}}">-->
 
             </td>
-            <td>{{$publication->documento}}</td>
+            <td><div class="celda-documento">{{$publication->documento}}</div></td>
             <td>{{$publication->fecha_inicio}}</td>
             <td>{{$publication->fecha_fin}}</td>
             <td class="col-2">
