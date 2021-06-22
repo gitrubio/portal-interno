@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicationController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\MainController;
+use App\Models\Publication;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -21,6 +23,7 @@ Route::get('/', [MainController::class, 'index']);
 Auth::routes();
 Route::resource('publication', PublicationController::class)->middleware('auth');
 
+
 Route::get('/home', [PublicationController::class, 'index'])->name('home');
 
 Route::resource('publication', PublicationController::class)->middleware('auth');
@@ -31,3 +34,6 @@ Route::group(['middleware' => 'auth'] , function () {
 
 
 Route::get('anuncios/{id}', [MainController::class, 'show']);
+
+
+Route::resource('user', UserController::class);

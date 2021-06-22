@@ -326,9 +326,9 @@
               @foreach ($cumpleanios as $cumpleanio )
               <!--<div class="list-group-item list-group-item-action ">-->
               <div>
-                <!--<span class="badge badge-pill badge-primary pull-right">{{$cumpleanio['dia']}}</span>-->
-                <h4 style="display: inline-block; color:#003660; margin-right:15px;">{{$cumpleanio['dia']}}</h3>
-                <h6 style="display: inline-block;">{{$cumpleanio['nombre']}}</h6>
+                <!--<span class="badge badge-pill badge-primary pull-right">{{$cumpleanio->Dia}}</span>-->
+                <h4 style="display: inline-block; color:#003660; margin-right:15px;">{{$cumpleanio->Dia}}</h3>
+                <h6 style="display: inline-block;">{{$cumpleanio->Empleado}}</h6>
               </div>
               @endforeach
             </div>

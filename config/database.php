@@ -79,9 +79,8 @@ return [
         ],
 
         'sqlsrv' => [
-            //'driver' => 'sqlsrv',
-            'driver' => 'sqlsvr',
-            //'url' => env('192.168.1.95'),
+            'driver' => 'sqlsrv',
+            'url' => env('DATABASE2_URL'),
             'host' => env('DB_HOST2'),
             'port' => env('DB_PORT2'),
             'database' => env('DB_DATABASE2'),

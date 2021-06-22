@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -14,6 +15,9 @@ class UserController extends Controller
     public function index()
     {
         //
+        //
+        $usuarios = User::paginate(5);
+        return view('usuarios.index',compact('usuarios'));
     }
 
     /**
@@ -24,6 +28,7 @@ class UserController extends Controller
     public function create()
     {
         //
+        return view('usuarios.create');
     }
 
     /**
@@ -69,7 +74,7 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         //
-    }
+    } 
 
     /**
      * Remove the specified resource from storage.
