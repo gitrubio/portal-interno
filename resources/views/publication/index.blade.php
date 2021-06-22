@@ -7,7 +7,7 @@
 @if (Session::has('mensaje'))
     {{Session::get('mensaje')}}
 @endif
-<table class="table table-sm table-light">
+<table class="table table-sm table-bordered">
     <thead class="thead-light">
         <tr>
             <th>Id</th>
@@ -36,10 +36,9 @@
             <td>
                 <img src="{{asset('storage').'/'.$publication->imagen}}" width="100" alt="{{$publication->imagen}}">
             </td>
-            <td>
-               <!-- <iframe width="150" height="100" frameborder="0" allowfullscreen=""   src="{{$publication->video}}">-->
 
-            </td>
+            <td><div class="celda-enlace">{{$publication->video}}</div></td>
+
             <td><div class="celda-documento">{{$publication->documento}}</div></td>
             <td>{{$publication->fecha_inicio}}</td>
             <td>{{$publication->fecha_fin}}</td>
