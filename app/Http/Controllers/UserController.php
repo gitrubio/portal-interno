@@ -40,6 +40,14 @@ class UserController extends Controller
     public function store(Request $request)
     {
         //
+        $datos_usuario = $request->except('_token');
+        
+       
+        //User::insert($datos_usuario);
+        User::create($datos_usuario);
+        //return response()->json($datos_usuario);
+
+        return redirect('user')->with('mensaje', 'Usuario creado correctamente.');
     }
 
     /**
@@ -62,6 +70,8 @@ class UserController extends Controller
     public function edit($id)
     {
         //
+        $usuario = User::findOrFail($id);
+        return view('usuarios.edit', compact('usuario'));
     }
 
     /**
@@ -74,6 +84,15 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $datos_usuario = $request->except(['_token', '_method']);
+        User::where('id', '=', $id)->update($datos_usuario);
+        $usuario = User::findOrFail($id);
+        
+        
+        //return view('publication.edit', compact('publication'));
+        //$datos = Publication::paginate(5);
+        return view('usuarios.edit', compact('usuario'))->with('mensaje','Usuario editado');;
+   
     } 
 
     /**
@@ -85,5 +104,8 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+        User::destroy($id);
+
+        return redirect('user')->with('mensaje','Usuario borrado');
     }
 }

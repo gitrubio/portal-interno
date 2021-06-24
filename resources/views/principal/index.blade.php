@@ -162,6 +162,10 @@
         <div id="ensign-nivoslider" class="slides">
           <img src="img/slider/fondo_perfect.jpg" alt="" title="#slider-direction-0" />
           {{$variable = 1}}
+          @if(count($cumpleanieros)>0)
+          <img src="img/slider//tarjeta-cumpleanos.jpg" alt="" title="{{'#slider-direction-'.$variable}}" />
+          {{$variable = $variable +1}}
+          @endif
           @foreach ($imagenes_slides as $imagen_slide)
           <img src="{{asset('storage').'/'.$imagen_slide->imagen}}" alt="" title="{{'#slider-direction-'.$variable}}" />
           {{$variable = $variable +1}}
@@ -194,6 +198,35 @@
           </div>
         </div>
         {{$variable = $variable +1}}
+        @if(count($cumpleanieros)>0)
+          <<div id="{{'slider-direction-'.$variable}}" class="slider-direction slider-one">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <div class="slider-content">
+                    <!-- layer 1 -->
+                    <div class="layer-1-1 hidden-xs wow slideInDown" data-wow-duration="2s" data-wow-delay=".2s">
+                      @foreach ($cumpleanieros as $cumpleaniero )
+                      <h2 class="title1">{{$cumpleaniero}}</h2>    
+                      @endforeach
+                     
+                    </div>
+                    <!-- layer 2 -->
+                    <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
+                      <h1 class="title2">FELIZ CUMPLEAÑOS</h1>
+                    </div>
+                    <!-- layer 3 -->
+                    <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
+                      <a class="ready-btn right-btn page-scroll" href="#team">Cumpleaños {{$mes}}</a>
+                      <!--<a class="ready-btn page-scroll" href="blog">MAS INFO</a>-->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {{$variable = $variable +1}}
+          @endif
         @foreach ($datos_slides as $dato_slide)
 
         <div id="{{'slider-direction-'.$variable}}" class="slider-direction slider-one">
@@ -213,8 +246,8 @@
                   </div>
                   <!-- layer 3 -->
                   <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
-                  <a class="ready-btn right-btn page-scroll" href="#blog">Todos los anuncios</a>
-                  <a class="ready-btn page-scroll" href="{{route('publication.show', $dato_slide->id)}}">MAS INFO</a>
+                  <a class="ready-btn right-btn page-scroll" href="#blog" >Todos los anuncios</a>
+                  <a class="ready-btn page-scroll" href="{{url('anuncios/'. $dato_slide->id)}} " target="_blank">MAS INFO</a>
                   </div>
                 </div>
               </div>

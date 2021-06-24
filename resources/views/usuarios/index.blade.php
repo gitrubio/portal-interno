@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="container">
-<a class="btn btn-primary" href="{{url('publication/create')}}">Crear Nuevo Usuario</a>
+<a class="btn btn-primary" href="{{url('user/create')}}">Crear Nuevo Usuario</a>
 <br>
 
 @if (Session::has('mensaje'))

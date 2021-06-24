@@ -67,21 +67,23 @@ class MainController extends Controller
         $date = new DateTime("now");
         $fecha = $date->format('Y-m-d');
         $mes_actual = date('m');
+        $dia_actual = date('d');
+        
         $imagenes_slides = Publication::select('imagen')
                                         ->where([['tipo','=','anuncio'],['fecha_inicio','<=',$fecha],['fecha_fin', '>',$fecha]])
-                                        ->orderBy('created_at', 'desc')
+                                        ->orderBy('created_at')
                                         ->take(3)
                                         ->get();
         
         $datos_slides = Publication::select('id','titulo', 'descripcion', 'link')
                                     ->where([['tipo','=','anuncio'],['fecha_inicio','<=',$fecha],['fecha_fin', '>',$fecha]])
-                                    ->orderBy('created_at', 'desc')
+                                    ->orderBy('created_at')
                                     ->take(3)
                                     ->get();
         
-        $anuncios = Publication::where('tipo', 'anuncio')->orderBy('created_at', 'desc')->get();
+        $anuncios = Publication::where('tipo', 'anuncio')->orderBy('created_at')->get();
         
-        $documentos = Publication::where('tipo', 'documento')->orderBy('created_at', 'desc')->get();
+        $documentos = Publication::where('tipo', 'documento')->orderBy('created_at')->get();
         
         $consulta_cumpleanios = "SELECT day(FechaNac) Dia , E.Nombre1 +' '+ E.Apellido1+' '+  E.Apellido2 AS Empleado
             FROM nEmpleados E
@@ -90,10 +92,12 @@ class MainController extends Controller
             ORDER BY Dia";
               
         $cumpleanios = DB::connection('sqlsrv')->select($consulta_cumpleanios);
+        $cumpleanieros = $this->buscarCumpleaniosHoy($cumpleanios);
+        //$numero = count($cumpleanieros);
         
-        return view('principal.index', compact('anuncios', 'datos_slides', 'imagenes_slides', 'documentos', 'cumpleanios', 'mes'));
         
-        //return response()->json($cumpleanios);
+        return view('principal.index', compact('anuncios', 'datos_slides', 'imagenes_slides', 'documentos', 'cumpleanieros', 'cumpleanios', 'mes'));
+        //return response()->json($cumpleanieros);
     }
 
     public function show($id){
@@ -101,6 +105,24 @@ class MainController extends Controller
         $anuncio = Publication::select('titulo','descripcion','contenido','imagen','link', 'created_at')->where('id', $id)->first();
         return view('principal.anuncios.anuncio-detalle', compact('anuncio'));
         //return response()->json($anuncio);
+
+    }
+
+    public function buscarCumpleaniosHoy($todos_cumpleanios){
+
+        $dia_actual = 12;
+        $numero_cumpleanieros = 0;
+        foreach($todos_cumpleanios as $cumpleanio){
+
+            if ($cumpleanio->Dia == $dia_actual ){
+
+                $cumpleanieros[$numero_cumpleanieros] = $cumpleanio->Empleado;
+                $numero_cumpleanieros += 1;
+            }
+
+        }
+
+        return $cumpleanieros;
 
     }
 
