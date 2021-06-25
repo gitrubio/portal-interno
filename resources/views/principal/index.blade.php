@@ -82,7 +82,7 @@
                       <a class="page-scroll" href="#team">Cumpleaños</a>
                     </li>
                     <li>
-                      <a class="page-scroll" href="#pricing">Protocolo Covid19</a>
+                      <a class="page-scroll" href="#pricing">Documentos</a>
                     </li>
                     <li id="boton_menu" class="dropdown" onclick="clickMenu()">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menú<span class="caret"></span></a>
@@ -162,7 +162,8 @@
         <div id="ensign-nivoslider" class="slides">
           <img src="img/slider/fondo_perfect.jpg" alt="" title="#slider-direction-0" />
           {{$variable = 1}}
-          @if(count($cumpleanieros)>0)
+          
+          @if(count($cumpleanieros_hoy)>0)
           <img src="img/slider//tarjeta-cumpleanos.jpg" alt="" title="{{'#slider-direction-'.$variable}}" />
           {{$variable = $variable +1}}
           @endif
@@ -170,6 +171,7 @@
           <img src="{{asset('storage').'/'.$imagen_slide->imagen}}" alt="" title="{{'#slider-direction-'.$variable}}" />
           {{$variable = $variable +1}}
           @endforeach
+          
         </div>
 
         <!-- direction 0 -->
@@ -181,43 +183,44 @@
                 <div class="slider-content">
                   <!-- layer 1 -->
                   <div class="layer-1-1 hidden-xs wow slideInDown" data-wow-duration="2s" data-wow-delay=".2s">
-                    <h2 class="title1">Bienvenido a la pagina de inicio</h2>
+                    <h2 class="title1"></h2>
                   </div>
                   <!-- layer 2 -->
                   <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                    <h1 class="title2">Portal Interno PBMC</h1>
+                    <h1 class="title2"></h1>
                   </div>
                   <!-- layer 3 -->
                   <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
-                    <a class="ready-btn right-btn page-scroll" href="#blog">Todos los anuncios</a>
-                    <a class="ready-btn page-scroll" href="blog">MAS INFO</a>
+                    <!--<a class="ready-btn right-btn page-scroll" href="#blog">Todos los anuncios</a>-->
+                    <!--<a class="ready-btn page-scroll" href="blog">MAS INFO</a>-->
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+       
         {{$variable = $variable +1}}
-        @if(count($cumpleanieros)>0)
-          <<div id="{{'slider-direction-'.$variable}}" class="slider-direction slider-one">
+        @if(count($cumpleanieros_hoy)>0)
+          <div id="{{'slider-direction-'.$variable}}" class="slider-direction slider-one">
             <div class="container">
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                   <div class="slider-content">
                     <!-- layer 1 -->
-                    <div class="layer-1-1 hidden-xs wow slideInDown" data-wow-duration="2s" data-wow-delay=".2s">
-                      @foreach ($cumpleanieros as $cumpleaniero )
+                    <div class="layer-1-1 hidden-xs wow slideInDown" style="padding-top=100px;" data-wow-duration="2s" data-wow-delay=".2s">
+                      @foreach ($cumpleanieros_hoy as $cumpleaniero )
                       <h2 class="title1">{{$cumpleaniero}}</h2>    
                       @endforeach
                      
                     </div>
                     <!-- layer 2 -->
                     <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                      <h1 class="title2">FELIZ CUMPLEAÑOS</h1>
+                      <h1 class="title2" style="margin-bottom: 0">FELIZ CUMPLEAÑOS</h1>
                     </div>
                     <!-- layer 3 -->
                     <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
-                      <a class="ready-btn right-btn page-scroll" href="#team">Cumpleaños {{$mes}}</a>
+                      <a class="ready-btn right-btn page-scroll" style="margin-bottom: 20px" href="#team">Ver Cumpleaños {{$mes}}</a>
                       <!--<a class="ready-btn page-scroll" href="blog">MAS INFO</a>-->
                     </div>
                   </div>
@@ -228,7 +231,7 @@
           {{$variable = $variable +1}}
           @endif
         @foreach ($datos_slides as $dato_slide)
-
+        
         <div id="{{'slider-direction-'.$variable}}" class="slider-direction slider-one">
           <div class="container">
             <div class="row">
@@ -255,7 +258,8 @@
           </div>
         </div>
         {{$variable = $variable + 1}}
-        @endforeach
+        @endforeach-->
+        
       </div>
     </div>
     <!-- Start Blog Area -->
@@ -519,18 +523,22 @@
         <div class="row">
           <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="section-headline text-center">
-              <h2>Protocolos Covid-19</h2>
+              <h2>Documentos</h2>
             </div>
           </div>
         </div>
         <div class="row justify-content-md-center">
-          <div class="col-md-3 col-sm-3 col-xs-12"></div> <!--para poder centrar-->
-          <div class="col-md-6 col-sm-6 col-xs-12">
+          <!--<div class="col-md-3 col-sm-3 col-xs-12"></div> para poder centrar-->
+          <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="pri_table_list active">
-              <h3>Encuentre aqui los documentos</h3>
+              <h3>Encuentre aquí los documentos</h3>
               <ol>
                 @foreach ($documentos as $documento )
-                <li class="check"><a href="{{url(asset('storage').'/'.$documento->documento)}}" target="_blank"><h6>{{$documento->titulo}}</h5></a></li>
+                <li class="check" >
+                  <a  href="{{url(asset('storage').'/'.$documento->documento)}}" target="_blank">
+                    <h6><strong>{{$documento->titulo}}</strong> : {{$documento->descripcion}}</h5>
+                  </a>
+                </li>
                 @endforeach
               </ol>
             </div>

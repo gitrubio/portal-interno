@@ -2114,7 +2114,7 @@ div#preloader {
   z-index: 222;
 }
 
-.ready-btn:hover {
+.ready-btn:hover { 
   color: #fff;
   background: #003660;
   border: 1px solid #003660;

@@ -56,7 +56,7 @@ class PublicationController extends Controller
     
         ]);
 
-        if($request->hasFile('imagen')){
+        if($request->hasFile('imagen')){ 
             $datos_publicacion['imagen'] = request()->file('imagen')->store('uploads', 'public');
 
         }
