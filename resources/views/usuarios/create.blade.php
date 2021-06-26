@@ -8,11 +8,11 @@
                     {{Session::get('mensaje')}}
                 @endif
                 <div class="card-header">
-                    <h2>{{ __('Nueva Publicación') }}</h2>
+                    <h2>{{ __('Nuevo Usuario') }}</h2> 
                 </div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ url('publication') }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ url('user') }}" enctype="multipart/form-data">
                         @csrf
                         @include('usuarios.form');
                     </form>

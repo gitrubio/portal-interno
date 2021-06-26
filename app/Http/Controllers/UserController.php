@@ -71,7 +71,8 @@ class UserController extends Controller
     {
         //
         $usuario = User::findOrFail($id);
-        return view('usuarios.edit', compact('usuario'));
+        return view('usuarios.edit', compact('usuario')); 
+        //return response()->json($usuario);
     }
 
     /**

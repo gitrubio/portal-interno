@@ -27,11 +27,11 @@
             <td>{{$usuario->name}}</td>
             <td>{{$usuario->email}}</td>
             <td class="col-2">
-                <a class="btn btn-success d-inline" href="{{url('publication/'.$usuario->id.'/edit')}}">
+                <a class="btn btn-success d-inline" href="{{url('user/'.$usuario->id.'/edit')}}">
                     Editar
                 </a>
 
-                <form  action="{{url('/publication/'.$usuario->id)}}" class="d-inline" method="POST" >
+                <form  action="{{url('/user/'.$usuario->id)}}" class="d-inline" method="POST" >
                     @csrf
                     {{method_field('DELETE')}}
                     <input class="btn btn-danger d-inline" type="submit" onclick="return confirm('¿Quieres eliminar?')" value="Borrar">

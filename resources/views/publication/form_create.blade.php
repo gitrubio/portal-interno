@@ -9,7 +9,6 @@
             <option value="anuncio">Anuncio</option>
             <option value="cumpleaños">Cumpleaños</option>
             <option value="documento">Documento</option> 
-
         </select>
 
 

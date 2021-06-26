@@ -1,11 +1,12 @@
 @extends('layouts.app')
-
 @section('content') 
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Registro de Usuario') }}</div>
+                <div class="card-header">
+                    {{ __('Registro de Usuario') }}
+                </div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
@@ -49,7 +50,7 @@
                                     <option value="administrador">Administrador</option>
                                     <option value="publicador">Publicador</option>
                                     
-                                   
+                                
 
                                 </select>
                                 @error('rol')
@@ -98,7 +99,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary"> 
                                     {{ __('Registrarse') }}
                                 </button>
                             </div>

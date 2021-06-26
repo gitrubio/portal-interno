@@ -21,19 +21,10 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', [MainController::class, 'index']); 
 
 Auth::routes();
-Route::resource('publication', PublicationController::class)->middleware('auth');
-
-
 Route::get('/home', [PublicationController::class, 'index'])->name('home');
-
 Route::resource('publication', PublicationController::class)->middleware('auth');
-
 Route::group(['middleware' => 'auth'] , function () {
     Route::get('/home', [PublicationController::class, 'index'])->name('home');
 });
-
-
 Route::get('anuncios/{id}', [MainController::class, 'show']);
-
-
 Route::resource('user', UserController::class);

@@ -3,6 +3,7 @@
 <div class="container">
 <a class="btn btn-primary" href="{{url('publication/create')}}">Crear Nueva Publicacion</a>
 <br>
+<br>
 
 @if (Session::has('mensaje'))
     {{Session::get('mensaje')}}

@@ -1,3 +1,4 @@
+@extends('layouts.app')
 @section('content')
 <div class="container">
     <div class="row justify-content-center"> 
@@ -7,11 +8,11 @@
                     {{Session::get('mensaje')}}
                 @endif
                 <div class="card-header">
-                    <h2>{{ __('Editar Publicación') }}</h2>
+                    <h2>{{ __('Editar Usuario') }}</h2> 
                 </div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ url('publication/'.$publication->id) }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ url('user/'.$usuario->id) }}">
                         @csrf
                         {{method_field('PATCH')}}
                         @include('usuarios.form'); 

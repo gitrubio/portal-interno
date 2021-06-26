@@ -210,9 +210,8 @@
                     <!-- layer 1 -->
                     <div class="layer-1-1 hidden-xs wow slideInDown" style="padding-top=100px;" data-wow-duration="2s" data-wow-delay=".2s">
                       @foreach ($cumpleanieros_hoy as $cumpleaniero )
-                      <h2 class="title1">{{$cumpleaniero}}</h2>    
+                      <h4 class="title1">{{$cumpleaniero}}</h4>    
                       @endforeach
-                     
                     </div>
                     <!-- layer 2 -->
                     <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
