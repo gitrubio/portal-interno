@@ -1,25 +1,5 @@
-<div class="form-group row">
-    <label for="tipo" class="col-md-4 col-form-label text-md-right">{{ __('Tipo') }}</label>
+<input id="tipo" type="hidden" class="form-control @error('titulo') is-invalid @enderror" name="tipo" value="anuncio" required autocomplete="titulo" autofocus>
 
-    
-    <div class="col-md-6">
-
-        <select id="tipo" class="form-control" @error('tipo') is-invalid @enderror name="tipo" value="{{ old('tipo') }}" required autocomplete="tipo" autofocus>
-            <option value="">-- Seleccionar --</option>
-            <option value="anuncio">Anuncio</option>
-            <option value="cumpleaños">Cumpleaños</option>
-            <option value="documento">Documento</option>
-            
-        </select>
-
-        
-        @error('tipo')
-            <span class="invalid-feedback" role="alert"> 
-                <strong>{{ $message }}</strong>
-            </span>
-        @enderror
-    </div>
-</div>
 
 <div class="form-group row">
     <label for="titulo" class="col-md-4 col-form-label text-md-right">{{ __('Titulo') }}</label>
@@ -157,12 +137,14 @@
 
 
 <div class="form-group row mb-0">
-    <div class="col-md-6 offset-md-4">
-        <button type="submit" class="btn btn-primary"> 
+    <div class="col-md-4"></div>
+    
+    <div class="col-md-2">
+        <button type="submit" class="btn btn-primary" > 
             {{ __('Publicar') }}
         </button>
     </div>
-    <div class="col-md-6 offset-md-4">
+    <div class="col-md-2">
         <a class="btn btn-success" href="{{url('publication')}}">
             {{ __('Regresar') }}
         </a>
