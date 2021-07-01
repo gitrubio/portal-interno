@@ -60,6 +60,7 @@ class PublicationController extends Controller
             $datos_publicacion['imagen'] = request()->file('imagen')->store('uploads', 'public');
 
         }
+        
         if($request->hasFile('video')){
             $datos_publicacion['video'] = request()->file('video')->store('uploads', 'public');
 

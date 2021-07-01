@@ -68,22 +68,26 @@ class MainController extends Controller
         $fecha = $date->format('Y-m-d');
         $mes_actual = date('m');
         $dia_actual = date('d');
-        
+        $dia_mes = $dia_actual." de ".$mes;
+
         $imagenes_slides = Publication::select('imagen')
-                                        ->where([['tipo','=','anuncio'],['fecha_inicio','<=',$fecha],['fecha_fin', '>',$fecha]])
+                                        ->where([/*['tipo','=','anuncio'],*/['fecha_inicio','<=',$fecha],['fecha_fin', '>',$fecha]])
                                         ->orderBy('created_at')
                                         ->take(3)
                                         ->get();
         
         $datos_slides = Publication::select('id','titulo', 'descripcion', 'link')
-                                    ->where([['tipo','=','anuncio'],['fecha_inicio','<=',$fecha],['fecha_fin', '>',$fecha]])
+                                    ->where([/*['tipo','=','anuncio'],*/['fecha_inicio','<=',$fecha],['fecha_fin', '>',$fecha]])
                                     ->orderBy('created_at')
                                     ->take(3)
                                     ->get();
         
-        $anuncios = Publication::where('tipo', 'anuncio')->orderBy('created_at')->get();
+        $anuncios = Publication::where('tipo', 'anuncio')
+                                ->orderBy('created_at')
+                                ->take(9)
+                                ->get();
         
-        $documentos = Publication::where('tipo', 'documento')->orderBy('created_at')->get();
+        $documentos = Publication::where('tipo', 'documento')->orderBy('created_at')->take(9)->get();
         
         $consulta_cumpleanios = "SELECT day(FechaNac) Dia , E.Nombre1 +' '+ E.Apellido1+' '+  E.Apellido2 AS Empleado
             FROM nEmpleados E
@@ -97,8 +101,8 @@ class MainController extends Controller
         //$numero = count($cumpleanieros);
         
         
-        return view('principal.index', compact('anuncios', 'datos_slides', 'imagenes_slides', 'documentos', 'cumpleanieros_hoy', 'cumpleanios', 'mes'));
-        //return response()->json($cumpleanieros);
+        return view('principal.index', compact('anuncios', 'datos_slides', 'imagenes_slides', 'documentos', 'cumpleanieros_hoy', 'cumpleanios', 'mes', 'dia_mes'));
+        //return response()->json($imagenes_slides);
     }
 
     public function show($id){
@@ -111,8 +115,10 @@ class MainController extends Controller
 
     public function buscarCumpleaniosHoy($todos_cumpleanios){
 
-        $dia_actual = 12;
+        $dia_actual = date('d');
         $numero_cumpleanieros = 0;
+        $cumpleanieros = array();
+        
         foreach($todos_cumpleanios as $cumpleanio){
 
             if ($cumpleanio->Dia == $dia_actual ){

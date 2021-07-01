@@ -51,11 +51,16 @@ Supports Thumbs: true
   font-weight: 700;
 }
 
+.title2{
+
+  font-size: 18px;
+}
+
 .layer-1-2 h1 {
   color: #fff;
-  font-size: 40px;
+  font-size: 20px;
   font-weight: 700;
-  line-height: 60px;
+  line-height: 30px;
 }
 
 .layer-1-3 {

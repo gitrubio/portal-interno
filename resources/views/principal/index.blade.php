@@ -164,11 +164,15 @@
           {{$variable = 1}}
           
           @if(count($cumpleanieros_hoy)>0)
-          <img src="img/slider//tarjeta-cumpleanos.jpg" alt="" title="{{'#slider-direction-'.$variable}}" />
+          <img src="img/slider/tarjeta-cumpleanos.jpg" alt="" title="{{'#slider-direction-'.$variable}}" />
           {{$variable = $variable +1}}
           @endif
           @foreach ($imagenes_slides as $imagen_slide)
-          <img src="{{asset('storage').'/'.$imagen_slide->imagen}}" alt="" title="{{'#slider-direction-'.$variable}}" />
+            @if(is_null($imagen_slide->imagen))
+              <img src="img/slider/slider_nuevo_documento.jpg" alt="slider_nuevo_documento" title="{{'#slider-direction-'.$variable}}" />
+            @else
+              <img src="{{asset('storage').'/'.$imagen_slide->imagen}}" alt="" title="{{'#slider-direction-'.$variable}}" />
+            @endif  
           {{$variable = $variable +1}}
           @endforeach
           
@@ -183,7 +187,7 @@
                 <div class="slider-content">
                   <!-- layer 1 -->
                   <div class="layer-1-1 hidden-xs wow slideInDown" data-wow-duration="2s" data-wow-delay=".2s">
-                    <h2 class="title1"></h2>
+                    <h2 class="title1">Bienvenido a Portal de Inicio</h2>
                   </div>
                   <!-- layer 2 -->
                   <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
@@ -191,7 +195,7 @@
                   </div>
                   <!-- layer 3 -->
                   <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
-                    <!--<a class="ready-btn right-btn page-scroll" href="#blog">Todos los anuncios</a>-->
+                    <a class="ready-btn right-btn page-scroll" href="#blog">Todos los anuncios</a>
                     <!--<a class="ready-btn page-scroll" href="blog">MAS INFO</a>-->
                   </div>
                 </div>
@@ -209,6 +213,7 @@
                   <div class="slider-content">
                     <!-- layer 1 -->
                     <div class="layer-1-1 hidden-xs wow slideInDown" style="padding-top=100px;" data-wow-duration="2s" data-wow-delay=".2s">
+                      <!--<h2 class="title1 nombre-cumpleaniero">{{$dia_mes}}</h2>-->
                       @foreach ($cumpleanieros_hoy as $cumpleaniero )
                       <h2 class="title1 nombre-cumpleaniero">{{$cumpleaniero}}</h2>    
                       @endforeach
@@ -244,6 +249,7 @@
                   <!-- layer 2 -->
                   <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
                   <h1 class="title2">{{$dato_slide->descripcion}}</h1>
+                  <!--<p class="title2">{{$dato_slide->descripcion}}</p>-->
 
                   </div>
                   <!-- layer 3 -->
@@ -257,7 +263,7 @@
           </div>
         </div>
         {{$variable = $variable + 1}}
-        @endforeach-->
+        @endforeach
         
       </div>
     </div>
