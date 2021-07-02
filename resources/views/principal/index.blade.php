@@ -365,7 +365,7 @@
         <div class="row justify-content-md-center">
           <div class="col-md-4 col-sm-4 col-xs-12">
             <div class="list-group">
-              @foreach ($cumpleanios as $cumpleanio )
+              @foreach ( $cumpleanios as $cumpleanio )
               <!--<div class="list-group-item list-group-item-action ">-->
               <div>
                 <!--<span class="badge badge-pill badge-primary pull-right">{{$cumpleanio->Dia}}</span>-->
@@ -382,8 +382,9 @@
                 <div class="single-team-member">
                   <div class="team-img">
                     <a href="#">
-                        <img src="img/team/1.jpg" alt="">
+                      <img src="img/team/1.jpg" alt="">
                     </a>
+                    <!--
                     <div class="team-social-icon text-center">
                       <ul>
                         <li>
@@ -403,6 +404,7 @@
                         </li>
                       </ul>
                     </div>
+                  -->
                   </div>
                   <div class="team-content text-center">
                     <h6><strong>Linda Paul</strong></h6>

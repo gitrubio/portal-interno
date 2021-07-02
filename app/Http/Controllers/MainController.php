@@ -98,7 +98,9 @@ class MainController extends Controller
         $cumpleanios = DB::connection('sqlsrv')->select($consulta_cumpleanios);
         $cumpleanieros_hoy = $this->buscarCumpleaniosHoy($cumpleanios);
         $cumpleaños_fotos = Publication::select('')->where('tipo','cumpleanios');
+
         //$numero = count($cumpleanieros);
+        
         
         
         return view('principal.index', compact('anuncios', 'datos_slides', 'imagenes_slides', 'documentos', 'cumpleanieros_hoy', 'cumpleanios', 'mes', 'dia_mes'));

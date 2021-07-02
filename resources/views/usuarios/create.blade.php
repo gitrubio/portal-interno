@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="container">
-    <div class="row justify-content-center"> 
+    <div class="row justify-content-center">  
         <div class="col-md-11">
             <div class="card">
                 @if (Session::has('mensaje'))
@@ -12,7 +12,7 @@
                 </div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ url('user') }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                         @csrf
                         @include('usuarios.form');
                     </form>

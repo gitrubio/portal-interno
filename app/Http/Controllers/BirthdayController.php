@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers; 
 
 use App\Models\Birthday;
 use Illuminate\Http\Request;
@@ -36,6 +36,23 @@ class BirthdayController extends Controller
     public function store(Request $request)
     {
         //
+        $datos_cumpleanios = $request->except('_token');
+        
+        $validatedData = $request->validate([
+            'imagen' => 'image|mimes:jpg,png,jpeg,gif,svg|max:6144',
+                
+        ]);
+
+        if($request->hasFile('imagen')){ 
+            $datos_cumpleanios['imagen'] = request()->file('imagen')->store('uploads', 'public');
+
+        }
+        
+        //Publication::insert($datos_publicacion);
+        Birthday::create($datos_cumpleanios);
+        //return response()->json($datos_publicacion);
+
+        return redirect('publication')->with('mensaje', 'Cumpleaños creado correctamente.');
     }
 
     /**
