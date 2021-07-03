@@ -99,12 +99,12 @@ class MainController extends Controller
         $cumpleanieros_hoy = $this->buscarCumpleaniosHoy($cumpleanios);
         $cumpleaños_fotos = Publication::select('')->where('tipo','cumpleanios');
 
-        //$numero = count($cumpleanieros);
+        //$numero = count($cumpleanieros); 
         
         
         
         return view('principal.index', compact('anuncios', 'datos_slides', 'imagenes_slides', 'documentos', 'cumpleanieros_hoy', 'cumpleanios', 'mes', 'dia_mes'));
-        //return response()->json($imagenes_slides);
+        //return response()->json($documentos);
     }
 
     public function show($id){

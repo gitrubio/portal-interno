@@ -34,17 +34,24 @@
                                 </span>
                             @enderror
                         </div>
-                    </div>
+                    </div> 
                                        
                     <form id="form" style="display: none;" method="POST" action="{{ url('publication') }}" enctype="multipart/form-data"> 
                         @csrf
                         @include('publication.form'); 
                     </form>
 
+                    <form id="form_documento" style="display: none;" method="POST" action="{{ url('publication') }}" enctype="multipart/form-data"> 
+                        @csrf
+                        @include('publication.form_documento'); 
+                    </form>
+
                     <form id="form_cumpleanios" style="display: none;" method="POST" action="{{ url('birthday') }}" enctype="multipart/form-data"> 
                         @csrf
                         @include('publication.form_cumpleanios'); 
                     </form>
+
+                    
                 </div>
                 
             </div>

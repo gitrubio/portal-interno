@@ -1,8 +1,8 @@
-<input id="tipo" type="hidden" class="form-control @error('tipo') is-invalid @enderror" name="tipo" value ="anuncio" required autocomplete="tipo" autofocus>
+<input id="tipo" type="hidden" class="form-control @error('tipo') is-invalid @enderror" name="tipo" value ="documento" required autocomplete="tipo" autofocus>
 
 
 <div class="form-group row">
-    <label for="titulo" class="col-md-4 col-form-label text-md-right">{{ __('Titulo') }}</label>
+    <label for="titulo" class="col-md-4 col-form-label text-md-right">{{ __('Titulo Documento') }}</label>
 
     <div class="col-md-6">
         <input id="titulo" type="text" class="form-control @error('titulo') is-invalid @enderror" name="titulo" value="{{isset($publication->titulo)?$publication->titulo:old('titulo')}}" required autocomplete="titulo" autofocus>
@@ -63,20 +63,7 @@
     </div>
 </div>
 
-<div class="form-group row">
-    <label for="video" class="col-md-4 col-form-label text-md-right">{{ __('Video') }}</label>
 
-    <div class="col-md-6">
-        
-        <input id="video" type="file" class="form-control @error('video') is-invalid @enderror" name="video"  autocomplete="video">
-
-        @error('video')
-            <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-            </span>
-        @enderror
-    </div>
-</div>
 
 <div class="form-group row">
     <label for="documento" class="col-md-4 col-form-label text-md-right">{{ __('Documento') }}</label>

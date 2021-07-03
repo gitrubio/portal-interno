@@ -6,3 +6,5 @@ function clickMenu() {
       document.getElementById("contenedor_opciones_menu").style.visibility = "visible";
     }
 }
+
+document.getElementById("mini-anuncio-enlace").href =

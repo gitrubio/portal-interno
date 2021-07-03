@@ -306,14 +306,10 @@
                       {{$anuncio->descripcion}}.
                     </p>
                   </div>
-                  <!--
-                  <p >
-                    {{$anuncio->descripcion}}.
-                  </p>
-                  -->
+                  
                 </div>
                 <span>
-                    <a href="{{$anuncio->link}}" class="ready-btn" target="_blank">VER ENLACE EXTERNO</a>
+                    <a id="mini-anuncio-enlace" href="{{$anuncio->link}}" class="ready-btn" style="pointer-events: none; cursor:default; opacity:0.6;" target="_blank">VER ENLACE EXTERNO</a>
                 </span>
               </div>
               <!-- Start single blog -->
