@@ -103,8 +103,8 @@ class MainController extends Controller
         
         
         
-        return view('principal.index', compact('anuncios', 'datos_slides', 'imagenes_slides', 'documentos', 'cumpleanieros_hoy', 'cumpleanios', 'mes', 'dia_mes'));
-        //return response()->json($documentos);
+        //return view('principal.index', compact('anuncios', 'datos_slides', 'imagenes_slides', 'documentos', 'cumpleanieros_hoy', 'cumpleanios', 'mes', 'dia_mes'));
+        return response()->json($cumpleanios);
     }
 
     public function show($id){

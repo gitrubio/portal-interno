@@ -309,7 +309,7 @@
                   
                 </div>
                 <span>
-                    <a id="mini-anuncio-enlace" href="{{$anuncio->link}}" class="ready-btn" style="pointer-events: none; cursor:default; opacity:0.6;" target="_blank">VER ENLACE EXTERNO</a>
+                    <a id ="{{$anuncio->id}}-enlace-mini-anuncio" href="{{$anuncio->link}}" class="ready-btn mini-anuncio-enlace"  target="_blank">VER ENLACE EXTERNO</a>
                 </span>
               </div>
               <!-- Start single blog -->
