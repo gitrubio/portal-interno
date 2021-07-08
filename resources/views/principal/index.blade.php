@@ -361,7 +361,7 @@
         <div class="row justify-content-md-center">
           <div class="col-md-4 col-sm-4 col-xs-12">
             <div class="list-group">
-              @foreach ( $cumpleanios as $cumpleanio )
+              @foreach ( $todos_cumpleanios as $cumpleanio )
               <!--<div class="list-group-item list-group-item-action ">-->
               <div>
                 <!--<span class="badge badge-pill badge-primary pull-right">{{$cumpleanio->Dia}}</span>-->

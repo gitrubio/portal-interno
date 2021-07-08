@@ -42,6 +42,15 @@ return [
             'visibility' => 'public',
         ],
 
+        'ftp' => [
+
+            'driver'   => 'ftp',
+            'host' => env('FTP_HOST'),
+            'username' => env('FTP_USERNAME'),
+            'password' => env('FTP_PASSWORD'),
+            'root' => 'StorageGD/anexos',
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),

@@ -35,7 +35,7 @@ class PublicationController extends Controller
     {
         //
         
-        return view('publication.create');
+        return view('publication.create'); 
     }
 
     /**

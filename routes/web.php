@@ -5,6 +5,7 @@ use App\Http\Controllers\PublicationController;
 use App\Http\Controllers\BirthdayController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\ExcelController;
 use App\Models\Publication;
 use Illuminate\Support\Facades\Auth;
 
@@ -19,7 +20,8 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', [MainController::class, 'index']); 
+Route::get('/', [MainController::class, 'index']);
+//Route::get('/', [ExcelController::class, 'buscarCumpleanieros']); 
 
 Auth::routes();
 //Route::get('/home', [PublicationController::class, 'index'])->name('home');

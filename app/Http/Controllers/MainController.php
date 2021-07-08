@@ -4,9 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\PublicationController;
+use App\Http\Controllers\ExcelController;
 use App\Models\Publication;
 use Illuminate\Support\Facades\DB;
+
 use DateTime;
+
+
 
 class MainController extends Controller
 {
@@ -98,13 +102,20 @@ class MainController extends Controller
         $cumpleanios = DB::connection('sqlsrv')->select($consulta_cumpleanios);
         $cumpleanieros_hoy = $this->buscarCumpleaniosHoy($cumpleanios);
         $cumpleaños_fotos = Publication::select('')->where('tipo','cumpleanios');
+                                        
+         
+        $excel_controller = new ExcelController();
+        $cumpleanios_n_n = $excel_controller->buscarCumpleanieros();
+        
+        $todos_cumpleanios = array_merge($cumpleanios, $cumpleanios_n_n);
+        
 
-        //$numero = count($cumpleanieros); 
-        
-        
-        
-        //return view('principal.index', compact('anuncios', 'datos_slides', 'imagenes_slides', 'documentos', 'cumpleanieros_hoy', 'cumpleanios', 'mes', 'dia_mes'));
-        return response()->json($cumpleanios);
+         $todos_cumpleanios = $this->ordernarCumpleanios($todos_cumpleanios);
+      
+        return view('principal.index', compact('anuncios', 'datos_slides', 'imagenes_slides', 'documentos', 'cumpleanieros_hoy', 'todos_cumpleanios', 'mes', 'dia_mes'));
+        //return response()->json($cumpleanios_n_n);
+        //return response()->json($todos_cumpleanios);
+        //return $cumpleanios;
     }
 
     public function show($id){
@@ -135,5 +146,18 @@ class MainController extends Controller
 
     }
 
-    
+    public function ordernarCumpleanios($todos_cumpleanios){
+
+        $longitud = count($todos_cumpleanios);
+         for ($i = 0; $i < $longitud; $i++) {
+             for ($j = 0; $j < $longitud - 1; $j++) {
+                if ($todos_cumpleanios[$j]->Dia > $todos_cumpleanios[$j + 1]->Dia) {
+                   $temporal = $todos_cumpleanios[$j];
+                   $todos_cumpleanios[$j] = $todos_cumpleanios[$j + 1];
+                   $todos_cumpleanios[$j + 1] = $temporal;
+                }
+            }
+        }
+        return $todos_cumpleanios; 
+    }
 }
