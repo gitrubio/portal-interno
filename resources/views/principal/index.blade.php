@@ -91,51 +91,51 @@
                         <div id="contenedor_opciones_menu" class="contenedor_opciones_menu dropdown-content">
                           <h3 class="titulo_enlace_menu">
                              <strong>
-                              Perfect Body
+                              
                             </strong>
                           </h3>
-                          <a id="enlace_menu" class="enlace_menu" href="http://192.168.1.95/ADMISIONES/index.aspx" target="_blank">
-                            Admisiones
+                          <a id="enlace_menu" class="enlace_menu"  href="http://192.168.1.95/ADMISIONES/index.aspx" target="_blank">
+                            <i class="fa fa-file-text fa-fw"></i>Admisiones
                           </a>
                           <a id="enlace_menu" class="enlace_menu" href="http://192.168.1.95/ActivosFijos/index.aspx" target="_blank">
-                            Activos Fijos
+                            <i class="fa fa-bar-chart fa-fw"></i>Activos Fijos
                           </a>
-                          <a id="enlace_menu" class="enlace_menu" href="http://192.168.1.95/CITAS/index.aspx">
-                            Citas</a>
+                          <a id="enlace_menu" class="enlace_menu"href="http://192.168.1.95/CITAS/index.aspx">
+                            <i class="fa fa-plus-square fa-fw" aria-hidden="true"></i>Citas</a>
                           <a id="enlace_menu" class="enlace_menu" href="http://192.168.1.95/contratacion/Index.aspx" target="_blank">
-                              Contratación</a>
+                            <i class="fa fa-handshake-o fa-fw" aria-hidden="true"></i> Contratación</a>
                           <a id="enlace_menu" class="enlace_menu" href="http://192.168.1.95/SIOS/" target="_blank">
-                              SIOS</a>
+                            <i class="fa fa-user fa-fw" aria-hidden="true"></i>  SIOS</a>
                           <a id="enlace_menu" class="enlace_menu" href="http://192.168.1.95/ORDENES/index.aspx" target="_blank">
-                              Orden Externa</a>
+                            <i class="fa fa-file-text fa-fw" aria-hidden="true"></i>  Orden Externa</a>
                           <a id="enlace_menu" class="enlace_menu" href="http://192.168.1.100:8080/oviyam2/" target="_blank">
-                              RX-Oviyam</a>
+                            <i class="fa fa-plus-square fa-fw" aria-hidden="true"></i>  RX-Oviyam</a>
                           <a id="enlace_menu" class="enlace_menu" href="http://192.168.1.95/gerencial/index.aspx" target="_blank">
-                              Gerencial</a>
+                            <i class="fa fa-plus-square fa-fw" aria-hidden="true"></i>  Gerencial</a>
                           <a id="enlace_menu" class="enlace_menu" href="http://192.168.1.52:8686/Incidencias/public/login" target="_blank">
-                              Incidencias</a>
+                            <i class="fa fa-plus-square fa-fw" aria-hidden="true"></i>  Incidencias</a>
                           <a id="enlace_menu" class="enlace_menu" href="http://192.168.1.52:8686/Gestion_Documental/public/login" target="_blank">
-                              Gestion Documental</a>
+                            <i class="fa fa-plus-square fa-fw" aria-hidden="true"></i>  Gestion Documental</a>
                           <a id="enlace_menu" class="enlace_menu" href="http://192.168.1.52:8686/Inspeccion_perfect_Body/public/login" target="_blank">
-                              Inspección</a>
+                            <i class="fa fa-plus-square fa-fw" aria-hidden="true"></i>  Inspección</a>
                           <a id="enlace_menu" class="enlace_menu" href="http://192.168.1.52:8686/SST_Perfect-Body/public/" target="_blank">
-                              C.P.C.PBMC</a>
+                            <i class="fa fa-plus-square fa-fw" aria-hidden="true"></i>  C.P.C.PBMC</a>
 
                           <h3 class="titulo_enlace_menu">
                             <strong>
-                               Otros Enlaces
+                              <hr>
                              </strong>
                            </h3>
                               <a id="enlace_menu" class="enlace_menu" href="https://mipres.sispro.gov.co/MIPRESNOPBS/Login.aspx" target="_blank">
-                                  Mipres SISPRO</a>
+                                <i class="fa fa-plus-square fa-fw" aria-hidden="true"></i>  Mipres SISPRO</a>
                               <a id="enlace_menu" class="enlace_menu" href="https://imagenes.rras-sas.com/viewer/index.php" target="_blank">
-                                  Radiologos S.A.S</a>
+                                <i class="fa fa-plus-square fa-fw" aria-hidden="true"></i>  Radiologos S.A.S</a>
                               <a id="enlace_menu" class="enlace_menu" href="https://resultados.patologosasociados.com/" target="_blank">
-                                  Patologos Asociados</a>
+                                <i class="fa fa-plus-square fa-fw" aria-hidden="true"></i>  Patologos Asociados</a>
                               <a id="enlace_menu" class="enlace_menu" href="https://www.colmenaseguros.com/Paginas/EncuestaCovid.aspx" target="_blank">
-                                  Encuesta Colmena</a>
+                                <i class="fa fa-plus-square fa-fw" aria-hidden="true"></i>  Encuesta Colmena</a>
                               <a id="enlace_menu" class="enlace_menu" href="https://drive.google.com/drive/folders/15VjXdXO1VjGVTE-TJrNMcfFSWxHn741r?usp=sharing" target="_blank">
-                                  Fichas INS
+                                <i class="fa fa-plus-square fa-fw" aria-hidden="true"></i>  Fichas INS
                               </a>
                               <a id="enlace_menu" class="enlace_menu" href="{{url('/login')}}" target="_blank">
                                   Administrar
@@ -281,14 +281,18 @@
           </div>
           <div class="row">
             <!-- Start Left Blog -->
+          
             @foreach ($anuncios as $anuncio)
-            <div class="col-md-4 col-sm-4 col-xs-12">
+            
+          
+            <div class="col-md-4 col-sm-4 col-xs-12 contenedor-mini-anuncio">
               <div class="single-blog">
-                <div class="single-blog-img">
+                <div id="contenedor-imagen" class="single-blog-img">
                   <a href="{{url('anuncios/'. $anuncio->id)}}.html">
                     <img class="single-blog-img" src="{{asset('storage').'/'.$anuncio->imagen}}" alt="">
                   </a>
                 </div>
+                <hr class="divisor-mini-anuncio">
                 <div class="blog-meta">
                   <span class="date-type">
                     <i class="fa fa-calendar"></i>{{$anuncio->fecha_inicio}} / {{$anuncio->fecha_fin}}
@@ -374,12 +378,13 @@
             
           <div class="col-md-7 col-sm-7 col-xs-12">
             <div class="team-top">
-              <div class="col-md-2 col-sm-2 col-xs-12 contenedor-cumpleaniero">
-                <div class="single-team-member">
+              @foreach ($cumpleanos_con_fotos as $cumpleano_con_foto )
+              <div class="col-md-2 col-sm-2 col-xs-12">
+               <div class="single-team-member">
                   <div class="team-img">
-                    <a href="#">
-                      <img src="img/team/1.jpg" alt="">
-                    </a>
+                    
+                      <img class="foto-cumpleaños" src="{{asset('storage').'/'.$cumpleano_con_foto->foto}}" alt="">
+                    
                     <!--
                     <div class="team-social-icon text-center">
                       <ul>
@@ -403,111 +408,13 @@
                   -->
                   </div>
                   <div class="team-content text-center">
-                    <h6><strong>Linda Paul</strong></h6>
-                    <p>Asistencial</p>
+                    <h6><strong>{{$cumpleano_con_foto->nombre}}</strong></h6>
+                    <p>{{$cumpleano_con_foto->area}}</p>
                   </div>
                 </div>
-              </div>
-              <!-- End column -->
-              <div class="col-md-2 col-sm-2 col-xs-12">
-                <div class="single-team-member">
-                  <div class="team-img">
-                    <a href="#">
-                      <img src="img/team/2.jpg" alt="">
-                    </a>
-                    <div class="team-social-icon text-center">
-                      <ul>
-                        <li>
-                          <a href="#">
-                              <i class="fa fa-facebook"></i>
-                            </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                              <i class="fa fa-twitter"></i>
-                            </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                              <i class="fa fa-instagram"></i>
-                            </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="team-content text-center">
-                    <h6><strong>Linda Paul</strong></h6>
-                    <p>Asistencial</p>
-                  </div>
-                </div>
-              </div>
-              <!-- End column -->
-              <div class="col-md-2 col-sm-2 col-xs-12">
-                <div class="single-team-member">
-                  <div class="team-img">
-                    <a href="#">
-                        <img src="img/team/3.jpg" alt="">
-                      </a>
-                    <div class="team-social-icon text-center">
-                      <ul>
-                        <li>
-                          <a href="#">
-                              <i class="fa fa-facebook"></i>
-                            </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                              <i class="fa fa-twitter"></i>
-                            </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                              <i class="fa fa-instagram"></i>
-                            </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="team-content text-center">
-                    <h6><strong>Linda Paul</strong></h6>
-                    <p>Asistencial</p>
-                  </div>
-                </div>
-              </div>
-              <!-- End column -->
-              <div class="col-md-2 col-sm-2 col-xs-12">
-                <div class="single-team-member">
-                  <div class="team-img">
-                    <a href="#">
-                        <img src="img/team/4.jpg" alt="">
-                      </a>
-                    <div class="team-social-icon text-center">
-                      <ul>
-                        <li>
-                          <a href="#">
-                              <i class="fa fa-facebook"></i>
-                            </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                              <i class="fa fa-twitter"></i>
-                            </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                              <i class="fa fa-instagram"></i>
-                            </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="team-content text-center">
-                    <h6><strong>Linda Paul</strong></h6>
-                    <p>Asistencial</p>
-                  </div>
-                </div>
-              </div>
-              <!-- End column -->
+               </div>
+              @endforeach
+             
             </div>
           </div>
            
@@ -535,6 +442,31 @@
           <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="pri_table_list active">
               <h3>Encuentre aquí los documentos</h3>
+              <div class=".table-responsive">
+                <table class="table">
+                  
+                  <thead>
+                    <tr>
+                      <th scope="col">Publicación</th>
+                      <th scope="col">Nombre</th>
+                      <th scope="col">Descripción</th>
+                      <th scope="col">Ver/Descargar</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @foreach ($documentos as $documento )
+                    <tr>
+                      <td class="celda-cumpleanios">{{date_format($documento->updated_at, 'Y-m-d')}}</td>
+                      <!--<th scope="row">{{$documento->id}}</th>-->
+                      <td class="celda-cumpleanios"><strong>{{$documento->titulo}}</strong></td>
+                      <td class="celda-cumpleanios">{{$documento->descripcion}}</td>
+                      <td class="celda-cumpleanios-descarga"><a  href="{{url(asset('storage').'/'.$documento->documento)}}" target="_blank"><i class="fa fa-download"></i></td>
+                    </tr>
+                    @endforeach
+                  </tbody>
+                </table>
+              </div>
+              <!--
               <ol>
                 @foreach ($documentos as $documento )
                 <li class="check" >
@@ -544,6 +476,7 @@
                 </li>
                 @endforeach
               </ol>
+            -->
             </div>
           </div>
 
@@ -578,7 +511,7 @@
                     <h2>Departamento de Tecnologia</h2>
                   </div>
 
-                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.</p>
+                  <p></p>
                   <div class="footer-icons">
                     <ul>
                       <li>

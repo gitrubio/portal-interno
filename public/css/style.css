@@ -266,7 +266,7 @@ div#preloader {
   width: 100%;
   /*heigth: auto*/
   height: 120px;
-  background: rgba(0, 0, 0, 0.40);
+  background: rgba(0, 0, 0, 0.534);
   z-index: 9;
 }
 
@@ -1255,6 +1255,23 @@ div#preloader {
 /* 11. Pricing Area
 /*----------------------------------------*/
 
+.celda-cumpleanios
+{
+ text-align: left;
+  max-width: 100px;
+ overflow: hidden;
+ text-overflow: ellipsiss;
+ white-space: nowrap;
+}
+.celda-cumpleanios-descarga{
+
+  text-align: center;
+  max-width: 100px;
+ overflow: hidden;
+ text-overflow: ellipsiss;
+ white-space: nowrap;
+}
+
 .pricing-area {
   background: rgba(0, 0, 0, 0.02) none repeat scroll 0 0;
 }
@@ -1496,7 +1513,15 @@ div#preloader {
 
 /*  13.Blog Area
 /*--------------------------------*/
-
+.contenedor-mini-anuncio{
+  
+  border-radius: 1cm;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #444;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.336);
+  margin: 0px 0px 5px 5px;
+}
 .blog-area {
   height: auto;
   width: 100%;
@@ -1660,10 +1685,19 @@ div#preloader {
 }
 
 .single-blog-img{
-
   height: 180px;
   max-height: 180px;
+  position: relative;
+  
+  z-index: -1;
+  
 }
+
+.divisor-mini-anuncio{
+  border: 1px solid #444;
+
+}
+
 
 .blog-contenedor-titulo{
 
@@ -2477,9 +2511,9 @@ background-color: rgb(110,110,110);
     visibility: hidden;
     position: absolute;
     /*background-color: rgba(0, 0, 0, 0.2);*/
-    background-color: #1a1a1a;
+    background-color: #16161681;
     min-width: 230px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,1);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.336);
     z-index: 10000;
   }
 #enlace_menu {
@@ -2489,7 +2523,8 @@ background-color: rgb(110,110,110);
     margin-bottom: 0px;
     text-decoration: none;
     font-size: 18px;
-    text-align: center;
+    padding-left: 5px;
+    text-align: left;
 }
 #enlace_menu:hover {
     background: #003660;
@@ -2499,6 +2534,11 @@ background-color: rgb(110,110,110);
 .dropdown-content a:hover {
   background-color: #003660;
   color: white;
+}
+.foto-cumpleaños{
+  
+  cursor: default;
+  
 }
 
 /*--------------------------------*/

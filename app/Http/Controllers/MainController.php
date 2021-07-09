@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\PublicationController;
 use App\Http\Controllers\ExcelController;
+use App\Models\Birthday;
 use App\Models\Publication;
 use Illuminate\Support\Facades\DB;
 
@@ -82,7 +83,7 @@ class MainController extends Controller
         
         $datos_slides = Publication::select('id','titulo', 'descripcion', 'link')
                                     ->where([/*['tipo','=','anuncio'],*/['fecha_inicio','<=',$fecha],['fecha_fin', '>',$fecha]])
-                                    ->orderBy('created_at')
+                                    ->orderBy('created_at', 'desc')
                                     ->take(3)
                                     ->get();
         
@@ -91,7 +92,7 @@ class MainController extends Controller
                                 ->take(9)
                                 ->get();
         
-        $documentos = Publication::where('tipo', 'documento')->orderBy('created_at')->take(9)->get();
+        $documentos = Publication::where('tipo', 'documento')->orderBy('created_at', 'desc')->take(9)->get();
         
         $consulta_cumpleanios = "SELECT day(FechaNac) Dia , E.Nombre1 +' '+ E.Apellido1+' '+  E.Apellido2 AS Empleado
             FROM nEmpleados E
@@ -101,7 +102,10 @@ class MainController extends Controller
               
         $cumpleanios = DB::connection('sqlsrv')->select($consulta_cumpleanios);
         $cumpleanieros_hoy = $this->buscarCumpleaniosHoy($cumpleanios);
-        $cumpleaños_fotos = Publication::select('')->where('tipo','cumpleanios');
+       /* $cumpleanos_con_fotos = Birthday::select('*')
+                                        ->where('MONTH(fecha)','=',$mes_actual)
+                                         ->get(); */
+        $cumpleanos_con_fotos = Birthday::whereMonth('fecha',$mes_actual)->get();
                                         
          
         $excel_controller = new ExcelController();
@@ -112,7 +116,7 @@ class MainController extends Controller
 
          $todos_cumpleanios = $this->ordernarCumpleanios($todos_cumpleanios);
       
-        return view('principal.index', compact('anuncios', 'datos_slides', 'imagenes_slides', 'documentos', 'cumpleanieros_hoy', 'todos_cumpleanios', 'mes', 'dia_mes'));
+        return view('principal.index', compact('anuncios', 'datos_slides', 'imagenes_slides', 'documentos', 'cumpleanieros_hoy', 'todos_cumpleanios', 'mes', 'dia_mes', 'cumpleanos_con_fotos'));
         //return response()->json($cumpleanios_n_n);
         //return response()->json($todos_cumpleanios);
         //return $cumpleanios;
