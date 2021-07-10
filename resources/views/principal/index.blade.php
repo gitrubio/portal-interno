@@ -105,21 +105,21 @@
                           <a id="enlace_menu" class="enlace_menu" href="http://192.168.1.95/contratacion/Index.aspx" target="_blank">
                             <i class="fa fa-handshake-o fa-fw" aria-hidden="true"></i> Contratación</a>
                           <a id="enlace_menu" class="enlace_menu" href="http://192.168.1.95/SIOS/" target="_blank">
-                            <i class="fa fa-user fa-fw" aria-hidden="true"></i>  SIOS</a>
+                            <i class="fa fa-user-md fa-fw" aria-hidden="true"></i>  SIOS</a>
                           <a id="enlace_menu" class="enlace_menu" href="http://192.168.1.95/ORDENES/index.aspx" target="_blank">
-                            <i class="fa fa-file-text fa-fw" aria-hidden="true"></i>  Orden Externa</a>
+                            <i class="fa fa-file-text-o fa-fw" aria-hidden="true"></i>  Orden Externa</a>
                           <a id="enlace_menu" class="enlace_menu" href="http://192.168.1.100:8080/oviyam2/" target="_blank">
-                            <i class="fa fa-plus-square fa-fw" aria-hidden="true"></i>  RX-Oviyam</a>
+                            <i class="fa fa-hospital-o fa-fw" aria-hidden="true"></i>  RX-Oviyam</a>
                           <a id="enlace_menu" class="enlace_menu" href="http://192.168.1.95/gerencial/index.aspx" target="_blank">
-                            <i class="fa fa-plus-square fa-fw" aria-hidden="true"></i>  Gerencial</a>
+                            <i class="fa fa-sitemap fa-fw" aria-hidden="true"></i>  Gerencial</a>
                           <a id="enlace_menu" class="enlace_menu" href="http://192.168.1.52:8686/Incidencias/public/login" target="_blank">
-                            <i class="fa fa-plus-square fa-fw" aria-hidden="true"></i>  Incidencias</a>
+                            <i class="fa fa-edit fa-fw" aria-hidden="true"></i>  Incidencias</a>
                           <a id="enlace_menu" class="enlace_menu" href="http://192.168.1.52:8686/Gestion_Documental/public/login" target="_blank">
-                            <i class="fa fa-plus-square fa-fw" aria-hidden="true"></i>  Gestion Documental</a>
+                            <i class="fa fa-archive fa-fw" aria-hidden="true"></i>  Gestion Documental</a>
                           <a id="enlace_menu" class="enlace_menu" href="http://192.168.1.52:8686/Inspeccion_perfect_Body/public/login" target="_blank">
-                            <i class="fa fa-plus-square fa-fw" aria-hidden="true"></i>  Inspección</a>
+                            <i class="fa fa-clipboard fa-fw" aria-hidden="true"></i>  Inspección</a>
                           <a id="enlace_menu" class="enlace_menu" href="http://192.168.1.52:8686/SST_Perfect-Body/public/" target="_blank">
-                            <i class="fa fa-plus-square fa-fw" aria-hidden="true"></i>  C.P.C.PBMC</a>
+                            <i class="fa fa-pencil fa-fw" aria-hidden="true"></i>  C.P.C.PBMC</a>
 
                           <h3 class="titulo_enlace_menu">
                             <strong>
@@ -127,18 +127,18 @@
                              </strong>
                            </h3>
                               <a id="enlace_menu" class="enlace_menu" href="https://mipres.sispro.gov.co/MIPRESNOPBS/Login.aspx" target="_blank">
-                                <i class="fa fa-plus-square fa-fw" aria-hidden="true"></i>  Mipres SISPRO</a>
+                                <i class="fa fa-user-md fa-fw" aria-hidden="true"></i>  Mipres SISPRO</a>
                               <a id="enlace_menu" class="enlace_menu" href="https://imagenes.rras-sas.com/viewer/index.php" target="_blank">
-                                <i class="fa fa-plus-square fa-fw" aria-hidden="true"></i>  Radiologos S.A.S</a>
+                                <i class="fa fa-thumb-tack fa-fw" aria-hidden="true"></i>  Radiologos S.A.S</a>
                               <a id="enlace_menu" class="enlace_menu" href="https://resultados.patologosasociados.com/" target="_blank">
-                                <i class="fa fa-plus-square fa-fw" aria-hidden="true"></i>  Patologos Asociados</a>
+                                <i class="fa fa-pencil fa-fw" aria-hidden="true"></i>  Patologos Asociados</a>
                               <a id="enlace_menu" class="enlace_menu" href="https://www.colmenaseguros.com/Paginas/EncuestaCovid.aspx" target="_blank">
-                                <i class="fa fa-plus-square fa-fw" aria-hidden="true"></i>  Encuesta Colmena</a>
+                                <i class="fa fa-bar-chart-o fa-fw" aria-hidden="true"></i>  Encuesta Colmena</a>
                               <a id="enlace_menu" class="enlace_menu" href="https://drive.google.com/drive/folders/15VjXdXO1VjGVTE-TJrNMcfFSWxHn741r?usp=sharing" target="_blank">
-                                <i class="fa fa-plus-square fa-fw" aria-hidden="true"></i>  Fichas INS
+                                <i class="fa fa-file-text-o fa-fw" aria-hidden="true"></i>  Fichas INS
                               </a>
                               <a id="enlace_menu" class="enlace_menu" href="{{url('/login')}}" target="_blank">
-                                  Administrar
+                                <i class="fa fa-lock fa-fw" aria-hidden="true"></i>  Administrar
                               </a>
                             </div>
                       <!--</ul>-->
@@ -379,7 +379,7 @@
           <div class="col-md-7 col-sm-7 col-xs-12">
             <div class="team-top">
               @foreach ($cumpleanos_con_fotos as $cumpleano_con_foto )
-              <div class="col-md-2 col-sm-2 col-xs-12">
+              <div class="col-md-2 col-sm-2 col-xs-12 single-team-member-contenedor">
                <div class="single-team-member">
                   <div class="team-img">
                     
@@ -390,8 +390,8 @@
                       <ul>
                         <li>
                           <a href="#">
-                              <i class="fa fa-facebook"></i>
-                            </a>
+                            <i class="fa fa-facebook"></i>
+                          </a>
                         </li>
                         <li>
                           <a href="#">

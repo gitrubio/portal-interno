@@ -863,9 +863,16 @@ div#preloader {
   transform: scale(1.2);
 }
 
+.single-team-member-contenedor{
+
+  padding-left: 5px;
+  padding:5px;
+}
+
 .single-team-member {
   border: 1px solid #ddd;
 }
+
 
 .team-left-text h4 {
   color: #fff;
