@@ -13,6 +13,17 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/form_create.js') }}" defer></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" defer></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js" defer></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js" defer></script>
+
+    <script>
+       $(document).ready(function() {
+        $('#tabla_anuncios').DataTable(); } );
+        //$('#tabla_anuncios').DataTable();
+        console.log("hola");
+    </script>
+
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -21,7 +32,9 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/publication/index.css') }}" rel="stylesheet">
+    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
+    @yield('css')
 
 </head>
 <body>
@@ -45,7 +58,7 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
-                           
+
                             @if (Route::has('login'))
                                     <!--
                                     <li class="nav-item">
@@ -53,16 +66,16 @@
                                     </li>
                                     -->
                                 @endif
-    
+
                                 @if (Route::has('register'))
-                                <!--    
+                                <!--
                                 <li class="nav-item">
                                         <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                     </li>
                                 -->
                                 @endif
                             @else
-                            
+
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                    {{ Auth::user()->username }}
@@ -90,5 +103,9 @@
             @yield('content')
         </main>
     </div>
+
+
+    @yield('js')
+
 </body>
 </html>

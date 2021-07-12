@@ -1,11 +1,10 @@
 td
 {
- max-width: 100px;
- overflow: hidden;
- text-overflow: ellipsiss;
- white-space: nowrap;
-}
-
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsiss;
+    white-space: nowrap;
+   }
 
 /*.celda-contenido{
     height: 40px;

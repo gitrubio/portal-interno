@@ -1,23 +1,23 @@
 <?php
 
-namespace App\Http\Controllers; 
+namespace App\Http\Controllers;
 
 use App\Models\Publication;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Photo;
 
-class PublicationController extends Controller 
+class PublicationController extends Controller
 {
     /**
-     * Display a listing of the resource. 
+     * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
         //
-        $datos = Publication::paginate(5);
+        $datos = Publication::all();
         return view('publication.index',compact('datos'));
         //$publications = Publication::latest()->paginate(5);
 
@@ -27,15 +27,15 @@ class PublicationController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource. 
+     * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function create()
     {
         //
-        
-        return view('publication.create'); 
+
+        return view('publication.create');
     }
 
     /**
@@ -48,20 +48,20 @@ class PublicationController extends Controller
     {
         //
         $datos_publicacion = $request->except('_token');
-        
+
         $validatedData = $request->validate([
-           
+
             'imagen' => 'image|mimes:jpg,png,jpeg,gif,svg|max:6144',
             'video' => 'mimes:mp4,mov,ogg,qt|max:204800',
             'documento' => 'mimes:txt,doc,docx,xls,xlsx,pdf|max:20480',
-    
+
         ]);
 
-        if($request->hasFile('imagen')){ 
+        if($request->hasFile('imagen')){
             $datos_publicacion['imagen'] = request()->file('imagen')->store('uploads', 'public');
 
         }
-        
+
         if($request->hasFile('video')){
             $datos_publicacion['video'] = request()->file('video')->store('uploads', 'public');
 
@@ -119,16 +119,16 @@ class PublicationController extends Controller
 
         if($request->hasFile('imagen')){
             $publication = Publication::findOrFail($id);
-            
+
             Storage::delete('public/'.$publication->imagen);
-            
+
             $validatedData = $request->validate([
                 'imagen' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:6144',
-        
+
             ]);
-            
+
             $datos_publicacion['imagen'] = request()->file('imagen')->store('uploads', 'public');
-            
+
 
         }
         Publication::where('id', '=', $id)->update($datos_publicacion);
