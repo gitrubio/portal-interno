@@ -80,7 +80,7 @@
 
 
     <script>
-       /* $(document).ready(function() {
+        /*$(document).ready(function() {
         $('#tabla_anuncios').DataTable(); } );*/
         $('#tabla_anuncios').DataTable({
             responsive:true,

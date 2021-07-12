@@ -115,7 +115,7 @@ class PublicationController extends Controller
     {
         //return view('publication.index',compact('datos'));
 
-        $datos_publicacion = $request->except(['_token', '_method']);
+        $datos_publicacion = $request->except(['_token', '_method']); 
 
         if($request->hasFile('imagen')){
             $publication = Publication::findOrFail($id);

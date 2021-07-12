@@ -12,7 +12,7 @@
                 </div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ url('user') }}" enctype="multipart/form-data">
                         @csrf
                         @include('usuarios.form');
                     </form>

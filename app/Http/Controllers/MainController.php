@@ -105,7 +105,7 @@ class MainController extends Controller
        /* $cumpleanos_con_fotos = Birthday::select('*')
                                         ->where('MONTH(fecha)','=',$mes_actual)
                                          ->get(); */
-        $cumpleanos_con_fotos = Birthday::whereMonth('fecha',$mes_actual)->get();
+        $cumpleanos_con_fotos = Birthday::whereMonth('fecha',$mes_actual)->orderBy('fecha')->get();
                                         
          
         $excel_controller = new ExcelController();

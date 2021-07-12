@@ -16,7 +16,7 @@ class UserController extends Controller
     {
         //
         //
-        $usuarios = User::paginate(5);
+        $usuarios = User::all();
         return view('usuarios.index',compact('usuarios'));
     }
 
@@ -41,13 +41,14 @@ class UserController extends Controller
     {
         //
         $datos_usuario = $request->except('_token');
-        
-       
+        $password_no_cript = $datos_usuario['password'];
+        $datos_usuario['password'] = bcrypt($password_no_cript);
         //User::insert($datos_usuario);
         User::create($datos_usuario);
+        
         //return response()->json($datos_usuario);
 
-        return redirect('user')->with('mensaje', 'Usuario creado correctamente.');
+        return redirect('user')->with('mensaje', 'Usuario creado correctamente.'); 
     }
 
     /**
