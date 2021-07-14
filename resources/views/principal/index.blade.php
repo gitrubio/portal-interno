@@ -31,10 +31,11 @@
 
     <!-- Main Stylesheet File -->
     <link href="css/style.css" rel="stylesheet">
-
+    <link href="css/mini-anuncio.css" rel="stylesheet">
 
     <!-- Responsive Stylesheet File -->
     <link href="css/responsive.css" rel="stylesheet">
+    
 
     <!-- =======================================================
       Theme Name: eBusiness
@@ -285,44 +286,43 @@
             <!-- Start Left Blog -->
           
             @foreach ($anuncios as $anuncio)
-                      
-            <div class="col-md-4 col-sm-4 col-xs-12 contenedor-mini-anuncio">
-              <div class="single-blog">
-                <a href="{{url('anuncios/'. $anuncio->id)}}/show">
-                <div id="contenedor-imagen" class="single-blog-img">
-                  
-                  <img class="single-blog-img" src="{{asset('storage').'/'.$anuncio->imagen}}" alt="">
-                  
-                </div>
-                <hr class="divisor-mini-anuncio">
-                <div class="blog-meta">
-                  <span class="date-type">
-                    <i class="fa fa-calendar"></i>{{$anuncio->fecha_inicio}} / {{$anuncio->fecha_fin}}
-                  </span>
-                </div>
-                <div class="blog-text">
-                  <div class="blog-contenedor-titulo">
-                    <h4>
-                      <a class="blog-titulo" href="{{url('anuncios/'. $anuncio->id)}}">{{$anuncio->titulo}}</a>
-                    </h4>
-                  </div>
-                  
-                  <div class="blog-contenedor-descripcion">
-                    <p>
-                      {{$anuncio->descripcion}}.
-                    </p>
-                  </div>
-                  
-                </div>
-              </a>
-                <span>
-                    <a id ="{{$anuncio->id}}-enlace-mini-anuncio" href="{{$anuncio->link}}" class="ready-btn mini-anuncio-enlace"  target="_blank">VER ENLACE EXTERNO</a>
-                </span>
+            <!-- Start single blog -->
+            <div class="card tarjeta-anuncio"> 
+              <div class="card-header">
+                <img src="{{asset('storage').'/'.$anuncio->imagen}}" alt="rover" />
               </div>
-              <!-- Start single blog -->
+              
+              <div class="card-body">
+                
+                <span class="date-type" style="display:inline;">
+                  <i class="fa fa-calendar"></i>{{$anuncio->fecha_inicio}} / {{$anuncio->fecha_fin}}
+                </span>
+                <span class="tag tag-usuario" style="display:inline;">Techno</span>
+                <div class="card-titulo">
+                  <h4 >
+                    {{$anuncio->titulo}}
+                  </h4>
+                </div>
+                <div class="card-contenedor-descripcion">
+                  <p >
+                    {{$anuncio->descripcion}}
+                  </p>
+                </div>
+                
+                <div class="user">
+                  <a href="{{url('anuncios/'. $anuncio->id)}}" target="_blank" class="tag tag-blue">Mas info</a>
+                  <a id ="{{$anuncio->id}}-enlace-mini-anuncio" href="{{$anuncio->link}}" target="_blank" class="tag tag-blue enlace-card">Ver enlace</a> 
+                </div>
+              </div>
             </div>
             @endforeach
           </div>
+           
+          
+          
+          
+          <!--</div>-->
+          
         </div>
       </div>
     </div>

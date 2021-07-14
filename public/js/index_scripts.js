@@ -6,7 +6,7 @@ function clickMenu() {
       document.getElementById("contenedor_opciones_menu").style.visibility = "visible";
     }
 }
- enlaces = document.getElementsByClassName("mini-anuncio-enlace");
+ enlaces = document.getElementsByClassName("enlace-card");
  numero_enlaces = enlaces.length;
  console.log(numero_enlaces);
  console.log(enlaces[0].href);

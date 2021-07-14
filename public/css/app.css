@@ -2446,6 +2446,16 @@ fieldset:disabled a.btn {
   background-color: #227dc7;
   border-color: #2176bd;
 }
+.btn-ver-cumpleaños {
+  color: #fff;
+  background-color: #3490dc;
+  border-color: #3490dc;
+}
+.btn-ver-cumpleaños:hover {
+  color: #fff;
+  background-color: #227dc7;
+  border-color: #2176bd;
+}
 .btn-primary:focus, .btn-primary.focus {
   color: #fff;
   background-color: #227dc7;

@@ -864,7 +864,7 @@ div#preloader {
 }
 
 .single-team-member-contenedor{
-
+  max-height: 344px;
   padding-left: 5px;
   padding:5px;
 }
@@ -1529,6 +1529,7 @@ div#preloader {
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.336);
   margin: 0px 0px 5px 5px;
 }
+
 .blog-area {
   height: auto;
   width: 100%;
@@ -1617,10 +1618,7 @@ div#preloader {
   letter-spacing: 1px;
 }
 
-.blog-contenedor-descripcion{
-  height: 100px;
-  overflow-y: scroll;
-}
+
 
 .blog-contenedor-descripcion::-webkit-scrollbar-track {
   /*border: 1px solid #000;*/
@@ -2543,7 +2541,7 @@ background-color: rgb(110,110,110);
   color: white;
 }
 .foto-cumpleaños{
-  
+  max-height: 224px;
   cursor: default;
   
 }
