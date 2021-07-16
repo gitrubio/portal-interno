@@ -1,5 +1,7 @@
 <input id="tipo" type="hidden" class="form-control @error('tipo') is-invalid @enderror" name="tipo" value ="anuncio" required autocomplete="tipo" autofocus>
 
+<input id="usuario_nombre" type="hidden" class="form-control @error('tipo') is-invalid @enderror" name="usuario_nombre" value="{{Auth::user()->username}}" required autocomplete="tipo" autofocus>
+
 
 <div class="form-group row">
     <label for="titulo" class="col-md-4 col-form-label text-md-right">{{ __('Titulo') }}</label>

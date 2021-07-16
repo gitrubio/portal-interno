@@ -8,6 +8,9 @@
 @section('content')
 <div class="container">
 <a class="btn btn-primary" href="{{url('user/create')}}">Crear Nuevo Usuario</a>
+  <a class="btn btn-success" href="{{url('publication')}}" style="margin-left: 5px">
+            {{ __('Regresar') }} </a>
+  
 <br>
 
 @if (Session::has('mensaje'))

@@ -8,7 +8,10 @@
 @section('content')
 <div class="container"> 
     <a class="btn btn-primary" href="{{url('publication/create')}}">Crear Nueva Publicacion</a>
-    <a class="btn btn-ver-cumpleaños"  href="{{url('birthday')}}">Ver Cumpleaños</style></a>
+    <a class="btn btn-ver-cumpleaños" style="background-color: #cf3b79; color: white" href="{{url('birthday')}}">Ver Cumpleaños</a>
+    @if (Auth::user()->rol == "administrador")
+    <a class="btn btn-usuarios btn-primary" style="float: right" href="{{url('user')}}">administra usuarios</a>
+      @endif
     <br>
     <br>
 
@@ -19,14 +22,16 @@
         <thead class="thead-light">
             <tr>
                 <!--<th>Id</th>-->
+                <th>usuario</th>
                 <th>Tipo</th>
                 <th>Titulo</th>
                 <th>Descripcion</th>
-                <th>Contenido</th>
+                
                 <th>Enlace</th>
-                <th>Foto</th>
-                <!--<th>Video</th>-->
-                <th>Documento</th>
+                <th>Anexo</th>
+             
+               
+                
                 <th>Inicio</th>
                 <th>Fin</th>
                 <th>Acciones</th>
@@ -36,18 +41,35 @@
             @foreach ($datos as $publication)
             <tr>
                 <!--<td>{{$publication->id}}</td>-->
+                <td>{{$publication->usuario_nombre}}</td>
                 <td>{{$publication->tipo}}</td>
                 <td>{{$publication->titulo}}</td>
                 <td><div class="celda-descripcion">{{$publication->descripcion}}</td>
-                <td><div class="celda-contenido">{{$publication->contenido}}</div></td>
+          
                 <td><div class="celda-enlace">{{$publication->link}}</div></td>
+                @if (!is_null($publication->imagen))
                 <td>
                     <img src="{{asset('storage').'/'.$publication->imagen}}" width="100" alt="{{$publication->imagen}}">
                 </td>
+                  
+                @endif
+                @if (!is_null($publication->documento))
+                
+                    
+                    <td><div class="celda-documento">{{$publication->documento}}</div></td>                  
+                  
+                @endif
+                @if (!is_null($publication->video))
+                
+                    
+                        <td><div class="celda-enlace">{{$publication->video}}</div></td>                 
+                
+                @endif
+                
 
                 <!--<td><div class="celda-enlace">{{$publication->video}}</div></td>-->
 
-                <td><div class="celda-documento">{{$publication->documento}}</div></td>
+                {{--  <td><div class="celda-documento">{{$publication->documento}}</div></td>  --}}
                 <td>{{$publication->fecha_inicio}}</td>
                 <td>{{$publication->fecha_fin}}</td>
                 <td class="">
@@ -105,7 +127,8 @@
             "paginate":{
                 "next": "siguiente",
                 "previous" : "anterior"
-            }
+            },
+           
 
         }
         });

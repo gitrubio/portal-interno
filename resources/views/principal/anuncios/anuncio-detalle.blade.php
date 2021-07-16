@@ -100,7 +100,7 @@
   <!-- Start Bottom Header -->
   <div class="header-bg page-area">
     <!--<div class="home-overly"></div>-->
-    <div class="container">
+    <!--<div class="container">
       <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12">
           <div class="slider-content text-center">
@@ -115,7 +115,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div>-->
   </div>
   <!-- END Header -->
   <div class="blog-page area-padding">
@@ -138,9 +138,16 @@
                   <!--<span><i class="fa fa-comments-o"></i> <a href="#">6 comments</a></span>-->
                 </div>
                 <div><p style="font-size: 20px">{{$anuncio->descripcion}}</p></div>
+                
+                @if (is_null($anuncio->imagen))
+                <img src="../img/slider/slider_nuevo_documento.jpg" alt="slider_nuevo_documento" title="{{'#slider-direction-1'}}" />
+                @else
                 <div class="post-thumbnail">
                   <img src="{{asset('storage').'/'.$anuncio->imagen}}" alt="{{$anuncio->titulo}}" />
-                </div>
+                </div>  
+              
+                @endif
+               
                 <div class="post-information">
                   <div class="entry-content">
                     <p style="font-size: 20px">{{$anuncio->contenido}}</p>

@@ -17,7 +17,7 @@
     <label for="username" class="col-md-4 col-form-label text-md-right">{{ __('Nombre de Usuario') }}</label>
 
     <div class="col-md-6">
-        <input id="username" type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ isset($usuario->name)?$usuario->name:old('username') }}" required autocomplete="username" autofocus>
+        <input id="username" type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ isset($usuario->username)?$usuario->username:old('username') }}" required autocomplete="username" autofocus>
 
         @error('username')
             <span class="invalid-feedback" role="alert">
@@ -31,7 +31,7 @@
     <label for="username" class="col-md-4 col-form-label text-md-right">{{ __('Rol') }}</label>
 
     <div class="col-md-6">
-        <select id="rol" type="text" class="form-control @error('rol') is-invalid @enderror" name="rol" value="{{ isset($usuario->name)?$usuario->name:old('rol') }}" required autocomplete="rol" autofocus>
+        <select id="rol" type="text" class="form-control @error('rol') is-invalid @enderror" name="rol" value="{{ isset($usuario->rol)?$usuario->rol:old('rol') }}" required autocomplete="rol" autofocus>
         <option value="">-- Seleccionar --</option>
             <option value="administrador">Administrador</option>
             <option value="publicador">Publicador</option>
@@ -48,7 +48,7 @@
     <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Correo') }}</label>
 
     <div class="col-md-6">
-        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ isset($usuario->name)?$usuario->name:old('email') }}" required autocomplete="email">
+        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ isset($usuario->email)?$usuario->email:old('email') }}" required autocomplete="email">
 
         @error('email')
             <span class="invalid-feedback" role="alert">
@@ -62,12 +62,12 @@
     <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Contraseña') }}</label>
 
     <div class="col-md-6">
-        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" value="{{isset($usuario->name)?$usuario->name:old('password')}}" required autocomplete="new-password">
+        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password"  required autocomplete="new-password">
 
         @error('password')
-            <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-            </span>
+            <br>
+                <strong style="color: red">{{ $message }}</strong>
+            <br>
         @enderror
     </div>
 </div>
@@ -76,7 +76,12 @@
     <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirme Contraseña') }}</label>
 
     <div class="col-md-6">
-        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" value ="{{isset($usuario->name)?$usuario->name:old('passwordgit')}}" required autocomplete="new-password">
+        <input id="password-confirm" type="password" class="form-control" name="password_confirmation"  required autocomplete="new-password">
+        @error('password_confirmation')
+        <br>
+            <strong style="color: red">{{ $message }}</strong>
+            <br>
+    @enderror
     </div>
 </div>
 
@@ -85,6 +90,13 @@
         <button type="submit" class="btn btn-primary">
             {{ __('Registrarse') }}
         </button>
+    </div>
+</div>
+<div class="form-group row mb-0">
+    <div class="col-md-6 offset-md-4">
+        <a class="btn btn-success" href="{{url('user')}}">
+            {{ __('Regresar') }}
+        </a>
     </div>
 </div>
                  

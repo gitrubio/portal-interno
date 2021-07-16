@@ -7,54 +7,46 @@
 @endsection
 @section('content')
 <div class="container"> 
-    <a class="btn btn-primary" href="{{url('publication/create')}}">Ver Publicaciones</a>
+    <a class="btn btn-primary" href="{{url('publication')}}">Ver Publicaciones</a>
     <br>
     <br>
 
     @if (Session::has('mensaje'))
         {{Session::get('mensaje')}}
     @endif
-    <table id="tabla_anuncios" class="table table-sm table-bordered">
+    <table id="tabla_cumpleanios" class="table table-sm table-bordered">
         <thead class="thead-light">
             <tr>
                 <!--<th>Id</th>-->
-                <th>Tipo</th>
-                <th>Titulo</th>
-                <th>Descripcion</th>
-                <th>Contenido</th>
-                <th>Enlace</th>
+                <th>Nombre</th>
+                <th>Fecha cumpleaños</th>
+                <th>Area</th>
                 <th>Foto</th>
-                <!--<th>Video</th>-->
-                <th>Documento</th>
-                <th>Inicio</th>
-                <th>Fin</th>
+                
                 <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($datos as $publication)
+            @foreach ($cumpleanios as $cumpleanio)
             <tr>
-                <!--<td>{{$publication->id}}</td>-->
-                <td>{{$publication->tipo}}</td>
-                <td>{{$publication->titulo}}</td>
-                <td><div class="celda-descripcion">{{$publication->descripcion}}</td>
-                <td><div class="celda-contenido">{{$publication->contenido}}</div></td>
-                <td><div class="celda-enlace">{{$publication->link}}</div></td>
+                
+                <td>{{$cumpleanio->nombre}}</td>
+                <td>{{$cumpleanio->fecha}}</td>
+                <td><div class="celda-descripcion">{{$cumpleanio->area}}</td>
+                
                 <td>
-                    <img src="{{asset('storage').'/'.$publication->imagen}}" width="100" alt="{{$publication->imagen}}">
+                    <img src="{{asset('storage').'/'.$cumpleanio->foto}}" height="100" alt="{{$cumpleanio->nombre}}">
                 </td>
 
-                <!--<td><div class="celda-enlace">{{$publication->video}}</div></td>-->
+                
 
-                <td><div class="celda-documento">{{$publication->documento}}</div></td>
-                <td>{{$publication->fecha_inicio}}</td>
-                <td>{{$publication->fecha_fin}}</td>
+                
                 <td class="">
-                    <a class="btn btn-success d-inline" href="{{url('publication/'.$publication->id.'/edit')}}">
+                    <a class="btn btn-success d-inline" href="{{url('birthday/'.$cumpleanio->id.'/edit')}}">
                         <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                     </a>
 
-                    <form  action="{{url('/publication/'.$publication->id)}}" class="d-inline" method="POST" >
+                    <form  action="{{url('/birthday/'.$cumpleanio->id)}}" class="d-inline" method="POST" >
                         @csrf
                         {{method_field('DELETE')}}
                         <!--<input class="btn btn-danger d-inline" type="submit" onclick="return confirm('¿Quieres eliminar?')" value="Borrar">-->
@@ -82,7 +74,7 @@
     <script>
         /*$(document).ready(function() {
         $('#tabla_anuncios').DataTable(); } );*/
-        $('#tabla_anuncios').DataTable({
+        $('#tabla_cumpleanios').DataTable({
             responsive:true,
             aoutoWidth:false,
 

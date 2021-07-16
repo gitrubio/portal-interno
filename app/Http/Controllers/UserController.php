@@ -39,10 +39,18 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate(
+            [
+           'username' => 'required',
+           'email' => 'required',
+           'password' =>'required',
+           'password_confirmation' => 'required|same:password'
+           ]); 
         //
+
         $datos_usuario = $request->except('_token');
-        $password_no_cript = $datos_usuario['password'];
-        $datos_usuario['password'] = bcrypt($password_no_cript);
+       /*  $password_no_cript = $datos_usuario['password'];
+        $datos_usuario['password'] = bcrypt($password_no_cript); */
         //User::insert($datos_usuario);
         User::create($datos_usuario);
         
@@ -75,7 +83,7 @@ class UserController extends Controller
         return view('usuarios.edit', compact('usuario')); 
         //return response()->json($usuario);
     }
-
+   
     /**
      * Update the specified resource in storage.
      *
@@ -86,14 +94,26 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $datos_usuario = $request->except(['_token', '_method']);
-        User::where('id', '=', $id)->update($datos_usuario);
-        $usuario = User::findOrFail($id);
-        
+        $request->validate(
+             [
+            'username' => 'required',
+            'email' => 'required',
+            'password' =>'required',
+            'password_confirmation' => 'required|same:password'
+            ]); 
+         
+
+            $datos_usuario = $request->except(['_token', '_method','password_confirmation']);
+           /*  $password_no_cript = $datos_usuario['password'];
+            $datos_usuario['password'] = bcrypt($password_no_cript); */
+            User::where('id', '=', $id)->update($datos_usuario);
+            $usuario = User::findOrFail($id);
+         
+    
         
         //return view('publication.edit', compact('publication'));
         //$datos = Publication::paginate(5);
-        return view('usuarios.edit', compact('usuario'))->with('mensaje','Usuario editado');;
+        return redirect('user')->with('mensaje','Usuario editado');;
    
     } 
 
