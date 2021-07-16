@@ -13,7 +13,7 @@ function clickMenu() {
  console.log(enlaces[1].href);
 
  for (let index = 0; index < numero_enlaces; index++) {
-  if(enlaces[index].href == "https://192.168.1.22/portal-interno/public/" || enlaces[index].href == "http://192.168.1.22/portal-interno/public/"){
+  if(enlaces[index].href == "https://localhost/portal-interno/public/" || enlaces[index].href == "http://localhost/portal-interno/public/" || enlaces[index].href == "http://192.168.1.22/portal-interno/public/" || enlaces[index].href == "https://192.168.1.22/portal-interno/public/"){
     id = enlaces[index].id;
     document.getElementById(id).style.pointerEvents = "none";
     //enlaces[index].style.pointerEvents = "none";
