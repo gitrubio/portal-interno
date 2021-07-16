@@ -284,49 +284,42 @@
           </div>
           <div class="row">
             <!-- Start Left Blog -->
-            <div class="carousel-wrapper">
-              <div class="carousel" data-flickity>
-                @foreach ($anuncios as $anuncio)
-                          <!-- Start single blog -->
-                          <div class="card tarjeta-anuncio"> 
-                              <div class="card-header">
-                              @if(is_null($anuncio->imagen))
-                              <img src="img/slider/slider_nuevo_documento.jpg" alt="slider_nuevo_documento" title="{{'#slider-direction-'.$variable}}" />
-                              @else
-                              <img src="{{asset('storage').'/'.$anuncio->imagen}}" alt="rover" />
-                              @endif
-                              </div>
-                          
-                              <div class="card-body">
-                                  
-                                  <span class="date-type" style="display:inline;">
-                                  <i class="fa fa-calendar"></i>{{$anuncio->fecha_inicio}} / {{$anuncio->fecha_fin}}
-                                  </span>
-                                  <span class="tag tag-usuario" style="display:inline;">{{$anuncio->usuario_nombre}}</span>
-                                  <div class="card-titulo">
-                                  <h4 >
-                                      {{$anuncio->titulo}}
-                                  </h4>
-                                  </div>
-                                  <div class="card-contenedor-descripcion">
-                                  <p >
-                                      {{$anuncio->descripcion}}
-                                  </p>
-                                  </div>
-                                  
-                                  <div class="user">
-                                  <a href="{{url('anuncios/'. $anuncio->id)}}" target="_blank" class="tag tag-blue">Mas info</a>
-                                  <a id ="{{$anuncio->id}}-enlace-mini-anuncio" href="{{$anuncio->link}}" target="_blank" class="tag tag-blue enlace-card">Ver enlace</a> 
-                                  </div>
-                              </div>
-                          </div>
-                          @endforeach
-                      
+          
+            @foreach ($anuncios as $anuncio)
+            <!-- Start single blog -->
+            <div class="card tarjeta-anuncio"> 
+              <div class="card-header">
+                @if(is_null($anuncio->imagen))
+                <img src="img/slider/slider_nuevo_documento.jpg" alt="slider_nuevo_documento" title="{{'#slider-direction-'.$variable}}" />
+              @else
+                <img src="{{asset('storage').'/'.$anuncio->imagen}}" alt="rover" />
+              @endif
+              </div>
+              
+              <div class="card-body">
                 
-            
+                <span class="date-type" style="display:inline;">
+                  <i class="fa fa-calendar"></i>{{$anuncio->fecha_inicio}} / {{$anuncio->fecha_fin}}
+                </span>
+                <span class="tag tag-usuario" style="display:inline;">{{$anuncio->usuario_nombre}}</span>
+                <div class="card-titulo">
+                  <h4 >
+                    {{$anuncio->titulo}}
+                  </h4>
+                </div>
+                <div class="card-contenedor-descripcion">
+                  <p >
+                    {{$anuncio->descripcion}}
+                  </p>
+                </div>
+                
+                <div class="user">
+                  <a href="{{url('anuncios/'. $anuncio->id)}}" target="_blank" class="tag tag-blue">Mas info</a>
+                  <a id ="{{$anuncio->id}}-enlace-mini-anuncio" href="{{$anuncio->link}}" target="_blank" class="tag tag-blue enlace-card">Ver enlace</a> 
+                </div>
               </div>
             </div>
-           
+            @endforeach
           </div>
            
           
@@ -626,14 +619,6 @@
 
     <script src="js/main.js"></script>
     <script src="js/index_scripts.js"></script>
-
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
-     <link rel="stylesheet" href="https://unpkg.com/flickity@2.0/dist/flickity.min.css">
-     <script src="https://unpkg.com/flickity@2.0/dist/flickity.pkgd.min.js"></script>
   </body>
 
   </html>

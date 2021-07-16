@@ -284,42 +284,49 @@
           </div>
           <div class="row">
             <!-- Start Left Blog -->
-          
-            @foreach ($anuncios as $anuncio)
-            <!-- Start single blog -->
-            <div class="card tarjeta-anuncio"> 
-              <div class="card-header">
-                @if(is_null($anuncio->imagen))
-                <img src="img/slider/slider_nuevo_documento.jpg" alt="slider_nuevo_documento" title="{{'#slider-direction-'.$variable}}" />
-              @else
-                <img src="{{asset('storage').'/'.$anuncio->imagen}}" alt="rover" />
-              @endif
-              </div>
-              
-              <div class="card-body">
+            <div class="carousel-wrapper">
+              <div class="carousel" data-flickity>
+                @foreach ($anuncios as $anuncio)
+                          <!-- Start single blog -->
+                          <div class="card tarjeta-anuncio"> 
+                              <div class="card-header">
+                              @if(is_null($anuncio->imagen))
+                              <img src="img/slider/slider_nuevo_documento.jpg" alt="slider_nuevo_documento" title="{{'#slider-direction-'.$variable}}" />
+                              @else
+                              <img src="{{asset('storage').'/'.$anuncio->imagen}}" alt="rover" />
+                              @endif
+                              </div>
+                          
+                              <div class="card-body">
+                                  
+                                  <span class="date-type" style="display:inline;">
+                                  <i class="fa fa-calendar"></i>{{$anuncio->fecha_inicio}} / {{$anuncio->fecha_fin}}
+                                  </span>
+                                  <span class="tag tag-usuario" style="display:inline;">{{$anuncio->usuario_nombre}}</span>
+                                  <div class="card-titulo">
+                                  <h4 >
+                                      {{$anuncio->titulo}}
+                                  </h4>
+                                  </div>
+                                  <div class="card-contenedor-descripcion">
+                                  <p >
+                                      {{$anuncio->descripcion}}
+                                  </p>
+                                  </div>
+                                  
+                                  <div class="user">
+                                  <a href="{{url('anuncios/'. $anuncio->id)}}" target="_blank" class="tag tag-blue">Mas info</a>
+                                  <a id ="{{$anuncio->id}}-enlace-mini-anuncio" href="{{$anuncio->link}}" target="_blank" class="tag tag-blue enlace-card">Ver enlace</a> 
+                                  </div>
+                              </div>
+                          </div>
+                          @endforeach
+                      
                 
-                <span class="date-type" style="display:inline;">
-                  <i class="fa fa-calendar"></i>{{$anuncio->fecha_inicio}} / {{$anuncio->fecha_fin}}
-                </span>
-                <span class="tag tag-usuario" style="display:inline;">{{$anuncio->usuario_nombre}}</span>
-                <div class="card-titulo">
-                  <h4 >
-                    {{$anuncio->titulo}}
-                  </h4>
-                </div>
-                <div class="card-contenedor-descripcion">
-                  <p >
-                    {{$anuncio->descripcion}}
-                  </p>
-                </div>
-                
-                <div class="user">
-                  <a href="{{url('anuncios/'. $anuncio->id)}}" target="_blank" class="tag tag-blue">Mas info</a>
-                  <a id ="{{$anuncio->id}}-enlace-mini-anuncio" href="{{$anuncio->link}}" target="_blank" class="tag tag-blue enlace-card">Ver enlace</a> 
-                </div>
+            
               </div>
             </div>
-            @endforeach
+           
           </div>
            
           
@@ -457,6 +464,7 @@
                   <thead>
                     <tr>
                       <th scope="col">Publicación</th>
+                      <th scope="col">tipo</th>
                       <th scope="col">Nombre</th>
                       <th scope="col">Descripción</th>
                       <th scope="col">Ver/Descargar</th>
@@ -467,9 +475,26 @@
                     <tr>
                       <td class="celda-cumpleanios">{{date_format($documento->updated_at, 'Y-m-d')}}</td>
                       <!--<th scope="row">{{$documento->id}}</th>-->
+                       <?php
+                       $tipo = pathinfo($documento->documento)
+                       ?>
+                       @if ($tipo['extension']=="xlsx"|| $tipo['extension']=="xls" )
+                        <p>entre</p>
+                       <td class="celda-cumpleanios"><i class="fa fa-file-excel-o fa-2x" style="color: green"> </i></td>
+                      @endif
+                       @if ($tipo['extension']=="pdf")
+                       <td class="celda-cumpleanios"><i class="fa fa-file-pdf-o fa-2x" aria-hidden="true" style="color: red"> </i></td>
+                      @endif
+                       @if ($tipo['extension']=="docx" || $tipo['extension']=="doc")
+                       <td class="celda-cumpleanios"><i class="fa fa-file-word-o fa-2x" aria-hidden="true" style="color:blue"> </i></td>
+                      @endif
+                       @if ($tipo['extension']=="text")
+                       <td class="celda-cumpleanios"><i class="fa fa-file-text fa-2x" aria-hidden="true"> </i></td>
+                      @endif
+
                       <td class="celda-cumpleanios"><strong>{{$documento->titulo}}</strong></td>
                       <td class="celda-cumpleanios">{{$documento->descripcion}}</td>
-                      <td class="celda-cumpleanios-descarga"><a  href="{{url(asset('storage').'/'.$documento->documento)}}" target="_blank"><i class="fa fa-download"></i></td>
+                      <td class="celda-cumpleanios-descarga"><a  href="{{url(asset('storage').'/'.$documento->documento)}}" target="_blank"><i class="fa fa-download fa-2x"></i></td>
                     </tr>
                     @endforeach
                   </tbody>
@@ -619,6 +644,14 @@
 
     <script src="js/main.js"></script>
     <script src="js/index_scripts.js"></script>
+
+    {{-- { <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>  --}}
+<!------ Include the above in your HEAD tag ---------->
+
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2.0/dist/flickity.min.css">
+     <script src="https://unpkg.com/flickity@2.0/dist/flickity.pkgd.min.js"></script> 
   </body>
 
   </html>
